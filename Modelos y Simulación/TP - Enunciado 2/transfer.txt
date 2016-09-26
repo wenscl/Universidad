@@ -1,0 +1,13 @@
+PEDIDOS
+transfer[1] = tiempo actual
+transfer[2] = tipo pedido
+transfer[3] = nro estacion/ prioridad
+transfer[4] = tiempo que estuvo en la red
+transfer[5] = bool si estuvo en la red
+transfer[6] = tiempo que utiliza la red
+
+EVENTOS
+transfer[1] = tiempo de ocurrencia del evento
+transfer[2] = tipo evento
+transfer[3] = tipo pedido
+transfer[4] = nro estacion/ prioridad
