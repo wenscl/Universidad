@@ -1,0 +1,24 @@
+filas = 5
+columnas = 5
+
+variables = tuple([(x,y) for x in range(filas) for y in range(columnas)])
+
+dominios = {casilla: range(1, filas*columnas + 1) for casilla in variables}
+
+def suma(variables, valores):
+	return sum(valor for valor in valores[0]) == sum(valor for valor in valores[2])
+	
+def distintos(variables, valores):
+	return valores[0] =! valores[1]
+
+restricciones = []
+
+filas = [tuple([(f, c) for c in range(filas)]) for f in range(columnas)]
+columnas = [tuple([(f, c) for f in range(columnas)]) for c in range(filas)]
+filas_y_columnas = filas + columnas
+
+for v1, v2 in itertools.combinations(filas_y_columnas, 2):
+    restricciones.append((v1 + v2, suma))
+
+for tupla in itertools.combinations(variables, 2):
+    restricciones.append((tupla, distintos))

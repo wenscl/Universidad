@@ -33,35 +33,35 @@ def probar_codigo(interactivo=False, saltear_errores=False):
         import entrega_1_local
         fin = datetime.now()
     except ImportError:
-        problemas.append(u'No se pudo encontrar el cÛdigo python. Probablemente el nombre del archivo .py no es correcto, o no est· en la raiz del repositorio.')
+        problemas.append(u'No se pudo encontrar el c√≥digo python. Probablemente el nombre del archivo .py no es correcto, o no est√° en la raiz del repositorio.')
         return
 
-    validar_tiempo(inicio, fin, 5, problemas, u'El import de la entrega demora demasiado tiempo, probablemente est·n haciendo b˙squeda en el import. Hagan lo del if __name__ ... que se recomienda en la consigna.')
+    validar_tiempo(inicio, fin, 5, problemas, u'El import de la entrega demora demasiado tiempo, probablemente est√°n haciendo b√∫squeda en el import. Hagan lo del if __name__ ... que se recomienda en la consigna.')
 
     # intentar extraer y validar la funcion resolver
-    print u'Extrayendo la funciÛn resolver...'
+    print u'Extrayendo la funci√≥n resolver...'
 
     resolver = getattr(entrega_1_local, 'resolver', None)
 
     if resolver is None:
-        problemas.append(u'El mÛdulo python no define la funciÛn resolver.')
+        problemas.append(u'El m√≥dulo python no define la funci√≥n resolver.')
         return
 
     if inspect.getargspec(resolver)[0] != ['metodo_busqueda', 'iteraciones', 'haz', 'reinicios']:
         print resolver.__code__.co_varnames
-        problemas.append(u'La funciÛn resolver no recibe los par·metros definidos en la entrega.')
+        problemas.append(u'La funci√≥n resolver no recibe los par√°metros definidos en la entrega.')
         return
 
     # validar el funcionamiento de la funcion resolver y el planteo del problema en general
-    print u'Probando la resoluciÛn de problemas...'
+    print u'Probando la resoluci√≥n de problemas...'
 
     # metodo_busqueda, posicion_rey, graph_search, limite_largo_camino, limite_tiempo
     pruebas = (
-        ('hill_climbing', dict(iteraciones=100)),
-        ('hill_climbing_stochastic', dict(iteraciones=100)),
-        ('beam', dict(iteraciones=100, haz=50)),
-        ('hill_climbing_random_restarts', dict(iteraciones=100, reinicios=50)),
-        ('simulated_annealing', dict(iteraciones=100)),
+        ('hill_climbing', dict(iteraciones=50)),
+        ('hill_climbing_stochastic', dict(iteraciones=50)),
+        ('beam', dict(iteraciones=50, haz=5)),
+        ('hill_climbing_random_restarts', dict(iteraciones=50, reinicios=5)),
+        ('simulated_annealing', dict(iteraciones=50)),
     )
 
     parametros_default = dict(reinicios=None, haz=None)
@@ -82,7 +82,7 @@ def probar_codigo(interactivo=False, saltear_errores=False):
                 fin = datetime.now()
 
                 if not isinstance(resultado, SearchNode):
-                    problemas.append(u'El resultado devuelto por la funciÛn resolver en la prueba %i no es un nodo de b˙squeda. Puede que la funciÛn resolver no estÈ devolviendo el nodo resultante, o que el problema no estÈ encontrando soluciÛn como deberÌa.' % numero_prueba)
+                    problemas.append(u'El resultado devuelto por la funci√≥n resolver en la prueba %i no es un nodo de b√∫squeda. Puede que la funci√≥n resolver no est√© devolviendo el nodo resultante, o que el problema no est√© encontrando soluci√≥n como deber√≠a.' % numero_prueba)
                 else:
                     print u'     meta:', repr(resultado.state)
                     print u'     valor:', repr(resultado.value)
@@ -95,11 +95,11 @@ def probar_codigo(interactivo=False, saltear_errores=False):
 
 def probar_estadisticas():
     # abrir el archivo de estadisticas
-    print u'Abriendo estadÌsticas...'
+    print u'Abriendo estad√≠sticas...'
 
     nombre_archivo = 'entrega_1_local.txt'
     if not os.path.exists(nombre_archivo):
-        problemas.append(u'No se pudo encontrar el archivo de estadÌsticas. Probablemente el nombre del archivo no es correcto, o no est· en la raiz del repositorio.')
+        problemas.append(u'No se pudo encontrar el archivo de estad√≠sticas. Probablemente el nombre del archivo no es correcto, o no est√° en la raiz del repositorio.')
         return
 
     with open(nombre_archivo) as archivo_stats:
@@ -116,17 +116,17 @@ def probar_estadisticas():
                 caso, valor = map(int, linea.split(':'))
 
                 if caso not in casos:
-                    problemas.append(u'Caso desconocido en archivo de estadÌsticas: %i' % caso)
+                    problemas.append(u'Caso desconocido en archivo de estad√≠sticas: %i' % caso)
                 elif caso not in casos_pendientes:
-                    problemas.append(u'Caso repetido en archivo de estadÌsticas: %i' % caso)
+                    problemas.append(u'Caso repetido en archivo de estad√≠sticas: %i' % caso)
                 else:
                     print u"   Encontrado caso", caso
                     casos_pendientes.remove(caso)
             except:
-                problemas.append(u'La siguiente linea de estadÌsticas no respeta el formato definido: %s' % linea)
+                problemas.append(u'La siguiente linea de estad√≠sticas no respeta el formato definido: %s' % linea)
 
     if casos_pendientes:
-        problemas.append(u'No se incluyeron las estadÌsticas de los siguientes casos: %s' % repr(casos_pendientes))
+        problemas.append(u'No se incluyeron las estad√≠sticas de los siguientes casos: %s' % repr(casos_pendientes))
 
 
 def imprimir_resultados():
@@ -147,6 +147,6 @@ if __name__ == '__main__':
     print
     probar_estadisticas()
     print
-    print u'Pruebas autom·ticas terminadas!'
+    print u'Pruebas autom√°ticas terminadas!'
     print
     imprimir_resultados()

@@ -1,0 +1,57 @@
+TP
+investigar keras
+
+tamaño de la imagen
+colores
+asignar nombres a las columnas
+
+data = pd.read_csv
+
+funcion para estandarizar los números entre 0 y 1
+
+funcion para mostrar imagenes
+
+entradas: pixeles
+salidas: 0 o 1
+
+separar datos para test y entrenamiento
+train, test = train_test_split(data, test_size=0.2)
+
+extraer de los datos los labels
+
+
+----------------------------------------------------------------
+- crear la red --> queras
+
+model = secuential([
+	dense(2, input_shape(picture_size **2*len(channeks),)),
+	activation('tanh')
+
+	dense(5),
+	activation('tanh') //entre -1 y 1
+	
+	dense(1),
+	activation('sigmoid') //entre 0 y 1. es la capa de salida.
+])	
+
+- Entrenar
+
+model.compile(optimizer='adam', funcion de perdida loss='binary_crossentropy', metrics[que mostrar 'acurrancy',])
+
+model.fit(extract_inputs(train), train.label.values,nb_epoch=5,batch_size=128)
+nb_epoch --> cuantas veces hay que entrenar. no más de 50
+batch_size se puede tocar también
+-- muestra la exactitud del resultado --> mínimo 80%
+-- agregar más capas o neuronas o cambiar las funciones. la funcion de la salida es la sigmoid
+
+show_images para mostrar ejemplos correctos y no correctos
+
+
+pillow
+classify_pictures
+para predecir otras imagenes.. 
+
+convoluciones --> se puede investigar y hace que se llegue mpas rapido al 80%
+es una forma distinta de armar las conexiones.
+
+puede tardar mucho

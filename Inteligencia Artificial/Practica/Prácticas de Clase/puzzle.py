@@ -78,7 +78,7 @@ if __name__ == '__main__':
     problema = PuzzleProblem(INICIAL)
 
     # resultado = astar(problema, viewer=WebViewer())
-    resultado = astar(problema)
+    resultado = astar(problema, graph_search=True)
 
     print 'Estado meta:'
     print resultado.state
@@ -87,3 +87,12 @@ if __name__ == '__main__':
     for accion, estado in resultado.path():
         print 'Movi', accion
         print 'Llegue a', estado
+
+
+
+
+
+
+
+
+
