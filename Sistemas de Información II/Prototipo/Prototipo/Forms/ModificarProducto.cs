@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Prototipo.Forms
 {
-    public partial class AgregarProducto : Form
+    public partial class ModificarProducto : Form
     {
-        public AgregarProducto()
+        public ModificarProducto()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
