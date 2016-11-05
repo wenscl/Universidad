@@ -83,6 +83,9 @@
     <EmbeddedResource Include="Forms\ListarProductos.resx">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModificarProducto.resx">
+      <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -108,6 +111,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icons\1478394338_icons_exit.png" />
+    <None Include="Icons\1478394432_DeleteRed.png" />
     <Content Include="Icons\accept.png" />
     <Content Include="Icons\accept2.png" />
     <Content Include="Icons\add.png" />

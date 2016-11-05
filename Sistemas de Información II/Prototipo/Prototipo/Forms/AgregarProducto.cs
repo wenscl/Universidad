@@ -32,6 +32,7 @@ namespace Prototipo.Forms
         {
             var producto = new Producto();
             producto.Codigo = txtCodigo.Text;
+            producto.Nombre = txtNombre.Text;
             producto.Tipo = txtTipo.Text;
             producto.Marca = txtMarca.Text;
             producto.Precio = Convert.ToSingle(txtPrecio.Text);
@@ -42,10 +43,11 @@ namespace Prototipo.Forms
         private void Cancelar_Click(object sender, EventArgs e)
         {
             txtCodigo.Clear();
+            txtNombre.Clear();
+            txtTipo.Clear();
             txtMarca.Clear();
             txtPrecio.Clear();
             txtStock.Clear();
-            txtTipo.Clear();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -55,13 +57,17 @@ namespace Prototipo.Forms
 
         private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
-
+        
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ListarProductos frm = new ListarProductos();
             frm.Show();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

@@ -20,12 +20,7 @@ namespace Prototipo.Forms
 
         private void ListarProductos_Load(object sender, EventArgs e)
         {
-            foreach (var producto in Producto.Listar())
-            {
-                listBox1.Items.Add(producto.Marca);
-                listBox1.Items.Add(producto.Precio.ToString());
-            }
-
+            dataGridView1.DataSource = Producto.Listar();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,7 +30,56 @@ namespace Prototipo.Forms
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            Producto.Buscar(txtBuscar.Text);
+
+            //Producto.Buscar(txtBuscar.Text);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Modificar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void toolStripButtonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            // no anda.. 
+            //Producto.Eliminar(dataGridView1.SelectedRows[0].Index);
+            //dataGridView1.Refresh();
+            
+            foreach (DataGridViewRow item in dataGridView1.SelectedRows)
+            {
+                Producto.Eliminar(item.Index);
+                dataGridView1.DataSource = Producto.Listar();
+            }
+        }
+
+        private void BuscarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgregarProducto frm = new AgregarProducto();
+            frm.Show();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
