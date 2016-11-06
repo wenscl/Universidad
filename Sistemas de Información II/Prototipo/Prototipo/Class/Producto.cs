@@ -1,6 +1,7 @@
 ﻿using LiteDB;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,22 +21,9 @@ namespace Prototipo.Class
         public float Precio { get; set; }
         public int Stock { get; set; }
 
-        public static string BD = "C:\\Users\\weens\\Documents\\RepoGitHub\\Universidad\\Sistemas de Información II\\Prototipo\\Prototipo\\BDPrototipo.db";
-        // Funciones
+        public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");
 
-        // Agregar producto
-        //public static void Agregar(string codigo, string tipo, string marca, string precio, string stock)
-        //{
-        //    try
-        //    {
-        //        Precio = Convert.ToSingle(precio);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        MessageBox.Show("El precio debe ser numérico", "Agregar Producto",
-        //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+        // Funciones
 
         // Agregar producto
         public static void Agregar(Producto producto)

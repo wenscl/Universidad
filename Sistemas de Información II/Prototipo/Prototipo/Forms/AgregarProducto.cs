@@ -61,13 +61,43 @@ namespace Prototipo.Forms
         
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListarProductos frm = new ListarProductos();
+            var frm = new ListarProductos();
             frm.Show();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new AgregarProveedor();
+            frm.Show();
+        }
+
+        private void mostrarProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarProveedores();
+            frm.Show();
+        }
+
+        private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new AgregarPedido();
+            frm.Show();
+        }
+
+        private void agregarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new AgregarVenta();
+            frm.Show();
+        }
+
+        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarVentas();
+            frm.Show();
         }
     }
 }

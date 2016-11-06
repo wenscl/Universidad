@@ -50,18 +50,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Pedido.cs" />
     <Compile Include="Class\Producto.cs" />
+    <Compile Include="Class\Proveedor.cs" />
+    <Compile Include="Class\Venta.cs" />
+    <Compile Include="Forms\AgregarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarPedido.Designer.cs">
+      <DependentUpon>AgregarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AgregarProducto.Designer.cs">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\EliminarProducto.cs">
+    <Compile Include="Forms\AgregarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EliminarProducto.Designer.cs">
-      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    <Compile Include="Forms\AgregarProveedor.Designer.cs">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AgregarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AgregarVenta.Designer.cs">
+      <DependentUpon>AgregarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListarPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarPedidos.Designer.cs">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListarProductos.cs">
       <SubType>Form</SubType>
@@ -69,16 +90,46 @@
     <Compile Include="Forms\ListarProductos.Designer.cs">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ListarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarProveedores.Designer.cs">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarVentas.Designer.cs">
+      <DependentUpon>ListarVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModificarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarPedido.Designer.cs">
+      <DependentUpon>ModificarPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ModificarProducto.Designer.cs">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarProveedor.Designer.cs">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AgregarPedido.resx">
+      <DependentUpon>AgregarPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AgregarProducto.resx">
       <DependentUpon>AgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AgregarProveedor.resx">
+      <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListarProductos.resx">
       <DependentUpon>ListarProductos.cs</DependentUpon>

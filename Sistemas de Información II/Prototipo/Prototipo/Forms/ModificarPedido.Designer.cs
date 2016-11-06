@@ -1,6 +1,6 @@
 ﻿namespace Prototipo.Forms
 {
-    partial class EliminarProducto
+    partial class ModificarPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "EliminarProducto";
+            this.Text = "ModificarPedido";
         }
 
         #endregion

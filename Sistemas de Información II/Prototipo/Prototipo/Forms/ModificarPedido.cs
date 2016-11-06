@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototipo.Forms
 {
-    public partial class EliminarProducto : Form
+    public partial class ModificarPedido : Form
     {
-        public EliminarProducto()
+        public ModificarPedido()
         {
             InitializeComponent();
         }
