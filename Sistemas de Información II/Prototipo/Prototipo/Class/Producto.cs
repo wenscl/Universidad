@@ -70,19 +70,14 @@ namespace Prototipo.Class
         }
 
         // Buscar producto
-        public static Producto Buscar(int id)
+        public static IEnumerable<Producto> Buscar(string nombre)
         {
             using (var db = new LiteDatabase(BD))
             {
                 var productos = db.GetCollection<Producto>("Productos");
 
-                return productos.FindById(id);
+                return productos.Find(Query.Contains("Nombre", nombre));
             }
         }
-
-        // Actualizar stock
-
-        // Consultar stock
-        
     }
 }

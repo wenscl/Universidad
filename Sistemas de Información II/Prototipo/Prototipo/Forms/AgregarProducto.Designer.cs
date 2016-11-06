@@ -227,10 +227,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(284, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 22);
+            this.label1.Size = new System.Drawing.Size(210, 23);
             this.label1.TabIndex = 13;
             this.label1.Text = "Carga de Productos";
             // 
@@ -259,14 +259,14 @@
             // agregarVentaToolStripMenuItem
             // 
             this.agregarVentaToolStripMenuItem.Name = "agregarVentaToolStripMenuItem";
-            this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.agregarVentaToolStripMenuItem.Text = "Agregar venta";
             this.agregarVentaToolStripMenuItem.Click += new System.EventHandler(this.agregarVentaToolStripMenuItem_Click);
             // 
             // mostrarVentasToolStripMenuItem
             // 
             this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
-            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.mostrarVentasToolStripMenuItem.Text = "Ver Ventas";
             this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
             // 
@@ -299,6 +299,7 @@
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
             this.verStockToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verStockToolStripMenuItem.Text = "Ver stock";
+            this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -344,6 +345,7 @@
             this.mostrarReportesToolStripMenuItem.Name = "mostrarReportesToolStripMenuItem";
             this.mostrarReportesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.mostrarReportesToolStripMenuItem.Text = "Mostrar reportes";
+            this.mostrarReportesToolStripMenuItem.Click += new System.EventHandler(this.mostrarReportesToolStripMenuItem_Click);
             // 
             // Cancelar
             // 

@@ -16,6 +16,7 @@ namespace Prototipo.Class
         public string Direccion { get; set; }
         public int Telefono { get; set; }
         public string Mail { get; set; }
+        public string Ciudad { get; set; }
 
         //Funciones
         public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");

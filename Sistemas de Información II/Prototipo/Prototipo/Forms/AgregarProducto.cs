@@ -38,6 +38,10 @@ namespace Prototipo.Forms
             producto.Precio = Convert.ToSingle(txtPrecio.Text);
             producto.Stock = Convert.ToInt32(txtStock.Text);
             Producto.Agregar(producto);
+
+            var frm = new ListarProductos();
+            this.Hide();
+            frm.Show();
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -48,6 +52,10 @@ namespace Prototipo.Forms
             txtMarca.Clear();
             txtPrecio.Clear();
             txtStock.Clear();
+
+            var frm = new ListarProductos();
+            this.Hide();
+            frm.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -62,6 +70,7 @@ namespace Prototipo.Forms
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ListarProductos();
+            this.Hide();
             frm.Show();
         }
 
@@ -73,31 +82,46 @@ namespace Prototipo.Forms
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarProveedor();
+            this.Hide();
             frm.Show();
         }
 
         private void mostrarProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ListarProveedores();
+            this.Hide();
             frm.Show();
         }
 
         private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarPedido();
+            this.Hide();
             frm.Show();
         }
 
         private void agregarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarVenta();
+            this.Hide();
             frm.Show();
         }
 
         private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ListarVentas();
+            this.Hide();
             frm.Show();
+        }
+
+        private void verStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mostrarReportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

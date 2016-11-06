@@ -164,6 +164,8 @@
   <ItemGroup>
     <None Include="Icons\1478394338_icons_exit.png" />
     <None Include="Icons\1478394432_DeleteRed.png" />
+    <None Include="Icons\1478490982_search.png" />
+    <None Include="Icons\1478491184_broom_stick_3.png" />
     <Content Include="Icons\accept.png" />
     <Content Include="Icons\accept2.png" />
     <Content Include="Icons\add.png" />

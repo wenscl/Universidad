@@ -60,6 +60,8 @@
             this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtCiudad = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -68,7 +70,7 @@
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(22, 28);
+            this.Nombre.Location = new System.Drawing.Point(24, 13);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(64, 19);
             this.Nombre.TabIndex = 0;
@@ -77,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 71);
+            this.label2.Location = new System.Drawing.Point(24, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 19);
             this.label2.TabIndex = 1;
@@ -86,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 114);
+            this.label3.Location = new System.Drawing.Point(24, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 19);
             this.label3.TabIndex = 2;
@@ -95,7 +97,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 158);
+            this.label4.Location = new System.Drawing.Point(24, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 19);
             this.label4.TabIndex = 3;
@@ -103,7 +105,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(135, 25);
+            this.txtNombre.Location = new System.Drawing.Point(137, 10);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(244, 24);
@@ -111,7 +113,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(135, 68);
+            this.txtDireccion.Location = new System.Drawing.Point(137, 53);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(244, 24);
@@ -119,7 +121,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(135, 111);
+            this.txtTelefono.Location = new System.Drawing.Point(137, 96);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(244, 24);
@@ -127,7 +129,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(135, 154);
+            this.txtMail.Location = new System.Drawing.Point(137, 139);
             this.txtMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(244, 24);
@@ -135,6 +137,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtCiudad);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.Nombre);
             this.panel1.Controls.Add(this.txtMail);
             this.panel1.Controls.Add(this.label2);
@@ -144,20 +148,21 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(160, 153);
+            this.panel1.Location = new System.Drawing.Point(236, 102);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 212);
+            this.panel1.Size = new System.Drawing.Size(417, 223);
             this.panel1.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 44);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(331, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.Size = new System.Drawing.Size(236, 23);
             this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
+            this.label1.Text = "Carga de Proveedores";
             // 
             // Cancelar
             // 
@@ -166,7 +171,7 @@
             this.Cancelar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelar.Image = global::Prototipo.Properties.Resources.cancel1;
             this.Cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelar.Location = new System.Drawing.Point(433, 429);
+            this.Cancelar.Location = new System.Drawing.Point(445, 377);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(106, 37);
             this.Cancelar.TabIndex = 11;
@@ -181,7 +186,7 @@
             this.Agregar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Agregar.Image = global::Prototipo.Properties.Resources.save;
             this.Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregar.Location = new System.Drawing.Point(545, 429);
+            this.Agregar.Location = new System.Drawing.Point(557, 377);
             this.Agregar.Name = "Agregar";
             this.Agregar.Size = new System.Drawing.Size(108, 37);
             this.Agregar.TabIndex = 10;
@@ -214,13 +219,14 @@
             // agregarVentaToolStripMenuItem
             // 
             this.agregarVentaToolStripMenuItem.Name = "agregarVentaToolStripMenuItem";
-            this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.agregarVentaToolStripMenuItem.Text = "Agregar venta";
+            this.agregarVentaToolStripMenuItem.Click += new System.EventHandler(this.agregarVentaToolStripMenuItem_Click);
             // 
             // mostrarVentasToolStripMenuItem
             // 
             this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
-            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mostrarVentasToolStripMenuItem.Text = "Ver Ventas";
             // 
             // productosToolStripMenuItem
@@ -300,28 +306,45 @@
             this.copiarToolStripMenuItem,
             this.pegarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
             // 
             // seleccionarToolStripMenuItem
             // 
             this.seleccionarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("seleccionarToolStripMenuItem.Image")));
             this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
-            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.seleccionarToolStripMenuItem.Text = "Seleccionar";
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripMenuItem.Image")));
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Image = global::Prototipo.Properties.Resources.paste;
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Location = new System.Drawing.Point(137, 179);
+            this.txtCiudad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(244, 24);
+            this.txtCiudad.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 183);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Ciudad";
             // 
             // AgregarProveedor
             // 
@@ -379,5 +402,7 @@
         private System.Windows.Forms.ToolStripMenuItem seleccionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtCiudad;
+        private System.Windows.Forms.Label label5;
     }
 }

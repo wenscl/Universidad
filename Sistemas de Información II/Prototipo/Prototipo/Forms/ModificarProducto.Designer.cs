@@ -39,13 +39,11 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtMarca = new System.Windows.Forms.TextBox();
-            this.Stock = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.Precio = new System.Windows.Forms.Label();
-            this.TipoProducto = new System.Windows.Forms.Label();
-            this.Marca = new System.Windows.Forms.Label();
-            this.Cancelar = new System.Windows.Forms.Button();
-            this.Agregar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +62,8 @@
             this.realizarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cancelar = new System.Windows.Forms.Button();
+            this.Agregar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -88,11 +88,11 @@
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.txtStock);
             this.panel1.Controls.Add(this.txtMarca);
-            this.panel1.Controls.Add(this.Stock);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtPrecio);
-            this.panel1.Controls.Add(this.Precio);
-            this.panel1.Controls.Add(this.TipoProducto);
-            this.panel1.Controls.Add(this.Marca);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(214, 117);
             this.panel1.Name = "panel1";
@@ -152,14 +152,14 @@
             this.txtMarca.Size = new System.Drawing.Size(248, 24);
             this.txtMarca.TabIndex = 2;
             // 
-            // Stock
+            // label5
             // 
-            this.Stock.AutoSize = true;
-            this.Stock.Location = new System.Drawing.Point(12, 184);
-            this.Stock.Name = "Stock";
-            this.Stock.Size = new System.Drawing.Size(46, 19);
-            this.Stock.TabIndex = 8;
-            this.Stock.Text = "Stock";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 184);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Stock";
             // 
             // txtPrecio
             // 
@@ -168,64 +168,32 @@
             this.txtPrecio.Size = new System.Drawing.Size(248, 24);
             this.txtPrecio.TabIndex = 3;
             // 
-            // Precio
+            // label4
             // 
-            this.Precio.AutoSize = true;
-            this.Precio.Location = new System.Drawing.Point(12, 147);
-            this.Precio.Name = "Precio";
-            this.Precio.Size = new System.Drawing.Size(51, 19);
-            this.Precio.TabIndex = 7;
-            this.Precio.Text = "Precio";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 19);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Precio";
             // 
-            // TipoProducto
+            // label6
             // 
-            this.TipoProducto.AutoSize = true;
-            this.TipoProducto.Location = new System.Drawing.Point(12, 81);
-            this.TipoProducto.Name = "TipoProducto";
-            this.TipoProducto.Size = new System.Drawing.Size(126, 19);
-            this.TipoProducto.TabIndex = 5;
-            this.TipoProducto.Text = "Tipo de Producto";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Tipo de Producto";
             // 
-            // Marca
+            // label3
             // 
-            this.Marca.AutoSize = true;
-            this.Marca.Location = new System.Drawing.Point(12, 114);
-            this.Marca.Name = "Marca";
-            this.Marca.Size = new System.Drawing.Size(55, 19);
-            this.Marca.TabIndex = 6;
-            this.Marca.Text = "Marca";
-            // 
-            // Cancelar
-            // 
-            this.Cancelar.FlatAppearance.BorderSize = 2;
-            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancelar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancelar.Image = global::Prototipo.Properties.Resources.cancel1;
-            this.Cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelar.Location = new System.Drawing.Point(448, 397);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(106, 37);
-            this.Cancelar.TabIndex = 13;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Cancelar.UseVisualStyleBackColor = true;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // Agregar
-            // 
-            this.Agregar.FlatAppearance.BorderSize = 2;
-            this.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Agregar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Agregar.Image = global::Prototipo.Properties.Resources.save;
-            this.Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregar.Location = new System.Drawing.Point(560, 397);
-            this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(108, 37);
-            this.Agregar.TabIndex = 12;
-            this.Agregar.Text = "Agregar";
-            this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Agregar.UseVisualStyleBackColor = true;
-            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Marca";
             // 
             // contextMenuStrip1
             // 
@@ -247,14 +215,14 @@
             // 
             this.copiarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripMenuItem.Image")));
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Image = global::Prototipo.Properties.Resources.paste;
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             // 
             // menuStrip1
@@ -284,12 +252,14 @@
             this.agregarVentaToolStripMenuItem.Name = "agregarVentaToolStripMenuItem";
             this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.agregarVentaToolStripMenuItem.Text = "Agregar venta";
+            this.agregarVentaToolStripMenuItem.Click += new System.EventHandler(this.agregarVentaToolStripMenuItem_Click);
             // 
             // mostrarVentasToolStripMenuItem
             // 
             this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
             this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.mostrarVentasToolStripMenuItem.Text = "Ver Ventas";
+            this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -320,6 +290,7 @@
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
             this.verStockToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verStockToolStripMenuItem.Text = "Ver stock";
+            this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -336,18 +307,21 @@
             this.agregarProveedorToolStripMenuItem.Name = "agregarProveedorToolStripMenuItem";
             this.agregarProveedorToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.agregarProveedorToolStripMenuItem.Text = "Agregar proveedor";
+            this.agregarProveedorToolStripMenuItem.Click += new System.EventHandler(this.agregarProveedorToolStripMenuItem_Click);
             // 
             // mostrarProveedoresToolStripMenuItem
             // 
             this.mostrarProveedoresToolStripMenuItem.Name = "mostrarProveedoresToolStripMenuItem";
             this.mostrarProveedoresToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.mostrarProveedoresToolStripMenuItem.Text = "Ver proveedores";
+            this.mostrarProveedoresToolStripMenuItem.Click += new System.EventHandler(this.mostrarProveedoresToolStripMenuItem_Click);
             // 
             // realizarPedidoToolStripMenuItem
             // 
             this.realizarPedidoToolStripMenuItem.Name = "realizarPedidoToolStripMenuItem";
             this.realizarPedidoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.realizarPedidoToolStripMenuItem.Text = "Realizar pedido";
+            this.realizarPedidoToolStripMenuItem.Click += new System.EventHandler(this.realizarPedidoToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -362,6 +336,39 @@
             this.mostrarReportesToolStripMenuItem.Name = "mostrarReportesToolStripMenuItem";
             this.mostrarReportesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.mostrarReportesToolStripMenuItem.Text = "Mostrar reportes";
+            this.mostrarReportesToolStripMenuItem.Click += new System.EventHandler(this.mostrarReportesToolStripMenuItem_Click);
+            // 
+            // Cancelar
+            // 
+            this.Cancelar.FlatAppearance.BorderSize = 2;
+            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancelar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancelar.Image = global::Prototipo.Properties.Resources.cancel1;
+            this.Cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cancelar.Location = new System.Drawing.Point(448, 397);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(106, 37);
+            this.Cancelar.TabIndex = 13;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
+            // Agregar
+            // 
+            this.Agregar.FlatAppearance.BorderSize = 2;
+            this.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Agregar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Agregar.Image = global::Prototipo.Properties.Resources.save;
+            this.Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Agregar.Location = new System.Drawing.Point(573, 397);
+            this.Agregar.Name = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(108, 37);
+            this.Agregar.TabIndex = 12;
+            this.Agregar.Text = "Agregar";
+            this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // ModificarProducto
             // 
@@ -375,6 +382,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ModificarProducto";
             this.Text = "ModificarProducto";
+            this.Load += new System.EventHandler(this.ModificarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -395,11 +403,11 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.Label Stock;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.Label Precio;
-        private System.Windows.Forms.Label TipoProducto;
-        private System.Windows.Forms.Label Marca;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
