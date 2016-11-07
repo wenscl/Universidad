@@ -16,6 +16,8 @@ namespace Prototipo
         [STAThread]
         static void Main()
         {
+            //DetalleVenta.EliminarTabla();
+            //Venta.EliminarTabla();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AgregarProducto());

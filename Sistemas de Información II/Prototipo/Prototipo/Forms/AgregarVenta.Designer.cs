@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Ventas = new System.Windows.Forms.DataGridView();
+            this.dataGridVentas = new System.Windows.Forms.DataGridView();
             this.Agregar = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
             this.Modificar = new System.Windows.Forms.Button();
-            this.Detalle = new System.Windows.Forms.DataGridView();
+            this.dataGridDetalle = new System.Windows.Forms.DataGridView();
             this.Terminar = new System.Windows.Forms.Button();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -42,20 +42,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.VerDetalle = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Ventas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Detalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalle)).BeginInit();
             this.SuspendLayout();
             // 
-            // Ventas
+            // dataGridVentas
             // 
-            this.Ventas.AllowUserToAddRows = false;
-            this.Ventas.AllowUserToDeleteRows = false;
-            this.Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Ventas.Location = new System.Drawing.Point(12, 27);
-            this.Ventas.Name = "Ventas";
-            this.Ventas.ReadOnly = true;
-            this.Ventas.Size = new System.Drawing.Size(388, 366);
-            this.Ventas.TabIndex = 0;
+            this.dataGridVentas.AllowUserToAddRows = false;
+            this.dataGridVentas.AllowUserToDeleteRows = false;
+            this.dataGridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridVentas.Location = new System.Drawing.Point(12, 27);
+            this.dataGridVentas.Name = "dataGridVentas";
+            this.dataGridVentas.ReadOnly = true;
+            this.dataGridVentas.Size = new System.Drawing.Size(388, 366);
+            this.dataGridVentas.TabIndex = 0;
             // 
             // Agregar
             // 
@@ -105,16 +105,16 @@
             this.Modificar.UseVisualStyleBackColor = true;
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
-            // Detalle
+            // dataGridDetalle
             // 
-            this.Detalle.AllowUserToAddRows = false;
-            this.Detalle.AllowUserToDeleteRows = false;
-            this.Detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Detalle.Location = new System.Drawing.Point(422, 190);
-            this.Detalle.Name = "Detalle";
-            this.Detalle.ReadOnly = true;
-            this.Detalle.Size = new System.Drawing.Size(476, 203);
-            this.Detalle.TabIndex = 27;
+            this.dataGridDetalle.AllowUserToAddRows = false;
+            this.dataGridDetalle.AllowUserToDeleteRows = false;
+            this.dataGridDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDetalle.Location = new System.Drawing.Point(422, 190);
+            this.dataGridDetalle.Name = "dataGridDetalle";
+            this.dataGridDetalle.ReadOnly = true;
+            this.dataGridDetalle.Size = new System.Drawing.Size(476, 203);
+            this.dataGridDetalle.TabIndex = 27;
             // 
             // Terminar
             // 
@@ -235,16 +235,16 @@
             this.Controls.Add(this.BuscarProducto);
             this.Controls.Add(this.txtProducto);
             this.Controls.Add(this.Terminar);
-            this.Controls.Add(this.Detalle);
+            this.Controls.Add(this.dataGridDetalle);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.Modificar);
-            this.Controls.Add(this.Ventas);
+            this.Controls.Add(this.dataGridVentas);
             this.Name = "AgregarVenta";
             this.Text = "AgregarVenta";
             this.Load += new System.EventHandler(this.AgregarVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Ventas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Detalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,11 +252,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView Ventas;
+        private System.Windows.Forms.DataGridView dataGridVentas;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Modificar;
-        private System.Windows.Forms.DataGridView Detalle;
+        private System.Windows.Forms.DataGridView dataGridDetalle;
         private System.Windows.Forms.Button Terminar;
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.TextBox txtCantidad;

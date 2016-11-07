@@ -14,7 +14,6 @@ namespace Prototipo.Class
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public float Total { get; set; }
-        //public List<int> IdProductos { get; set; }
 
         public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");
 
@@ -22,7 +21,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var ventas = db.GetCollection<Venta>("Venta");
+                var ventas = db.GetCollection<Venta>("Ventas");
 
                 ventas.Insert(venta);
             }
@@ -33,7 +32,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var ventas = db.GetCollection<Venta>("Venta");
+                var ventas = db.GetCollection<Venta>("Ventas");
 
                 ventas.Update(venta);
             }
@@ -44,7 +43,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var ventas = db.GetCollection<Venta>("Venta");
+                var ventas = db.GetCollection<Venta>("Ventas");
 
                 ventas.Delete(id);
             }
@@ -55,7 +54,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var ventas = db.GetCollection<Venta>("Venta");
+                var ventas = db.GetCollection<Venta>("Ventas");
 
                 return ventas.FindAll().ToList();
             }
@@ -66,10 +65,18 @@ namespace Prototipo.Class
         //{
         //    using (var db = new LiteDatabase(BD))
         //    {
-        //        var ventas = db.GetCollection<Venta>("Venta");
+        //        var ventas = db.GetCollection<Venta>("Ventas");
 
         //        return ventas.FindById(id);
         //    }
         //}
+
+        public static void EliminarTabla()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                db.DropCollection("Ventas");
+            }
+        }
     }
 }

@@ -23,20 +23,20 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVenta");
+                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
 
                 detalles.Insert(detalle);
             }
         }
 
         // Detalle ventas
-        public static IEnumerable<DetalleVenta> Listar(int id)
+        public static List<DetalleVenta> Listar(int id)
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVenta");
+                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
 
-                return detalles.Find(x => x.IdVenta == id);
+                return detalles.Find(Query.EQ("IdVenta", id)).ToList();
             }
         }
 
@@ -45,7 +45,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVenta");
+                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
 
                 detalles.Delete(id);
             }
@@ -55,7 +55,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVenta");
+                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
 
                 return detalles.FindAll().ToList();
             }
@@ -65,7 +65,17 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                db.DropCollection("DetalleVenta");
+                db.DropCollection("DetalleVentas");
+            }
+        }
+
+        public static List<DetalleVenta> EliminarDetalle(int id)
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
+
+                return detalles.Find(x => x.IdVenta == id).ToList();
             }
         }
     }

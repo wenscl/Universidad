@@ -20,34 +20,38 @@ namespace Prototipo.Forms
 
         private void AgregarVenta_Load(object sender, EventArgs e)
         {
-            Ventas.DataSource = Venta.Listar();
+            dataGridVentas.DataSource = Venta.Listar();
         }
 
         private void Agregar_Click(object sender, EventArgs e)
         {
             var venta = new Venta();
-
             venta.Fecha = DateTime.Now;
             venta.Total = 0;
-
             Venta.Agregar(venta);
 
-            Ventas.DataSource = Venta.Listar();
+            dataGridVentas.DataSource = Venta.Listar();
             
             txtCantidad.Enabled = true;
             txtProducto.Enabled = true;
+            txtPrecio.Enabled = true;
             Siguiente.Enabled = true;
             Terminar.Enabled = true;
-            txtPrecio.Enabled = true;
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            if (Ventas.SelectedRows.Count > 0)
+            if (dataGridVentas.SelectedRows.Count > 0)
             {
-                var id = Ventas.SelectedRows[0].Cells["Id"].Value.ToString();
-                Venta.Eliminar(Convert.ToInt32(id));
-                Ventas.DataSource = Venta.Listar();
+                var id = Convert.ToInt32(dataGridVentas.SelectedRows[0].Cells["Id"].Value);
+                var lista = DetalleVenta.EliminarDetalle(id);
+                foreach (DetalleVenta item in lista)
+                {
+                    DetalleVenta.Eliminar(item.IdVenta);
+                }
+                Venta.Eliminar(id);
+                dataGridVentas.DataSource = Venta.Listar();
+                dataGridDetalle.DataSource = DetalleVenta.Todos();
             }
         }
 
@@ -61,8 +65,8 @@ namespace Prototipo.Forms
         private void Siguiente_Click(object sender, EventArgs e)
         {
             var detalle = new DetalleVenta();
-            Ventas.Rows[Ventas.Rows.Count - 1].Selected = true;
-            int id = Convert.ToInt32(Ventas.SelectedRows[0].Cells["Id"].Value);
+            dataGridVentas.Rows[dataGridVentas.Rows.Count - 1].Selected = true;
+            var id = Convert.ToInt32(dataGridVentas.SelectedRows[0].Cells["Id"].Value);
             detalle.IdVenta = id;
             //detalle.IdVenta = Ventas.Rows.Count - 1;
             detalle.CodigoProducto = txtProducto.Text;
@@ -70,39 +74,37 @@ namespace Prototipo.Forms
             detalle.Precio = Convert.ToSingle(txtPrecio.Text);
             total += Convert.ToSingle(txtPrecio.Text);
             DetalleVenta.Agregar(detalle);
-
-            //Detalle.DataSource = DetalleVenta.Todos();
-            Detalle.DataSource = DetalleVenta.Todos();
-            //Detalle.Refresh();
+            
+            dataGridDetalle.DataSource = DetalleVenta.Listar(id);
         }
 
         private void Terminar_Click(object sender, EventArgs e)
         {
             txtCantidad.Enabled = false;
             txtProducto.Enabled = false;
-            Siguiente.Enabled = false;
-            Terminar.Enabled = false; 
             txtPrecio.Enabled = false;
+            Siguiente.Enabled = false;
+            Terminar.Enabled = false;
 
             var venta = new Venta();
-            Ventas.Rows[Ventas.Rows.Count - 1].Selected = true;
-            venta.Id = Convert.ToInt32(Ventas.SelectedRows[0].Cells["Id"].Value);
-            //venta.Id = Ventas.Rows.Count - 1;
+            dataGridVentas.Rows[dataGridVentas.Rows.Count - 1].Selected = true;
+            venta.Id = Convert.ToInt32(dataGridVentas.SelectedRows[0].Cells["Id"].Value);
             venta.Fecha = DateTime.Now;
             venta.Total = total;
             Venta.Modificar(venta);
 
-            Ventas.DataSource = Venta.Listar();
-
+            dataGridVentas.DataSource = Venta.Listar();
+            dataGridDetalle.DataSource = DetalleVenta.Todos();
+            
             total = 0;
         }
 
         private void VerDetalle_Click(object sender, EventArgs e)
         {
-            if (Ventas.SelectedRows.Count > 0)
+            if (dataGridVentas.SelectedRows.Count > 0)
             {
-                var id = Convert.ToInt32(Ventas.SelectedRows[0].Cells["Id"].Value);
-                Detalle.DataSource = DetalleVenta.Listar(id);
+                var id = Convert.ToInt32(dataGridVentas.SelectedRows[0].Cells["Id"].Value);
+                dataGridDetalle.DataSource = DetalleVenta.Listar(id);
             }
         }
     }
