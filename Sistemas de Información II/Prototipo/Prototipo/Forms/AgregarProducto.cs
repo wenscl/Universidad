@@ -18,16 +18,6 @@ namespace Prototipo.Forms
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Agregar_Click(object sender, EventArgs e)
         {
             var producto = new Producto();
@@ -57,28 +47,13 @@ namespace Prototipo.Forms
             this.Hide();
             frm.Show();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-        
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ListarProductos();
             this.Hide();
             frm.Show();
         }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
+        
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarProveedor();
@@ -112,16 +87,6 @@ namespace Prototipo.Forms
             var frm = new ListarVentas();
             this.Hide();
             frm.Show();
-        }
-
-        private void verStockToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mostrarReportesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

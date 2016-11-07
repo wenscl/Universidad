@@ -32,9 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarProductos));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.BuscarProducto = new System.Windows.Forms.Label();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +56,6 @@
             this.Eliminar = new System.Windows.Forms.Button();
             this.Modificar = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.Button();
-            this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -69,7 +68,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(290, 22);
             this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // BuscarProducto
             // 
@@ -80,11 +78,6 @@
             this.BuscarProducto.Size = new System.Drawing.Size(121, 19);
             this.BuscarProducto.TabIndex = 3;
             this.BuscarProducto.Text = "Buscar Producto";
-            this.BuscarProducto.Click += new System.EventHandler(this.BuscarProducto_Click);
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
             // 
             // dataGridView1
             // 
@@ -98,7 +91,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1067, 341);
             this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // contextMenuStrip1
             // 
@@ -108,6 +100,27 @@
             this.pegarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
+            // 
+            // seleccionarToolStripMenuItem
+            // 
+            this.seleccionarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("seleccionarToolStripMenuItem.Image")));
+            this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
+            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.seleccionarToolStripMenuItem.Text = "Seleccionar";
+            // 
+            // copiarToolStripMenuItem
+            // 
+            this.copiarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripMenuItem.Image")));
+            this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copiarToolStripMenuItem.Text = "Copiar";
+            // 
+            // pegarToolStripMenuItem
+            // 
+            this.pegarToolStripMenuItem.Image = global::Prototipo.Properties.Resources.paste;
+            this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pegarToolStripMenuItem.Text = "Pegar";
             // 
             // menuStrip1
             // 
@@ -168,14 +181,12 @@
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
             this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verProductosToolStripMenuItem.Text = "Ver productos";
-            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // verStockToolStripMenuItem
             // 
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
             this.verStockToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verStockToolStripMenuItem.Text = "Ver stock";
-            this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -221,7 +232,6 @@
             this.mostrarReportesToolStripMenuItem.Name = "mostrarReportesToolStripMenuItem";
             this.mostrarReportesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.mostrarReportesToolStripMenuItem.Text = "Mostrar reportes";
-            this.mostrarReportesToolStripMenuItem.Click += new System.EventHandler(this.mostrarReportesToolStripMenuItem_Click);
             // 
             // Limpiar
             // 
@@ -302,27 +312,6 @@
             this.Buscar.UseVisualStyleBackColor = true;
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
-            // seleccionarToolStripMenuItem
-            // 
-            this.seleccionarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("seleccionarToolStripMenuItem.Image")));
-            this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
-            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.seleccionarToolStripMenuItem.Text = "Seleccionar";
-            // 
-            // copiarToolStripMenuItem
-            // 
-            this.copiarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripMenuItem.Image")));
-            this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.copiarToolStripMenuItem.Text = "Copiar";
-            // 
-            // pegarToolStripMenuItem
-            // 
-            this.pegarToolStripMenuItem.Image = global::Prototipo.Properties.Resources.paste;
-            this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.pegarToolStripMenuItem.Text = "Pegar";
-            // 
             // ListarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -355,7 +344,6 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label BuscarProducto;
         private System.Windows.Forms.Button Buscar;
-        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem seleccionarToolStripMenuItem;

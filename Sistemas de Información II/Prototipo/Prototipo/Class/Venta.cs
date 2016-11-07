@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace Prototipo.Class
 {
-    class Venta
+    public class Venta
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public float Total { get; set; }
-        public List<Producto> Productos { get; set; }
+        //public List<int> IdProductos { get; set; }
 
         public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");
 
@@ -28,7 +28,7 @@ namespace Prototipo.Class
             }
         }
 
-        // Modificar productos
+        // Modificar ventas
         public static void Modificar(Venta venta)
         {
             using (var db = new LiteDatabase(BD))
@@ -39,7 +39,7 @@ namespace Prototipo.Class
             }
         }
 
-        // Eliminar productos
+        // Eliminar ventas
         public static void Eliminar(int id)
         {
             using (var db = new LiteDatabase(BD))
@@ -50,7 +50,7 @@ namespace Prototipo.Class
             }
         }
 
-        // Listar productos
+        // Listar ventas
         public static List<Venta> Listar()
         {
             using (var db = new LiteDatabase(BD))
@@ -61,15 +61,15 @@ namespace Prototipo.Class
             }
         }
 
-        // Buscar producto
-        public static Venta Buscar(int id)
-        {
-            using (var db = new LiteDatabase(BD))
-            {
-                var ventas = db.GetCollection<Venta>("Venta");
+        // Buscar venta
+        //public static Venta Buscar(int id)
+        //{
+        //    using (var db = new LiteDatabase(BD))
+        //    {
+        //        var ventas = db.GetCollection<Venta>("Venta");
 
-                return ventas.FindById(id);
-            }
-        }
+        //        return ventas.FindById(id);
+        //    }
+        //}
     }
 }

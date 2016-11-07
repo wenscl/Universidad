@@ -13,10 +13,10 @@ namespace Prototipo.Class
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public string Ciudad { get; set; }
         public string Direccion { get; set; }
         public int Telefono { get; set; }
         public string Mail { get; set; }
-        public string Ciudad { get; set; }
 
         //Funciones
         public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");
@@ -66,13 +66,13 @@ namespace Prototipo.Class
         }
 
         // Buscar proveedores
-        public static Proveedor Buscar(int id)
+        public static IEnumerable<Proveedor> Buscar(string nombre)
         {
             using (var db = new LiteDatabase(BD))
             {
                 var proveedores = db.GetCollection<Proveedor>("Proveedor");
 
-                return proveedores.FindById(id);
+                return proveedores.Find(Query.Contains("Nombre", nombre));
             }
         }
     }

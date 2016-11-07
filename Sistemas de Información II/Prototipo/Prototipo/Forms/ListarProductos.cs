@@ -22,55 +22,17 @@ namespace Prototipo.Forms
         {
             dataGridView1.DataSource = Producto.Listar();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Buscar_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = Producto.Buscar(txtBuscar.Text).ToList();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Modificar_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void toolStripButtonAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButtonDelete_Click(object sender, EventArgs e)
-        {    
-        }
-
-        private void BuscarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarProducto();
             this.Hide();
             frm.Show();
-        }
-
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Modificar_Click_1(object sender, EventArgs e)
@@ -93,13 +55,12 @@ namespace Prototipo.Forms
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            var id = dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString();
-            Producto.Eliminar(Convert.ToInt32(id));
-            dataGridView1.Refresh();
-        }
-
-        private void Agregar_Click(object sender, EventArgs e)
-        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var id = dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString();
+                Producto.Eliminar(Convert.ToInt32(id));
+                dataGridView1.DataSource = Producto.Listar();
+            }
         }
 
         private void Agregar_Click_1(object sender, EventArgs e)
@@ -122,12 +83,7 @@ namespace Prototipo.Forms
             this.Hide();
             frm.Show();
         }
-
-        private void verStockToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarProveedor();
@@ -147,11 +103,6 @@ namespace Prototipo.Forms
             var frm = new AgregarPedido();
             this.Hide();
             frm.Show();
-        }
-
-        private void mostrarReportesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Limpiar_Click(object sender, EventArgs e)

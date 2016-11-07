@@ -85,7 +85,6 @@
             this.pegarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // seleccionarToolStripMenuItem
             // 
@@ -124,7 +123,6 @@
             this.CodProducto.Size = new System.Drawing.Size(60, 19);
             this.CodProducto.TabIndex = 4;
             this.CodProducto.Text = "Código";
-            this.CodProducto.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtNombre
             // 
@@ -205,7 +203,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(396, 219);
             this.panel1.TabIndex = 12;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label2
             // 
@@ -285,7 +282,6 @@
             this.agregarProductoToolStripMenuItem.Name = "agregarProductoToolStripMenuItem";
             this.agregarProductoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.agregarProductoToolStripMenuItem.Text = "Agregar producto";
-            this.agregarProductoToolStripMenuItem.Click += new System.EventHandler(this.agregarProductoToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
@@ -299,7 +295,6 @@
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
             this.verStockToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verStockToolStripMenuItem.Text = "Ver stock";
-            this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -345,7 +340,6 @@
             this.mostrarReportesToolStripMenuItem.Name = "mostrarReportesToolStripMenuItem";
             this.mostrarReportesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.mostrarReportesToolStripMenuItem.Text = "Mostrar reportes";
-            this.mostrarReportesToolStripMenuItem.Click += new System.EventHandler(this.mostrarReportesToolStripMenuItem_Click);
             // 
             // Cancelar
             // 
@@ -393,7 +387,6 @@
             this.Name = "AgregarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Producto";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

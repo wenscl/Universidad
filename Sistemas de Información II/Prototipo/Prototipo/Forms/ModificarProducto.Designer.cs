@@ -290,7 +290,6 @@
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
             this.verStockToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verStockToolStripMenuItem.Text = "Ver stock";
-            this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -336,7 +335,6 @@
             this.mostrarReportesToolStripMenuItem.Name = "mostrarReportesToolStripMenuItem";
             this.mostrarReportesToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.mostrarReportesToolStripMenuItem.Text = "Mostrar reportes";
-            this.mostrarReportesToolStripMenuItem.Click += new System.EventHandler(this.mostrarReportesToolStripMenuItem_Click);
             // 
             // Cancelar
             // 
@@ -382,7 +380,6 @@
             this.Controls.Add(this.label1);
             this.Name = "ModificarProducto";
             this.Text = "ModificarProducto";
-            this.Load += new System.EventHandler(this.ModificarProducto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);

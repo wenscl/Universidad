@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\DetalleVenta.cs" />
     <Compile Include="Class\Pedido.cs" />
     <Compile Include="Class\Producto.cs" />
     <Compile Include="Class\Proveedor.cs" />
@@ -131,11 +132,20 @@
     <EmbeddedResource Include="Forms\AgregarProveedor.resx">
       <DependentUpon>AgregarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AgregarVenta.resx">
+      <DependentUpon>AgregarVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListarProductos.resx">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListarProveedores.resx">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModificarProducto.resx">
       <DependentUpon>ModificarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModificarProveedor.resx">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
