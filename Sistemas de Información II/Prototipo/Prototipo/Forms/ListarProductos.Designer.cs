@@ -28,19 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarProductos));
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.BuscarProducto = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.seleccionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pegarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +43,7 @@
             this.agregarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Limpiar = new System.Windows.Forms.Button();
@@ -56,74 +51,47 @@
             this.Eliminar = new System.Windows.Forms.Button();
             this.Modificar = new System.Windows.Forms.Button();
             this.Buscar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(342, 58);
+            this.txtBuscar.Location = new System.Drawing.Point(415, 42);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(290, 22);
-            this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.Size = new System.Drawing.Size(267, 22);
+            this.txtBuscar.TabIndex = 1;
             // 
             // BuscarProducto
             // 
             this.BuscarProducto.AutoSize = true;
-            this.BuscarProducto.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarProducto.Location = new System.Drawing.Point(206, 61);
+            this.BuscarProducto.BackColor = System.Drawing.Color.Transparent;
+            this.BuscarProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarProducto.Location = new System.Drawing.Point(206, 43);
             this.BuscarProducto.Name = "BuscarProducto";
-            this.BuscarProducto.Size = new System.Drawing.Size(121, 19);
+            this.BuscarProducto.Size = new System.Drawing.Size(204, 21);
             this.BuscarProducto.TabIndex = 3;
-            this.BuscarProducto.Text = "Buscar Producto";
+            this.BuscarProducto.Text = "Buscar nombre producto";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 112);
+            this.dataGridView1.Location = new System.Drawing.Point(58, 107);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1067, 341);
+            this.dataGridView1.Size = new System.Drawing.Size(1067, 385);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seleccionarToolStripMenuItem,
-            this.copiarToolStripMenuItem,
-            this.pegarToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
-            // 
-            // seleccionarToolStripMenuItem
-            // 
-            this.seleccionarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("seleccionarToolStripMenuItem.Image")));
-            this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
-            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.seleccionarToolStripMenuItem.Text = "Seleccionar";
-            // 
-            // copiarToolStripMenuItem
-            // 
-            this.copiarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copiarToolStripMenuItem.Image")));
-            this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.copiarToolStripMenuItem.Text = "Copiar";
-            // 
-            // pegarToolStripMenuItem
-            // 
-            this.pegarToolStripMenuItem.Image = global::Prototipo.Properties.Resources.paste;
-            this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pegarToolStripMenuItem.Text = "Pegar";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.GhostWhite;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventasToolStripMenuItem,
             this.productosToolStripMenuItem,
@@ -132,15 +100,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1095, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1180, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarVentaToolStripMenuItem,
-            this.mostrarVentasToolStripMenuItem});
+            this.agregarVentaToolStripMenuItem});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
@@ -151,13 +118,6 @@
             this.agregarVentaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.agregarVentaToolStripMenuItem.Text = "Agregar venta";
             this.agregarVentaToolStripMenuItem.Click += new System.EventHandler(this.agregarVentaToolStripMenuItem_Click);
-            // 
-            // mostrarVentasToolStripMenuItem
-            // 
-            this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
-            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.mostrarVentasToolStripMenuItem.Text = "Ver Ventas";
-            this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 
@@ -181,6 +141,7 @@
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
             this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.verProductosToolStripMenuItem.Text = "Ver productos";
+            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
             // verStockToolStripMenuItem
             // 
@@ -193,7 +154,8 @@
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarProveedorToolStripMenuItem,
             this.mostrarProveedoresToolStripMenuItem,
-            this.realizarPedidoToolStripMenuItem});
+            this.realizarPedidoToolStripMenuItem,
+            this.verPedidosToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
@@ -219,6 +181,13 @@
             this.realizarPedidoToolStripMenuItem.Text = "Realizar pedido";
             this.realizarPedidoToolStripMenuItem.Click += new System.EventHandler(this.realizarPedidoToolStripMenuItem_Click);
             // 
+            // verPedidosToolStripMenuItem
+            // 
+            this.verPedidosToolStripMenuItem.Name = "verPedidosToolStripMenuItem";
+            this.verPedidosToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.verPedidosToolStripMenuItem.Text = "Ver pedidos";
+            this.verPedidosToolStripMenuItem.Click += new System.EventHandler(this.verPedidosToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -235,88 +204,106 @@
             // 
             // Limpiar
             // 
+            this.Limpiar.BackColor = System.Drawing.Color.GhostWhite;
             this.Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Limpiar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Limpiar.Image = global::Prototipo.Properties.Resources._1478491184_broom_stick_3;
+            this.Limpiar.Image = ((System.Drawing.Image)(resources.GetObject("Limpiar.Image")));
             this.Limpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Limpiar.Location = new System.Drawing.Point(783, 49);
+            this.Limpiar.Location = new System.Drawing.Point(795, 28);
             this.Limpiar.Name = "Limpiar";
-            this.Limpiar.Size = new System.Drawing.Size(97, 37);
-            this.Limpiar.TabIndex = 24;
-            this.Limpiar.Text = "Limpiar";
+            this.Limpiar.Size = new System.Drawing.Size(174, 44);
+            this.Limpiar.TabIndex = 3;
+            this.Limpiar.Text = "Limpiar búsqueda";
             this.Limpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Limpiar.UseVisualStyleBackColor = true;
+            this.Limpiar.UseVisualStyleBackColor = false;
             this.Limpiar.Click += new System.EventHandler(this.Limpiar_Click);
             // 
             // Agregar
             // 
+            this.Agregar.BackColor = System.Drawing.Color.GhostWhite;
             this.Agregar.FlatAppearance.BorderSize = 2;
             this.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Agregar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Agregar.Image = global::Prototipo.Properties.Resources.save;
+            this.Agregar.Image = ((System.Drawing.Image)(resources.GetObject("Agregar.Image")));
             this.Agregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregar.Location = new System.Drawing.Point(467, 483);
+            this.Agregar.Location = new System.Drawing.Point(382, 500);
             this.Agregar.Name = "Agregar";
-            this.Agregar.Size = new System.Drawing.Size(108, 37);
-            this.Agregar.TabIndex = 23;
-            this.Agregar.Text = "Agregar";
+            this.Agregar.Size = new System.Drawing.Size(166, 45);
+            this.Agregar.TabIndex = 4;
+            this.Agregar.Text = "Agregar Producto";
             this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.UseVisualStyleBackColor = false;
             this.Agregar.Click += new System.EventHandler(this.Agregar_Click_1);
             // 
             // Eliminar
             // 
+            this.Eliminar.BackColor = System.Drawing.Color.GhostWhite;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Eliminar.Image = global::Prototipo.Properties.Resources.delete;
+            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
             this.Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminar.Location = new System.Drawing.Point(730, 483);
+            this.Eliminar.Location = new System.Drawing.Point(676, 500);
             this.Eliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(103, 37);
-            this.Eliminar.TabIndex = 22;
+            this.Eliminar.Size = new System.Drawing.Size(103, 45);
+            this.Eliminar.TabIndex = 6;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.UseVisualStyleBackColor = false;
             this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // Modificar
             // 
+            this.Modificar.BackColor = System.Drawing.Color.GhostWhite;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Modificar.Image = global::Prototipo.Properties.Resources.edit;
+            this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
             this.Modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificar.Location = new System.Drawing.Point(596, 483);
+            this.Modificar.Location = new System.Drawing.Point(554, 500);
             this.Modificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(113, 37);
-            this.Modificar.TabIndex = 21;
+            this.Modificar.Size = new System.Drawing.Size(116, 45);
+            this.Modificar.TabIndex = 5;
             this.Modificar.Text = "Modificar";
             this.Modificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Modificar.UseVisualStyleBackColor = true;
+            this.Modificar.UseVisualStyleBackColor = false;
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click_1);
             // 
             // Buscar
             // 
+            this.Buscar.BackColor = System.Drawing.Color.GhostWhite;
             this.Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Buscar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Buscar.Image = global::Prototipo.Properties.Resources._1478490982_search;
+            this.Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Buscar.Image")));
             this.Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscar.Location = new System.Drawing.Point(653, 49);
+            this.Buscar.Location = new System.Drawing.Point(688, 28);
             this.Buscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(101, 37);
-            this.Buscar.TabIndex = 4;
+            this.Buscar.Size = new System.Drawing.Size(101, 44);
+            this.Buscar.TabIndex = 2;
             this.Buscar.Text = "Buscar";
             this.Buscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.UseVisualStyleBackColor = false;
             this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(54, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 22);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Listado de Productos";
             // 
             // ListarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 579);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1180, 557);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Limpiar);
             this.Controls.Add(this.Agregar);
             this.Controls.Add(this.Eliminar);
@@ -327,12 +314,13 @@
             this.Controls.Add(this.BuscarProducto);
             this.Controls.Add(this.txtBuscar);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ListarProductos";
-            this.Text = "ListarProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Listado de Productos";
             this.Load += new System.EventHandler(this.ListarProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -345,14 +333,9 @@
         private System.Windows.Forms.Label BuscarProducto;
         private System.Windows.Forms.Button Buscar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem seleccionarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copiarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pegarToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarVentaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mostrarVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
@@ -367,5 +350,7 @@
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.Button Limpiar;
+        private System.Windows.Forms.ToolStripMenuItem verPedidosToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -75,5 +75,23 @@ namespace Prototipo.Class
                 return proveedores.Find(Query.Contains("Nombre", nombre));
             }
         }
+
+        public static List<string> Listar2()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                var proveedores = db.GetCollection<Proveedor>("Proveedor");
+
+                return proveedores.Find(Query.All()).Select(x => x.Nombre).ToList();
+            }
+        }
+
+        public static void EliminarTabla()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                db.DropCollection("Proveedor");
+            }
+        }
     }
 }

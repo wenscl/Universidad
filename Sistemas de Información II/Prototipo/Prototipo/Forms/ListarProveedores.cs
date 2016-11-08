@@ -61,19 +61,12 @@ namespace Prototipo.Forms
         {
             var id = dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString();
             Proveedor.Eliminar(Convert.ToInt32(id));
-            dataGridView1.Refresh();
+            dataGridView1.DataSource = Proveedor.Listar();
         }
 
         private void agregarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarVenta();
-            this.Hide();
-            frm.Show();
-        }
-
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListarVentas();
             this.Hide();
             frm.Show();
         }
@@ -102,6 +95,13 @@ namespace Prototipo.Forms
         private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarPedido();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarPedidos();
             this.Hide();
             frm.Show();
         }

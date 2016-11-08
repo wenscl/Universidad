@@ -25,7 +25,7 @@ namespace Prototipo.Forms
         
         private void Buscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Producto.Buscar(txtBuscar.Text).ToList();
+            dataGridView1.DataSource = Producto.Buscar(txtBuscar.Text);
         }
         
         private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -76,13 +76,6 @@ namespace Prototipo.Forms
             this.Hide();
             frm.Show();
         }
-
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListarVentas();
-            this.Hide();
-            frm.Show();
-        }
         
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -108,6 +101,18 @@ namespace Prototipo.Forms
         private void Limpiar_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = Producto.Listar();
+            txtBuscar.Clear();
+        }
+
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarPedidos();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

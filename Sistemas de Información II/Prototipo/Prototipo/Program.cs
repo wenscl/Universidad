@@ -18,9 +18,13 @@ namespace Prototipo
         {
             //DetalleVenta.EliminarTabla();
             //Venta.EliminarTabla();
+            //Producto.EliminarTabla();
+            //Pedido.EliminarTabla();
+            //DetallePedido.EliminarTabla();
+            //Proveedor.EliminarTabla();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AgregarProducto());
+            Application.Run(new AgregarVenta());
         }
     }
 }

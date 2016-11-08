@@ -9,12 +9,10 @@ using System.Windows.Forms;
 
 namespace Prototipo.Class
 {
-    class Pedido
+    public class Pedido
     {
         public int Id { get; set; }
         public string Proveedor { get; set; }
-        public Producto Producto { get; set; }
-        public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
 
         //Funciones
@@ -25,7 +23,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var pedidos = db.GetCollection<Pedido>("Pedido");
+                var pedidos = db.GetCollection<Pedido>("Pedidos");
 
                 pedidos.Insert(pedido);
             }
@@ -36,7 +34,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var pedidos = db.GetCollection<Pedido>("Pedido");
+                var pedidos = db.GetCollection<Pedido>("Pedidos");
 
                 pedidos.Update(pedido);
             }
@@ -47,7 +45,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var pedidos = db.GetCollection<Pedido>("Pedido");
+                var pedidos = db.GetCollection<Pedido>("Pedidos");
 
                 pedidos.Delete(id);
             }
@@ -58,7 +56,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var pedidos = db.GetCollection<Pedido>("Pedido");
+                var pedidos = db.GetCollection<Pedido>("Pedidos");
 
                 return pedidos.FindAll().ToList();
             }
@@ -69,9 +67,17 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var pedidos = db.GetCollection<Pedido>("Pedido");
+                var pedidos = db.GetCollection<Pedido>("Pedidos");
 
                 return pedidos.FindById(id);
+            }
+        }
+
+        public static void EliminarTabla()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                db.DropCollection("Pedidos");
             }
         }
     }

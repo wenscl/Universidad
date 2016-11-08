@@ -82,9 +82,9 @@ namespace Prototipo.Forms
             frm.Show();
         }
 
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new ListarVentas();
+            var frm = new ListarPedidos();
             this.Hide();
             frm.Show();
         }

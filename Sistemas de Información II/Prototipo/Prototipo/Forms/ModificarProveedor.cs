@@ -47,12 +47,13 @@ namespace Prototipo.Forms
         private void Agregar_Click(object sender, EventArgs e)
         {
             var proveedor = new Proveedor();
+            proveedor.Id = Id;
             proveedor.Nombre = txtNombre.Text;
             proveedor.Ciudad = txtCiudad.Text;
             proveedor.Direccion = txtDireccion.Text;
             proveedor.Telefono = Convert.ToInt32(txtTelefono.Text);
             proveedor.Mail = txtMail.Text;
-            Proveedor.Agregar(proveedor);
+            Proveedor.Modificar(proveedor);
 
             var frm = new ListarProveedores();
             this.Hide();
@@ -62,13 +63,6 @@ namespace Prototipo.Forms
         private void agregarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarVenta();
-            this.Hide();
-            frm.Show();
-        }
-
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListarVentas();
             this.Hide();
             frm.Show();
         }
@@ -104,6 +98,13 @@ namespace Prototipo.Forms
         private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarPedido();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarPedidos();
             this.Hide();
             frm.Show();
         }

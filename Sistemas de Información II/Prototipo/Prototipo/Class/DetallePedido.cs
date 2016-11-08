@@ -9,46 +9,44 @@ using System.Windows.Forms;
 
 namespace Prototipo.Class
 {
-    public class DetalleVenta
+    public class DetallePedido
     {
         public int Id { get; set; }
-        public int IdVenta { get; set; }
-        public string CodigoProducto { get; set; }
+        public int IdPedido { get; set; }
+        public string Producto { get; set; }
         public int Cantidad { get; set; }
-        public float Precio { get; set; }
 
         public static string BD = Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "BDPrototipo.db");
-
+        
         // Agregar detalle
-        public static void Agregar(DetalleVenta detalle)
+        public static void Agregar(DetallePedido detalle)
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
-
+                var detalles = db.GetCollection<DetallePedido>("DetallePedidos");
                 detalles.Insert(detalle);
             }
         }
 
         // Modificar ventas
-        public static void Modificar(DetalleVenta detalle)
+        public static void Modificar(DetallePedido detalle)
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
+                var detalles = db.GetCollection<DetallePedido>("DetallePedidos");
 
                 detalles.Update(detalle);
             }
         }
 
         // Detalle ventas
-        public static List<DetalleVenta> Listar(int id)
+        public static List<DetallePedido> Listar(int id)
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
+                var detalles = db.GetCollection<DetallePedido>("DetallePedidos");
 
-                return detalles.Find(Query.EQ("IdVenta", id)).ToList();
+                return detalles.Find(Query.EQ("IdPedido", id)).ToList();
             }
         }
 
@@ -57,17 +55,17 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
+                var detalles = db.GetCollection<DetallePedido>("DetallePedidos");
 
                 detalles.Delete(id);
             }
         }
 
-        public static List<DetalleVenta> Todos()
+        public static List<DetallePedido> Todos()
         {
             using (var db = new LiteDatabase(BD))
             {
-                var detalles = db.GetCollection<DetalleVenta>("DetalleVentas");
+                var detalles = db.GetCollection<DetallePedido>("DetallePedidos");
 
                 return detalles.FindAll().ToList();
             }
@@ -77,7 +75,7 @@ namespace Prototipo.Class
         {
             using (var db = new LiteDatabase(BD))
             {
-                db.DropCollection("DetalleVentas");
+                db.DropCollection("DetallePedidos");
             }
         }
     }

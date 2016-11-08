@@ -80,13 +80,6 @@ namespace Prototipo.Forms
             frm.Show();
         }
 
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ListarVentas();
-            this.Hide();
-            frm.Show();
-        }
-
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarProveedor();
@@ -104,6 +97,13 @@ namespace Prototipo.Forms
         private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new AgregarPedido();
+            this.Hide();
+            frm.Show();
+        }
+
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ListarPedidos();
             this.Hide();
             frm.Show();
         }

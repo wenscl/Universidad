@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\DetallePedido.cs" />
     <Compile Include="Class\DetalleVenta.cs" />
     <Compile Include="Class\Pedido.cs" />
     <Compile Include="Class\Producto.cs" />
@@ -97,18 +98,6 @@
     <Compile Include="Forms\ListarProveedores.Designer.cs">
       <DependentUpon>ListarProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ListarVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ListarVentas.Designer.cs">
-      <DependentUpon>ListarVentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ModificarPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ModificarPedido.Designer.cs">
-      <DependentUpon>ModificarPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +124,9 @@
     <EmbeddedResource Include="Forms\AgregarVenta.resx">
       <DependentUpon>AgregarVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ListarPedidos.resx">
+      <DependentUpon>ListarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListarProductos.resx">
       <DependentUpon>ListarProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,19 +141,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -172,19 +164,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Icons\1478394338_icons_exit.png" />
-    <None Include="Icons\1478394432_DeleteRed.png" />
-    <None Include="Icons\1478490982_search.png" />
-    <None Include="Icons\1478491184_broom_stick_3.png" />
     <Content Include="Icons\accept.png" />
-    <Content Include="Icons\accept2.png" />
     <Content Include="Icons\add.png" />
-    <Content Include="Icons\add2.png" />
+    <Content Include="Icons\add3.png" />
+    <Content Include="Icons\buscar %282%29.png" />
     <Content Include="Icons\cancel.png" />
-    <Content Include="Icons\cancel2.png" />
     <Content Include="Icons\copy.png" />
     <Content Include="Icons\delete.png" />
+    <Content Include="Icons\detalle %282%29.png" />
+    <Content Include="Icons\detalle.png" />
     <Content Include="Icons\edit.png" />
+    <Content Include="Icons\limpiar.png" />
     <Content Include="Icons\paste.png" />
     <Content Include="Icons\save.png" />
     <Content Include="Icons\select.png" />

@@ -70,13 +70,31 @@ namespace Prototipo.Class
         }
 
         // Buscar producto
-        public static IEnumerable<Producto> Buscar(string nombre)
+        public static List<Producto> Buscar(string nombre)
         {
             using (var db = new LiteDatabase(BD))
             {
                 var productos = db.GetCollection<Producto>("Productos");
 
-                return productos.Find(Query.Contains("Nombre", nombre));
+                return productos.Find(Query.Contains("Nombre", nombre)).ToList();
+            }
+        }
+
+        public static List<string> Listar2()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                var productos = db.GetCollection<Producto>("Productos");
+
+                return productos.Find(Query.All()).Select(x => x.Codigo).ToList();
+            }
+        }
+
+        public static void EliminarTabla()
+        {
+            using (var db = new LiteDatabase(BD))
+            {
+                db.DropCollection("Productos");
             }
         }
     }
