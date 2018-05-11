@@ -1,0 +1,34 @@
+{
+	"A": {
+		"id": 1,
+		"nombre": "A",
+		"inicio": 0,
+		"duracion": 3
+	},
+	"B": {
+		"id": 2,
+		"nombre": "B",
+		"inicio": 1,
+		"duracion": 5
+	},
+	"C": {
+		"id": 3,
+		"nombre": "C",
+		"inicio": 4,
+		"duracion": 2
+	},
+	"D": {
+		"id": 4,
+		"nombre": "D",
+		"inicio": 5,
+		"duracion": 6
+	},
+	"E": {
+		"id": 5,
+		"nombre": "E",
+		"inicio": 8,
+		"duracion": 4
+	}
+}
+	
+

@@ -1,0 +1,5 @@
+1 - d)     Dado un lenguaje ambiguo, es imposible expresarlo a través de una gramática que no sea ambigua.
+
+La respuesta a esta afirmación es VERDADERO. Un lenguaje es inherentemente ambiguo (o ambiguo) si todas las gramáticas que lo representan son ambiguas. Si existe al menos una gramática no ambigua que lo represente es lenguaje no es ambiguo. 
+
+El lenguaje de las expresiones debería tener en cuenta las asociaciones y precedencias, cosa que si hace la gramática de la calculadora no ambigua.

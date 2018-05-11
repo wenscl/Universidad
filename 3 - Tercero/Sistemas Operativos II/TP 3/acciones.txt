@@ -1,0 +1,6 @@
+MD|DatosAC1
+
+CD|DatosAC1
+
+CF|Datos.txt
+WF|Datos.txt|Texto a incluir en el archivo 

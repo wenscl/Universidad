@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-spec tool='waqr' tool-version='1.0' template-name='Basic'>
+<report-name><![CDATA[Reporte-Punto3-HorarioMayorConcurrencia]]></report-name>
+<report-desc><![CDATA[]]></report-desc>
+<query>
+<mql>
+<domain_type>relational</domain_type>
+<domain_id><![CDATA[admin/resources/metadata/DW-Report-Punto3-HorariosMayorConcurrencia.xmi]]></domain_id><model_id><![CDATA[MODEL_1]]></model_id>
+<options>
+<disable_distinct>false</disable_distinct>
+</options>
+<selections>
+<selection><view>DW-Report-Punto3-HorariosMayorConcurrencia</view><column>LC_INLINE_SQL_1_pc_horario</column></selection>
+<selection><view>DW-Report-Punto3-HorariosMayorConcurrencia</view><column>LC_INLINE_SQL_1_pc_Cantidad_de_Asistencias</column></selection>
+</selections>
+<constraints>
+</constraints>
+<orders>
+<order><direction>asc</direction><view_id>DW-Report-Punto3-HorariosMayorConcurrencia</view_id><column_id>LC_INLINE_SQL_1_pc_horario</column_id></order>
+<order><direction>asc</direction><view_id>DW-Report-Punto3-HorariosMayorConcurrencia</view_id><column_id>LC_INLINE_SQL_1_pc_Cantidad_de_Asistencias</column_id></order>
+</orders>
+</mql>
+</query>
+<field-mapping key="reportheader" value=""/><field-mapping key="reportfooter" value=""/><field-mapping key="pageheader" value=""/><field-mapping key="pagefooter" value=""/><page-format><![CDATA[LETTER]]></page-format>
+<orientation><![CDATA[portrait]]></orientation>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_horario" horizontal-alignment="not-set" expression="none" type="12"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Cantidad_de_Asistencias" horizontal-alignment="not-set" format="" expression="sum" type="2"/>
+</report-spec>

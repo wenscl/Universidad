@@ -1,0 +1,166 @@
+<Schema name="Schema_TP">
+  <Dimension type="TimeDimension" visible="true" highCardinality="false" name="DimensionTiempo">
+    <Hierarchy name="Jerarquia A&#241;o/Mes/Dia/Trimestre" visible="true" hasAll="true" allMemberCaption="Todos los A&#241;os" primaryKey="id_tiempo" caption="A&#241;o/Mes/Dia">
+      <Table name="d_tiempo" schema="public">
+      </Table>
+      <Level name="Anio" visible="true" column="anio" type="Integer" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never" captionColumn="anio">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA['Año ' || CAST(d_tiempo.Anio AS CHARACTER VARYING)]]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+      <Level name="Trimestre" visible="true" column="trimestre" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never" caption="Trimestre" captionColumn="trimestre">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA[CAST(d_tiempo.trimestre AS CHARACTER VARYING) || '° Trimestre']]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+      <Level name="Mes" visible="true" column="mes" type="Integer" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never" captionColumn="mes">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA[CASE WHEN d_tiempo.mes = 1 THEN 'Enero'
+WHEN d_tiempo.mes = 2 THEN 'Febrero'
+WHEN d_tiempo.mes = 3 THEN 'Marzo'
+WHEN d_tiempo.mes = 4 THEN 'Abril'
+WHEN d_tiempo.mes = 5 THEN 'Mayo'
+WHEN d_tiempo.mes = 6 THEN 'Junio'
+WHEN d_tiempo.mes = 7 THEN 'Julio'
+WHEN d_tiempo.mes = 8 THEN 'Agosto'
+WHEN d_tiempo.mes = 9 THEN 'Septiembre'
+WHEN d_tiempo.mes = 10 THEN 'Octubre'
+WHEN d_tiempo.mes = 11 THEN 'Noviembre'
+WHEN d_tiempo.mes = 12 THEN 'Diciembre'
+END]]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+      <Level name="Dia" visible="true" column="dia" type="String" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never" captionColumn="dia">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionEmpleado">
+    <Hierarchy name="JerarquiaEmpleado" visible="true" hasAll="true" allMemberCaption="Todos los empleados" primaryKey="id_empleado" caption="Empleado">
+      <Table name="d_empleado" schema="public">
+      </Table>
+      <Level name="Empleado" visible="true" column="id_empleado" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Nombre" captionColumn="nombre">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA[d_empleado.nombre || ' ' || d_empleado.apellido]]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionActividad">
+    <Hierarchy name="JerarquiaActividad" visible="true" hasAll="true" allMemberCaption="Todas las actividades" primaryKey="id_actividad" caption="Actividad">
+      <Table name="d_actividad" schema="public">
+      </Table>
+      <Level name="Actividad" visible="true" column="id_actividad" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Actividad" captionColumn="descripcion">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionGimnasio">
+    <Hierarchy name="JerarquiaGimnasio" visible="true" hasAll="true" allMemberCaption="Todos los gimnasios" primaryKey="id_gimnasio" caption="Gimnasio">
+      <Table name="d_gimnasio" schema="public">
+      </Table>
+      <Level name="Gimnasio" visible="true" column="id_gimnasio" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Gimnasio" captionColumn="nombre">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionProducto">
+    <Hierarchy name="JerarquiaProducto" visible="true" hasAll="true" allMemberCaption="Todos los productos" primaryKey="id_producto" caption="Producto">
+      <Table name="d_producto" schema="public">
+      </Table>
+      <Level name="Producto" visible="true" table="d_producto" column="id_producto" nameColumn="id_producto" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Producto" captionColumn="descripcion">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionCliente">
+    <Hierarchy name="JerarquiaCliente" visible="true" hasAll="true" allMemberCaption="Todos los clientes" primaryKey="id_cliente" caption="Cliente">
+      <Table name="d_cliente" schema="public">
+      </Table>
+      <Level name="Cliente" visible="true" column="id_cliente" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Cliente" captionColumn="nombre">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA[d_cliente.nombre || ' ' || d_cliente.apellido]]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="DimensionHorario">
+    <Hierarchy name="JerarquiaHorario" visible="true" hasAll="true" allMemberCaption="Todos los horarios" primaryKey="id_horario" caption="Hora_Inicio/Hora_fin">
+      <Table name="d_horario" schema="public">
+      </Table>
+      <Level name="Horario" visible="true" column="id_horario" nameColumn="id_horario" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never" caption="Horario" captionColumn="hora_inicio">
+        <CaptionExpression>
+          <SQL dialect="generic">
+            <![CDATA[CAST(d_horario.hora_inicio AS CHARACTER VARYING) || ':00 hs a ' || CAST(d_horario.hora_fin AS CHARACTER VARYING) || ':00 hs']]>
+          </SQL>
+        </CaptionExpression>
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="VentasAbonos" caption="Ventas de Abonos" visible="true" cache="true" enabled="true">
+    <Table name="h_ventas_abonos" schema="public">
+    </Table>
+    <DimensionUsage source="DimensionTiempo" name="Tiempo" visible="true" foreignKey="id_tiempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionGimnasio" name="Gimnasio" visible="true" foreignKey="id_gimnasio" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionActividad" name="Actividad" visible="true" foreignKey="id_actividad" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionEmpleado" name="Empleado" visible="true" foreignKey="id_empleado" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionCliente" name="Cliente" visible="true" foreignKey="id_cliente" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="cantidad" column="cantidad" datatype="Integer" aggregator="sum" caption="Cantidad" visible="true">
+    </Measure>
+    <Measure name="monto" column="monto" datatype="Numeric" aggregator="sum" caption="Monto" visible="true">
+    </Measure>
+    <CalculatedMember name="Total" formatString="##.00" caption="Total" formula="[Measures].[cantidad]*[Measures].[monto]" dimension="Measures" visible="true">
+    </CalculatedMember>
+  </Cube>
+  <Cube name="EmpleadosActividades" caption="Empleados y Actividades" visible="true" cache="true" enabled="true">
+    <Table name="h_empleados_actividades" schema="public">
+    </Table>
+    <DimensionUsage source="DimensionActividad" name="Actividad" caption="Actividad" visible="true" foreignKey="id_actividad" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionEmpleado" name="Empleado" caption="Empleado" visible="true" foreignKey="id_empleado" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="CantidadAlumnos" column="cantidad_alumnos" datatype="Integer" aggregator="sum" caption="Cantidad de Alumnos" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="ClientesAsistencias" caption="Asistencias de Clientes" visible="true" cache="true" enabled="true">
+    <Table name="h_clientes_asistencias" schema="public">
+    </Table>
+    <DimensionUsage source="DimensionTiempo" name="Tiempo" visible="true" foreignKey="id_tiempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionCliente" name="Cliente" visible="true" foreignKey="id_cliente" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionHorario" name="Horario" visible="true" foreignKey="id_horario" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Cantidad" column="cantidad" aggregator="count" caption="Cantidad de Asistencias" visible="true">
+    </Measure>
+  </Cube>
+  <Cube name="VentasProductos" caption="Ventas de Productos" visible="true" cache="true" enabled="true">
+    <Table name="h_ventas_productos" schema="public">
+    </Table>
+    <DimensionUsage source="DimensionProducto" name="Producto" visible="true" foreignKey="id_producto" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionCliente" name="Cliente" visible="true" foreignKey="id_cliente" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionTiempo" name="Tiempo" visible="true" foreignKey="id_tiempo" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="DimensionGimnasio" name="Gimnasio" visible="true" foreignKey="id_gimnasio" highCardinality="false">
+    </DimensionUsage>
+    <Measure name="Cantidad" column="cantidad" aggregator="sum" caption="Cantidad" visible="true">
+    </Measure>
+    <Measure name="PrecioUnitario" column="precio" aggregator="sum" caption="Precio Unitario" visible="true">
+    </Measure>
+    <Measure name="MontoTotal" column="monto_total" aggregator="sum" caption="Total" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

@@ -1,0 +1,3 @@
+filtro f l = [x | x <- l, f x]
+
+numero n l = [x | x <- l, x < n] ++ [n] ++ [x | x <- l, x > n]

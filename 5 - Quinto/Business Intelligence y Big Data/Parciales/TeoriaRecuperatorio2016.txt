@@ -1,0 +1,10 @@
+2) 
+	a) Diferencias entre el modelo de Inmonn y Kimball
+	b) que tareas pertenecen a la etapa de datos
+	c) Definir OLAP, ROLAP y MOLAP
+3) Data Mining:
+	a) Definir Clasificación. ¿Cómo se mide la calidad de una regla de clasificación? 
+	b) Puso un ejemplo y había que poner que problema tenía (era sobreentrenamiento) y explicar.
+4) Big data:
+	a) que es big data y su utilización en las empresas
+	b) nombrar y explicar las caracteristicas de big data (Las 3 V)

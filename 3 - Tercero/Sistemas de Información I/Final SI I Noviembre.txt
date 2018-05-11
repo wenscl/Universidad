@@ -1,0 +1,11 @@
+1) Definición de ciclos de vida de sistemas de información. Diferencias entre ciclo de vida clásico y ciclo de vida de prototipos.
+
+2) Desarrolle 3 métodos de relevamiento de requerimientos.
+
+3) Verdadero o Falso. Justifique las falsas.
+a) La prueba de caja blanca o estructural apunta a que no queden líneas de código sin ejecutar.
+b) Los casos de prueba consisten en una situación de prueba y los resultados que se esperan.
+c) La conversión de sistemas y la conversión de datos son etapas posteriores a la implementación.
+d) La revisión de sistemas es una etapa previa a la implementación.
+
+4) Defina los tres tipos de mantenimiento. Enuncie tres consejos para evitar o facilitar el mantenimiento.

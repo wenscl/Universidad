@@ -1,0 +1,2483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>Transformaciones</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <directory>&#47;</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2017&#47;10&#47;19 18:53:45.500</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#47;10&#47;19 18:53:45.500</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>Conexion_Abonos</name>
+    <server>Localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>Abonos</database>
+    <port>5432</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10be96addb</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Conexion_Facturacion1</name>
+    <server>LocalHost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>Facturacion_1</database>
+    <port>5432</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10be96addb</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Conexion_Facturacion2</name>
+    <server>Localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>Facturacion_2</database>
+    <port>5432</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10be96addb</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>Conexion_Recursos_Humanos</name>
+    <server>Localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>Recursos_Humanos</database>
+    <port>5432</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10be96addb</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>DW</name>
+    <server>Localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>DW</database>
+    <port>5432</port>
+    <username>dba</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10be96addb</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Entrada_Empleados</from><to>Salida_D_Empleado</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Actividad</from><to>Salida_D_Actividad</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Producto</from><to>Salida_D_Producto</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Gimnasio</from><to>Salida_D_Gimnasio</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Cliente</from><to>Salida_D_Cliente</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Horario</from><to>Salida_D_Horario</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Fecha_Abonos</from><to>Unión Ordenada</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Fecha_Facturacion1</from><to>Unión Ordenada</to><enabled>N</enabled> </hop>  <hop> <from>Unión Ordenada</from><to>Filas Unicas</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Fecha_Recursos_Humanos</from><to>Unión Ordenada</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_Fecha_Facturacion2</from><to>Unión Ordenada</to><enabled>N</enabled> </hop>  <hop> <from>Filas Unicas</from><to>Salida_D_Tiempo</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_empleados_actividades_abonos</from><to>Busqueda_Empleado</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_Empleado</from><to>Selecciona&#47;Renombra valores</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_empleados_actividades</from><to>Ordenar_Empleados_Actividades</to><enabled>N</enabled> </hop>  <hop> <from>Selecciona&#47;Renombra valores</from><to>Ordenar_Empleados_Gimnasio</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_Empleados_Actividades</from><to>Unión_Empleado_Actividad_Gimnasio</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_Empleados_Gimnasio</from><to>Unión_Empleado_Actividad_Gimnasio</to><enabled>N</enabled> </hop>  <hop> <from>Unión_Empleado_Actividad_Gimnasio</from><to>Ordenar_Empleados_Actividad</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_Empleados_Actividad</from><to>Agrupar por</to><enabled>N</enabled> </hop>  <hop> <from>Agrupar por</from><to>Salida_H_Empleados_Actividades</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_clientes_asistencias</from><to>Busqueda_id_tiempo</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_id_tiempo</from><to>Busqueda_id_horario</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_id_horario</from><to>Ordenar_Tiempo_Cliente_Horario</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_Tiempo_Cliente_Horario</from><to>Agrupar_Cliente_Tiempo_Horario</to><enabled>N</enabled> </hop>  <hop> <from>Agrupar_Cliente_Tiempo_Horario</from><to>Salida_H_Clientes_Asistencias</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_ventas_abonos</from><to>Busqueda_id_tiempo 2</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_id_tiempo 2</from><to>Busqueda_Empleado 2</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_Empleado 2</from><to>Ordenar_ventas_abonos</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_ventas_abonos 2</from><to>Unión_Empleado_Actividad_Gimnasio 2</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_ventas_abonos</from><to>Unión_Empleado_Actividad_Gimnasio 2</to><enabled>N</enabled> </hop>  <hop> <from>Unión_Empleado_Actividad_Gimnasio 2</from><to>Ordenar_ventas_abonos 2</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_ventas_abonos 2</from><to>Agrupar por 2</to><enabled>N</enabled> </hop>  <hop> <from>Agrupar por 2</from><to>Salida_H_Ventas_Abonos</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_ventas_productos_F1</from><to>Busqueda_id_tiempo 3</to><enabled>N</enabled> </hop>  <hop> <from>Entrada_h_ventas_productos_F2</from><to>Busqueda_id_tiempo 3</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_id_tiempo 3</from><to>Busqueda_Empleado 3</to><enabled>N</enabled> </hop>  <hop> <from>Busqueda_Empleado 3</from><to>Ordenar_ventas_abonos 3</to><enabled>N</enabled> </hop>  <hop> <from>Ordenar_ventas_abonos 3</from><to>Agrupar por 3</to><enabled>N</enabled> </hop>  <hop> <from>Agrupar por 3</from><to>Salida_H_Ventas_Productos</to><enabled>N</enabled> </hop>  </order>
+  <step>
+    <name>Agrupar por</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>id_actividad</name>
+        </field>
+        <field>
+          <name>legajo</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>cantidad_alumnos</aggregate>
+          <subject>id_actividad</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1307</xloc>
+      <yloc>24</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Agrupar por 2</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>cod_cliente</name>
+        </field>
+        <field>
+          <name>id_tiempo</name>
+        </field>
+        <field>
+          <name>gimnasio</name>
+        </field>
+        <field>
+          <name>id_actividad</name>
+        </field>
+        <field>
+          <name>legajo</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>monto</aggregate>
+          <subject>monto_item</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>cantidad</aggregate>
+          <subject>cantidad</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1306</xloc>
+      <yloc>364</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Agrupar por 3</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>cod_producto</name>
+        </field>
+        <field>
+          <name>cod_cliente</name>
+        </field>
+        <field>
+          <name>id_tiempo</name>
+        </field>
+        <field>
+          <name>gimnasio</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>cantidad</aggregate>
+          <subject>cantidad</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>precio</aggregate>
+          <subject>precio</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>monto_total</aggregate>
+          <subject>monto_total</subject>
+          <type>SUM</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1226</xloc>
+      <yloc>517</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Agrupar_Cliente_Tiempo_Horario</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>codigo_cliente</name>
+        </field>
+        <field>
+          <name>id_tiempo</name>
+        </field>
+        <field>
+          <name>id_horario</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>cantidad_asistencias</aggregate>
+          <subject>codigo_cliente</subject>
+          <type>COUNT_ALL</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1211</xloc>
+      <yloc>214</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_Empleado</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>empleado</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>cod_empleado</name>
+        <field>legajo</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>gimnasio</name>
+        <rename>gimnasio</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>769</xloc>
+      <yloc>143</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_Empleado 2</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>empleado</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>cod_vendedor</name>
+        <field>legajo</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>gimnasio</name>
+        <rename>gimnasio</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>900</xloc>
+      <yloc>366</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_Empleado 3</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>empleado</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>cod_empleado</name>
+        <field>legajo</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>gimnasio</name>
+        <rename>gimnasio</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>555</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_id_horario</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>d_horario</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>hora</name>
+        <field>hora_inicio</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_horario</name>
+        <rename>id_horario</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>912</xloc>
+      <yloc>266</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_id_tiempo</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>d_tiempo</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>anio</name>
+        <field>anio</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>mes</name>
+        <field>mes</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>dia</name>
+        <field>dia</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_tiempo</name>
+        <rename>id_tiempo</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>759</xloc>
+      <yloc>269</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_id_tiempo 2</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>d_tiempo</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>anio</name>
+        <field>anio</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>mes</name>
+        <field>mes</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>dia</name>
+        <field>dia</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_tiempo</name>
+        <rename>id_tiempo</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>739</xloc>
+      <yloc>365</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Busqueda_id_tiempo 3</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>public</schema>
+      <table>d_tiempo</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>anio</name>
+        <field>anio</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>mes</name>
+        <field>mes</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>dia</name>
+        <field>dia</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>id_tiempo</name>
+        <rename>id_tiempo</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>815</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Actividad</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT id_actividad, descripcion FROM public.actividad</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>125</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Cliente</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Abonos</connection>
+    <sql>SELECT c.codigo_cliente as codigo, c.nombre, c.apellido, ne.descripcion as nivel_estudio,
+	CASE WHEN (c.sexo = 1) THEN &apos;Masculino&apos; ELSE &apos;Femenino&apos; END as sexo
+FROM public.cliente c
+join public.nivel_estudio ne on c.cod_nivel_estudio = ne.cod_nivel_estudio</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>66</xloc>
+      <yloc>360</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Empleados</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT legajo, nombre, apellido, fecha_ingreso, sueldo,
+	CASE WHEN (SELECT SUM(ee.horas_capacitacion)
+			   FROM public.especialidades_empleado ee
+			   WHERE ee.legajo = e.legajo
+		   		GROUP BY ee.legajo) IS NULL THEN 0 ELSE (SELECT SUM(ee.horas_capacitacion)
+		   												FROM public.especialidades_empleado ee
+													   WHERE ee.legajo = e.legajo
+													   GROUP BY ee.legajo) END as horas_capacitacion,
+	(legajo in (SELECT legajo FROM public.actividad_instructor)) as es_instructor
+FROM public.empleado e</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>65</xloc>
+      <yloc>37</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Fecha_Abonos</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Abonos</connection>
+    <sql>SELECT DISTINCT f.anio, f.mes, f.dia, f.trimestre, f.temporada
+FROM (
+	SELECT 
+		cast(extract (year from fecha) as integer) as anio,
+		cast(extract (month from fecha) as integer) as mes,
+		cast(extract (day from fecha) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 3, 21)
+				and
+				make_date(extract(year from fecha)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 6, 21)
+				and
+				make_date(extract(year from fecha)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 9, 21)
+				and
+				make_date(extract(year from fecha)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+	FROM public.venta
+	UNION ALL
+	SELECT 		
+		cast(extract (year from fecha_nacimiento) as integer) as anio,
+		cast(extract (month from fecha_nacimiento) as integer) as mes,
+		cast(extract (day from fecha_nacimiento) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha_nacimiento)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha_nacimiento)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha_nacimiento)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha_nacimiento)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha_nacimiento BETWEEN
+				make_date(extract(year from fecha_nacimiento)::int, 3, 21)
+				and
+				make_date(extract(year from fecha_nacimiento)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha_nacimiento BETWEEN
+				make_date(extract(year from fecha_nacimiento)::int, 6, 21)
+				and
+				make_date(extract(year from fecha_nacimiento)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha_nacimiento BETWEEN
+				make_date(extract(year from fecha_nacimiento)::int, 9, 21)
+				and
+				make_date(extract(year from fecha_nacimiento)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+	FROM public.empleado
+	UNION ALL
+	SELECT 
+		cast(extract (year from fecha) as integer) as anio,
+		cast(extract (month from fecha) as integer) as mes,
+		cast(extract (day from fecha) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 3, 21)
+				and
+				make_date(extract(year from fecha)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 6, 21)
+				and
+				make_date(extract(year from fecha)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha BETWEEN
+				make_date(extract(year from fecha)::int, 9, 21)
+				and
+				make_date(extract(year from fecha)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+	FROM public.asistencia)
+as f
+ORDER BY f.anio, f.mes, f.dia</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>82</xloc>
+      <yloc>507</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Fecha_Facturacion1</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion1</connection>
+    <sql>SELECT DISTINCT 
+		cast(extract (year from fecha_venta) as integer) as anio,
+		cast(extract (month from fecha_venta) as integer) as mes,
+		cast(extract (day from fecha_venta) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha_venta)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha_venta)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha_venta)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha_venta)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 3, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 6, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 9, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+FROM public.venta
+ORDER BY anio, mes, dia</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>84</xloc>
+      <yloc>573</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Fecha_Facturacion2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion2</connection>
+    <sql>SELECT DISTINCT 
+		cast(extract (year from fecha_venta) AS integer) AS anio,
+		cast(extract (month from fecha_venta) AS integer) AS mes,
+		cast(extract (day from fecha_venta) AS integer) AS dia, 
+		CASE
+			WHEN extract(month from fecha_venta)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha_venta)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha_venta)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha_venta)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 3, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 6, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha_venta BETWEEN
+				make_date(extract(year from fecha_venta)::int, 9, 21)
+				and
+				make_date(extract(year from fecha_venta)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+FROM public.venta
+ORDER BY anio, mes, dia</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>86</xloc>
+      <yloc>642</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Fecha_Recursos_Humanos</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT DISTINCT f.anio, f.mes, f.dia, f.trimestre, f.temporada
+FROM (
+	SELECT 
+		cast(extract (year from fecha_ingreso) as integer) as anio,
+		cast(extract (month from fecha_ingreso) as integer) as mes,
+		cast(extract (day from fecha_ingreso) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha_ingreso)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha_ingreso)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha_ingreso)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha_ingreso)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha_ingreso BETWEEN
+				make_date(extract(year from fecha_ingreso)::int, 3, 21)
+				and
+				make_date(extract(year from fecha_ingreso)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha_ingreso BETWEEN
+				make_date(extract(year from fecha_ingreso)::int, 6, 21)
+				and
+				make_date(extract(year from fecha_ingreso)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha_ingreso BETWEEN
+				make_date(extract(year from fecha_ingreso)::int, 9, 21)
+				and
+				make_date(extract(year from fecha_ingreso)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+	FROM public.empleado
+	UNION ALL
+	SELECT 
+		cast(extract (year from fecha_inicio) as integer) as anio,
+		cast(extract (month from fecha_inicio) as integer) as mes,
+		cast(extract (day from fecha_inicio) as integer) as dia,
+		CASE
+			WHEN extract(month from fecha_inicio)::int
+				IN (1, 2, 3)
+				THEN 1
+			WHEN extract(month from fecha_inicio)::int
+				IN (4, 5, 6)
+				THEN 2
+			WHEN extract(month from fecha_inicio)::int
+				IN (7, 8, 9)
+				THEN 3
+			WHEN extract(month from fecha_inicio)::int
+				IN (10, 11, 12)
+				THEN 4
+		END as trimestre, 
+		CASE
+			WHEN fecha_inicio BETWEEN
+				make_date(extract(year from fecha_inicio)::int, 3, 21)
+				and
+				make_date(extract(year from fecha_inicio)::int, 6, 20)
+			THEN &apos;otonio&apos;
+			WHEN fecha_inicio BETWEEN
+				make_date(extract(year from fecha_inicio)::int, 6, 21)
+				and
+				make_date(extract(year from fecha_inicio)::int, 9, 20)
+			THEN &apos;invierno&apos;
+			WHEN fecha_inicio BETWEEN
+				make_date(extract(year from fecha_inicio)::int, 9, 21)
+				and
+				make_date(extract(year from fecha_inicio)::int, 12, 20)
+			THEN &apos;primavera&apos;
+			ELSE &apos;verano&apos;
+		END AS temporada
+	FROM public.actividad
+	) as f
+ORDER BY f.anio, f.mes, f.dia</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>85</xloc>
+      <yloc>719</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Gimnasio</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion1</connection>
+    <sql>SELECT numbers.num as codigo, &apos;GIM &apos;||CAST(numbers.num as text) as descripcion
+FROM (select generate_series(1,10) as num) as numbers</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>66</xloc>
+      <yloc>285</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Horario</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT hora_inicio, hora_fin
+FROM public.actividad_instructor
+GROUP BY hora_inicio, hora_fin
+ORDER BY hora_inicio</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>68</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_Producto</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion1</connection>
+    <sql>SELECT id_producto, descripcion FROM public.producto</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>205</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_clientes_asistencias</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Abonos</connection>
+    <sql>SELECT	codigo_cliente,
+		hora,
+		cast(extract (year from A.fecha) as integer) as anio,
+		cast(extract (month from A.fecha) as integer) as mes,
+		cast(extract (day from A.fecha) as integer) as dia
+FROM	public.asistencia A
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>556</xloc>
+      <yloc>267</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_empleados_actividades</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT	AI.id_actividad, AI.legajo, E.gimnasio
+FROM	public.actividad_instructor AI
+	INNER JOIN public.empleado E ON E.legajo = AI.legajo
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>534</xloc>
+      <yloc>45</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_empleados_actividades_abonos</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Abonos</connection>
+    <sql>SELECT	IV.nro_ticket, IV.codigo_producto, V.cod_empleado
+FROM	public.item_venta IV
+	INNER JOIN	public.venta V 
+		ON	IV.nro_ticket = V.nro_ticket</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>556</xloc>
+      <yloc>143</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_ventas_abonos</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Abonos</connection>
+    <sql>SELECT	IV.codigo_producto, IV.cantidad, IV.monto_item,
+		cast(extract (year from V.fecha) as integer) as anio,
+		cast(extract (month from V.fecha) as integer) as mes,
+		cast(extract (day from V.fecha) as integer) as dia,
+		V.cod_empleado as cod_vendedor,
+		V.cod_cliente		
+FROM	public.item_venta IV
+	INNER JOIN	public.venta V
+		ON	V.nro_ticket = IV.nro_ticket</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>559</xloc>
+      <yloc>365</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_ventas_abonos 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Recursos_Humanos</connection>
+    <sql>SELECT	AI.id_actividad, AI.legajo, E.gimnasio
+FROM	public.actividad_instructor AI
+	INNER JOIN public.empleado E ON E.legajo = AI.legajo
+ORDER	BY AI.id_actividad, E.gimnasio</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>561</xloc>
+      <yloc>449</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_ventas_productos_F1</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion1</connection>
+    <sql>SELECT	IV.id_producto as cod_producto,
+		IV.cantidad,
+		IV.precio,
+		IV.cantidad * IV.precio as monto_total,
+		cast(extract (year from V.fecha_venta) as integer) as anio,
+		cast(extract (month from V.fecha_venta) as integer) as mes,
+		cast(extract (day from V.fecha_venta) as integer) as dia,
+		V.id_empleado as cod_empleado,
+		V.id_cliente as cod_cliente
+FROM	public.item_venta IV
+	INNER JOIN	public.venta V
+		ON	V.numero_ticket = IV.numero_ticket
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>627</xloc>
+      <yloc>539</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Entrada_h_ventas_productos_F2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>Conexion_Facturacion2</connection>
+    <sql>SELECT	IV.cod_producto,
+		IV.cantidad,
+		IV.precio,
+		IV.cantidad * IV.precio as monto_total,
+		cast(extract (year from V.fecha_venta) as integer) as anio,
+		cast(extract (month from V.fecha_venta) as integer) as mes,
+		cast(extract (day from V.fecha_venta) as integer) as dia,
+		V.cod_empleado,
+		V.cod_cliente
+FROM	public.item_venta IV
+	INNER JOIN	public.venta V
+		ON	V.nro_ticket = IV.nro_ticket
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>637</xloc>
+      <yloc>650</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filas Unicas</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>353</xloc>
+      <yloc>607</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_Empleados_Actividad</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>id_actividad</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>legajo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1163</xloc>
+      <yloc>34</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_Empleados_Actividades</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>id_actividad</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>gimnasio</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>752</xloc>
+      <yloc>58</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_Empleados_Gimnasio</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_producto</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>gimnasio</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1153</xloc>
+      <yloc>141</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_Tiempo_Cliente_Horario</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_cliente</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>id_tiempo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>id_horario</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1055</xloc>
+      <yloc>239</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_ventas_abonos</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codigo_producto</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>gimnasio</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>340</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_ventas_abonos 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>cod_cliente</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>id_tiempo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>gimnasio</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>id_actividad</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>legajo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1199</xloc>
+      <yloc>426</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Ordenar_ventas_abonos 3</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>%%java.io.tmpdir%%</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>cod_producto</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>cod_cliente</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>id_tiempo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+      <field>
+        <name>gimnasio</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1105</xloc>
+      <yloc>536</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Actividad</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema/>
+    <table>d_actividad</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_actividad</column_name>
+          <stream_name>id_actividad</stream_name>
+        </field>
+        <field>
+          <column_name>descripcion</column_name>
+          <stream_name>descripcion</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>323</xloc>
+      <yloc>125</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Cliente</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_cliente</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>nombre</column_name>
+          <stream_name>nombre</stream_name>
+        </field>
+        <field>
+          <column_name>apellido</column_name>
+          <stream_name>apellido</stream_name>
+        </field>
+        <field>
+          <column_name>nivel_estudio</column_name>
+          <stream_name>nivel_estudio</stream_name>
+        </field>
+        <field>
+          <column_name>sexo</column_name>
+          <stream_name>sexo</stream_name>
+        </field>
+        <field>
+          <column_name>id_cliente</column_name>
+          <stream_name>codigo</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>328</xloc>
+      <yloc>359</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Empleado</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_empleado</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_empleado</column_name>
+          <stream_name>legajo</stream_name>
+        </field>
+        <field>
+          <column_name>nombre</column_name>
+          <stream_name>nombre</stream_name>
+        </field>
+        <field>
+          <column_name>apellido</column_name>
+          <stream_name>apellido</stream_name>
+        </field>
+        <field>
+          <column_name>fecha_ingreso</column_name>
+          <stream_name>fecha_ingreso</stream_name>
+        </field>
+        <field>
+          <column_name>sueldo</column_name>
+          <stream_name>sueldo</stream_name>
+        </field>
+        <field>
+          <column_name>horas_capacitacion</column_name>
+          <stream_name>horas_capacitacion</stream_name>
+        </field>
+        <field>
+          <column_name>es_profesor</column_name>
+          <stream_name>es_instructor</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>326</xloc>
+      <yloc>37</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Gimnasio</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_gimnasio</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_gimnasio</column_name>
+          <stream_name>codigo</stream_name>
+        </field>
+        <field>
+          <column_name>nombre</column_name>
+          <stream_name>descripcion</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>325</xloc>
+      <yloc>285</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Horario</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_horario</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>hora_inicio</column_name>
+          <stream_name>hora_inicio</stream_name>
+        </field>
+        <field>
+          <column_name>hora_fin</column_name>
+          <stream_name>hora_fin</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>330</xloc>
+      <yloc>431</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Producto</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_producto</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_producto</column_name>
+          <stream_name>id_producto</stream_name>
+        </field>
+        <field>
+          <column_name>descripcion</column_name>
+          <stream_name>descripcion</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>323</xloc>
+      <yloc>205</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_D_Tiempo</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>d_tiempo</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>anio</column_name>
+          <stream_name>anio</stream_name>
+        </field>
+        <field>
+          <column_name>mes</column_name>
+          <stream_name>mes</stream_name>
+        </field>
+        <field>
+          <column_name>dia</column_name>
+          <stream_name>dia</stream_name>
+        </field>
+        <field>
+          <column_name>trimestre</column_name>
+          <stream_name>trimestre</stream_name>
+        </field>
+        <field>
+          <column_name>estacion</column_name>
+          <stream_name>temporada</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>460</xloc>
+      <yloc>603</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_H_Clientes_Asistencias</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>h_clientes_asistencias</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_cliente</column_name>
+          <stream_name>codigo_cliente</stream_name>
+        </field>
+        <field>
+          <column_name>id_tiempo</column_name>
+          <stream_name>id_tiempo</stream_name>
+        </field>
+        <field>
+          <column_name>id_horario</column_name>
+          <stream_name>id_horario</stream_name>
+        </field>
+        <field>
+          <column_name>cantidad</column_name>
+          <stream_name>cantidad_asistencias</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1352</xloc>
+      <yloc>243</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_H_Empleados_Actividades</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>h_empleados_actividades</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_actividad</column_name>
+          <stream_name>id_actividad</stream_name>
+        </field>
+        <field>
+          <column_name>id_empleado</column_name>
+          <stream_name>legajo</stream_name>
+        </field>
+        <field>
+          <column_name>cantidad_alumnos</column_name>
+          <stream_name>cantidad_alumnos</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1442</xloc>
+      <yloc>44</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_H_Ventas_Abonos</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>h_ventas_abonos</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_cliente</column_name>
+          <stream_name>cod_cliente</stream_name>
+        </field>
+        <field>
+          <column_name>id_tiempo</column_name>
+          <stream_name>id_tiempo</stream_name>
+        </field>
+        <field>
+          <column_name>id_gimnasio</column_name>
+          <stream_name>gimnasio</stream_name>
+        </field>
+        <field>
+          <column_name>id_actividad</column_name>
+          <stream_name>id_actividad</stream_name>
+        </field>
+        <field>
+          <column_name>id_empleado</column_name>
+          <stream_name>legajo</stream_name>
+        </field>
+        <field>
+          <column_name>monto</column_name>
+          <stream_name>monto</stream_name>
+        </field>
+        <field>
+          <column_name>cantidad</column_name>
+          <stream_name>cantidad</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1419</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Salida_H_Ventas_Productos</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>DW</connection>
+    <schema>public</schema>
+    <table>h_ventas_productos</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>id_producto</column_name>
+          <stream_name>cod_producto</stream_name>
+        </field>
+        <field>
+          <column_name>id_cliente</column_name>
+          <stream_name>cod_cliente</stream_name>
+        </field>
+        <field>
+          <column_name>id_tiempo</column_name>
+          <stream_name>id_tiempo</stream_name>
+        </field>
+        <field>
+          <column_name>id_gimnasio</column_name>
+          <stream_name>gimnasio</stream_name>
+        </field>
+        <field>
+          <column_name>cantidad</column_name>
+          <stream_name>cantidad</stream_name>
+        </field>
+        <field>
+          <column_name>precio</column_name>
+          <stream_name>precio</stream_name>
+        </field>
+        <field>
+          <column_name>monto_total</column_name>
+          <stream_name>monto_total</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1350</xloc>
+      <yloc>548</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Selecciona&#47;Renombra valores</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>nro_ticket</name>
+      </remove>      <remove>        <name>cod_empleado</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>946</xloc>
+      <yloc>143</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unión Ordenada</name>
+    <type>SortedMerge</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>anio</name>
+        <ascending>N</ascending>
+        </field>
+      <field>
+        <name>mes</name>
+        <ascending>N</ascending>
+        </field>
+      <field>
+        <name>dia</name>
+        <ascending>N</ascending>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>251</xloc>
+      <yloc>605</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unión_Empleado_Actividad_Gimnasio</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>Ordenar_Empleados_Actividades</step1>
+<step2>Ordenar_Empleados_Gimnasio</step2>
+    <keys_1>
+      <key>id_actividad</key>
+      <key>gimnasio</key>
+    </keys_1>
+    <keys_2>
+      <key>codigo_producto</key>
+      <key>gimnasio</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>967</xloc>
+      <yloc>46</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unión_Empleado_Actividad_Gimnasio 2</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>INNER</join_type>
+<step1>Ordenar_ventas_abonos</step1>
+<step2>Entrada_h_ventas_abonos 2</step2>
+    <keys_1>
+      <key>codigo_producto</key>
+      <key>gimnasio</key>
+    </keys_1>
+    <keys_2>
+      <key>id_actividad</key>
+      <key>gimnasio</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1058</xloc>
+      <yloc>452</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+</transformation>

@@ -1,0 +1,52 @@
+Unidad 2:
+
+Ejercicios – Respuestas
+1.	Verdadero.
+2.	Verdadero – Es un SIOP que se adapta o parametriza.
+3.	Verdadero.
+4.	Verdadero, es un SIOP persona a persona y ad-hoc.
+5.	Verdadero, integra sistemas existentes.
+6.	Falso, es orientado a persona-aplicación.
+7.	Falso, es fuertemente estructurado.
+
+Ejercicios
+1.	Un modelo de proceso de negocio, ¿Es el principal componente requerido por un BPMS para soportar la ejecución del proceso?
+Respuesta: sí. Es el punto de partida. Es el mapa principal que después el sistema va a utilizar para la gestión.
+2.	Una actividad automática, ¿Requiere de un ítem de trabajo?
+Respuesta: no. Un ítem de trabajo solo puede ser realizado por una persona.  Ninguna de las actividades automatizadas requiere un ítem de trabajo.
+3.	Una lista de trabajo, ¿Puede ser compartida por varias personas?
+Respuesta: sí. Es la idea. Una lista sí, un ítem no.
+4.	La carga de una denuncia de un siniestro: ¿Es una actividad o una instancia?
+Respuesta:  es una actividad. Está planteado como genérico “un siniestro”. Una instancia debería ser más específica en la declaración, como con número de instancia, por ejemplo.
+5.	La instancia de una actividad, ¿puede pasar a estado de suspendida y luego ser reanudada?
+Respuesta: sí.
+
+
+Ejercicios (Verdadero o Falso)
+1.	Un ítem de trabajo representa la ejecución de una tarea en un proceso/workflow.
+Respuesta: Falso. Representa lo que hay que hacer, no lo que se está haciendo. Eso es instancia.
+2.	Un ítem de trabajo sólo puede ser asignado a una única persona
+Respuesta: Verdadero. Puede ser asignado solo a una, pero puede ofrecerse a varias.
+3.	Las tareas de un proceso son ofrecidas y/o asignadas a los usuarios de un proceso de acuerdo al rol y/o unidad organizacional a la que pertenece.
+Respuesta: Verdadero.
+4.	La máquina de workflow no define como es la asignación de ítems de trabajo a un recurso.
+Respuesta: Falso.
+5.	Un ítem de trabajo puede ser Interrumpido y luego Reanudado.
+Respuesta: Falso.
+
+
+Ejercicios
+1.	¿Comparando un BPMS con un DBMS, que características o fundamentos comunes tienen?
+Respuesta: modelo, especificación, BPMS tiene propia BD, monitoreo de rendimiento, manejo de bloqueos, interfaz.
+2.	¿Un BPMS, depende de un DBMS interno para soportar la ejecución de sus procesos?
+Respuesta: Sí, tiene su propio DBMS interno.
+3.	¿Los datos relevantes (atributos) de un proceso/workflow, utilizados para gestionar el flujo de control del workflow, son consultados y/o utilizados por el BPMS?
+Respuesta: Sí.
+4.	¿Qué aplicaciones interactivas debería proveer un BPMS para soportar la ejecución de los procesos/workflows?
+Respuesta: Manejador de listas de trabajo. Creo.
+5.	¿Cuáles interfaces del estándar de la WfMC son críticas para la ejecución de workflow?
+Respuesta: Casi todas, menos “otros”.
+
+
+
+

@@ -1,0 +1,41 @@
+Atributos
+	Constructor (nombre y valor)
+	Nombre: TipoAtributo
+	Valor: double
+Enum TipoAtribruto
+Carta
+	Constructor (código y nombre)
+	Lista Atributos: Atributo
+	Método AgregarAtributo (nombre y valor)
+	Método CantidadAtributosTest
+Juego
+	Constructor 
+	Lista Partidas: Partida
+	Método AgregarPartida (partida)
+Jugador
+	Constructor (nombre)
+	Nombre, ConnectionId: string
+	Lista Cartas: Carta
+	Método PerderCarta: CartaPropia
+	Método GanarCarta (CartaOponente)
+Mazo
+	Constructor (nombre, cantidaddecartas)
+	Nombre
+	CantidadDecartas
+	Lista Cartas: Carta
+	Lista Atributos: TipoAtributos
+	Lista NombreAtributos: string
+	Método AgregarCarta (NuevaCarta)
+	Método Mezclar
+	Método ControlCantidadCartas //Es para el test
+ListExtensions
+	Método static Mezclar (listaCartas)
+Partida
+	Constructor (nombre, jugador, mazo)
+	Nombre, Mazo, Usuario: string
+	MazoCartas: Mazo
+	Lista Jugadores: Jugador
+	path: string (directorio de los mazos)
+	Método ArmarMazo (mazo) //Crea en base al txt
+	Método AgregarJugadores (NuevoJugador)
+	Método Repartir

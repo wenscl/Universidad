@@ -1,0 +1,32 @@
+Cartoon Network
+Codigo|Nombre|Peso|Fuerza|Inteligencia|Valentia|Maldad
+CN1|LCS|30|92|80|95|10
+CN2|Mojojojo|45|60|87|59|90
+CN3|Johnny Bravo|83|95|11|35|22
+CN4|Scooby Doo|46|43|23|16|08
+CN5|Shaggy|64|36|15|16|07
+CN6|Billy|33|35|21|13|12
+CN7|Mandy|31|45|76|86|83
+CN8|Huesos|23|57|50|72|38
+CN9|Coraje|25|63|76|12|07
+CN10|Ed|54|46|09|30|10
+CN11|Edd|51|32|34|31|11
+CN12|Eddy|54|30|21|32|24
+CN13|Dexter|39|11|100|76|28
+CN14|Dee Dee|55|24|05|61|44
+CN15|Tom|15|23|24|60|76
+CN16|Jerry|05|20|53|30|61
+CN17|Pedro Picapiedra|79|90|48|74|05
+CN18|Vaca|99|81|40|73|08
+CN19|Pollito|09|21|42|22|35
+CN20|Pinky|04|16|34|76|43
+CN21|Cerebro|07|19|88|71|46
+CN22|Tweety|02|10|67|56|20
+CN23|Silvestre|14|57|21|79|88
+CN24|Coyote|19|43|73|75|90
+CN25|Correcaminos|10|19|87|76|21
+CN26|Bugs Bunny|18|34|84|91|43
+CN27|Pato Lucas|17|37|62|85|93
+CN28|Speedy Gonzales|05|54|57|87|08
+CN29|Tazmania|24|92|22|78|92
+CN30|Marvin el Marciano|30|23|74|83|86

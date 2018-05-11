@@ -1,0 +1,51 @@
+Public Class Persona
+{
+	Private string _nombre;
+	Public string nombre
+	{
+		Get {return _nombre}
+	}
+	Private string _apellido;
+	Public string apellido
+	{
+		Get {return apellido}
+	}
+	Private int _edad;
+	Public int edad
+	{
+		Get {return _edad}
+	}
+
+	Public Persona (string nombre, string apellido, int edad)
+	{
+		_nombre = nombre;
+		_apellido = apellido;
+		If Edad < 0
+		{
+			_edad = 0;
+		}
+		Else
+		{
+			_edad = edad;
+		}
+	}
+
+	Public event EventHandler CumplioAnios;
+
+	Public void Cumplir_Años()
+	{
+		this.edad++;
+		If (CumplioAnios != null)
+		{
+			CumplioAnios (this, new EventArgs e);
+		}
+	}
+	
+	Public override string ToString()
+	{
+		return (this.nombre + " " + this.apellido);
+	}
+	
+	Public virtual void trabajar();
+}
+	 

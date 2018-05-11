@@ -1,0 +1,9 @@
+Clases:
+*Cartas ( serían los personajes): Codigo, Nombre, Atributos
+*Jugadores
+*Atributos: Nombre, Valor (Double).
+*Mazo
+*Mano <----> Partida (VER)
+*Juego (principal)
+JuegoCromy.Code (ahí se crean las clases)
+JuegoCromy.Test (ahí se realizan pruebas del código)

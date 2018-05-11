@@ -1,0 +1,93 @@
+[
+  {
+    "reglas_esperadas": [
+      ["E : T E1", [ "num", "(" ] ],
+      [ "E1 : + T E1", [ "+" ] ],
+      [ "E1 : - T E1", [ "-" ] ],
+      [ "E1 : lambda", [ "$", ")" ] ],
+      [ "T : F T1", [ "num", "(" ] ],
+      [ "T1 : * F T1", [ "*" ] ],
+      [ "T1 : / F T1", [ "/" ] ],
+      [ "T1 : lambda", [ "+", "-", "$", ")" ] ],
+      [ "F : num", [ "num" ] ],
+      [ "F : ( E )", [ "(" ] ]
+    ],
+    "cadenas_a_evaluar": [
+      [ "num + num * num", true ],
+      [ "num num", false ],
+      [ "+ num * num", false ],
+      [ "( num + num )", true ]
+    ],
+    "es_ll1_esperado": true
+  },
+  {
+    "reglas_esperadas": [
+      [ "S : A", [ "a", "b" ] ],
+      [ "A : b D AA", [ "b" ] ],
+      [ "A : a AA", [ "a" ] ],
+      [ "AA : c AA", [ "c" ] ],
+      [ "AA : lambda", [ "$" ] ],
+      [ "D : d DD", [ "d" ] ],
+      [ "DD : d DD", [ "d" ] ],
+      [ "DD : lambda", [ "c", "$" ] ]
+    ],
+    "cadenas_a_evaluar": [
+      [ "a", true ],
+      [ "b d", true ],
+      [ "c", false ],
+      [ "a c", true ],
+      [ "d", false ]
+    ],
+    "es_ll1_esperado": true
+  },
+  {
+    "reglas_esperadas": [
+      [ "S : A", [ "a", "b" ] ],
+      [ "A : b D", [ "b" ] ],
+      [ "A : a", [ "a" ] ],
+      [ "A : A c", [ "c" ] ],
+      [ "D : D d", [ "d" ] ],
+      [ "D : d", [ "d" ] ]
+    ],
+    "cadenas_a_evaluar": [
+      [ "a", true ],
+      [ "b d", true ],
+      [ "c", false ],
+      [ "a c", true ],
+      [ "d", false ]
+    ],
+    "es_ll1_esperado": false
+  },
+  {
+  "reglas_esperadas":[
+    ["S : b S1",["b"]],    
+	["S : T b S1", ["a"]],
+    ["S1 : b S1", ["b"]],
+    ["S1 : lambda", ["$"]],
+    ["T : a T1", ["a"]],
+    ["T1 : T", ["a"]],
+    ["T1 : b", ["b"]]
+	],
+    "cadenas_a_evaluar": [
+      [ "b", true ]
+    ],
+    "es_ll1_esperado": true
+	},
+	{"reglas_esperadas":
+	[
+    ["S : b B S1", ["b"]],
+    ["S1 : a A S1", ["a"]],
+    ["S1 : lambda", ["$"]],
+    ["A : a B", ["a"]],
+    ["A : c", ["c"]],
+    ["B : d B1", ["d"]],
+    ["B1 : b B1", ["b"]],
+    ["B1 : lambda", ["a", "$"]]
+	],
+    "cadenas_a_evaluar": [
+      [ "b d", true ],
+      [ "z", false ]
+    ],
+    "es_ll1_esperado": true
+	}
+]

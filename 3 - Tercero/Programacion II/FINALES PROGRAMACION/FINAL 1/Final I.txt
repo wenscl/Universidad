@@ -1,0 +1,47 @@
+Abstract Class CuentaBancaria
+{
+	Protected decimal saldo;
+	Public void depositar (decimal monto)
+	{
+		this.saldo = saldo + monto;
+	}
+	public virtual decimal extraer (decimal monto)
+	{}
+}
+
+Public Class CajaAhorro : CuentaBancaria
+{
+	Public override decimal extraer (decimal monto)
+	{
+		If (monto <= this.saldo)
+		{ 
+			this.saldo = saldo - monto;
+			return monto;
+		}
+		return 0;
+	}
+}
+
+Public Class CuentaCorriente : CuentaBancaria
+{
+	Private decimal _LimiteDescubierto;
+	Public decimal LimiteDescubierto
+	{
+		set
+		{ 
+			If (LimiteDescubierto > value)
+			{
+				_LimiteDescubierto = value;
+			}
+		}
+	}
+	Public override decimal extraer (decimal monto)
+	{
+		If (monto <= (_LimiteDescubierto + this.saldo))
+		{
+			this.saldo = saldo - monto;
+			return this.monto;
+		}
+		return 0;
+	}
+}

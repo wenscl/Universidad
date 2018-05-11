@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-spec tool='waqr' tool-version='1.0' template-name='Basic'>
+<report-name><![CDATA[Reporte-Punto5-ActividadesEmpleadosCapacitacion]]></report-name>
+<report-desc><![CDATA[]]></report-desc>
+<query>
+<mql>
+<domain_type>relational</domain_type>
+<domain_id><![CDATA[admin/resources/metadata/DW-Report-Punto5-EmpleadosActividadesCapacitacion.xmi]]></domain_id><model_id><![CDATA[MODEL_1]]></model_id>
+<options>
+<disable_distinct>false</disable_distinct>
+</options>
+<selections>
+<selection><view>DW-Report-Punto5-EmpleadosActividadesCapacitacion</view><column>LC_INLINE_SQL_1_pc_Empleado</column></selection>
+<selection><view>DW-Report-Punto5-EmpleadosActividadesCapacitacion</view><column>LC_INLINE_SQL_1_pc_Actividad</column></selection>
+<selection><view>DW-Report-Punto5-EmpleadosActividadesCapacitacion</view><column>LC_INLINE_SQL_1_pc_Horas_de_Capacitación_Totales</column></selection>
+<selection><view>DW-Report-Punto5-EmpleadosActividadesCapacitacion</view><column>LC_INLINE_SQL_1_pc_Cantidad_de_Alumnos</column></selection>
+</selections>
+<constraints>
+</constraints>
+<orders>
+</orders>
+</mql>
+</query>
+<field-mapping key="reportheader" value=""/><field-mapping key="reportfooter" value=""/><field-mapping key="pageheader" value=""/><field-mapping key="pagefooter" value=""/><page-format><![CDATA[LETTER]]></page-format>
+<orientation><![CDATA[portrait]]></orientation>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Empleado" horizontal-alignment="not-set" expression="none" type="12"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Actividad" horizontal-alignment="not-set" expression="none" type="12"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Horas_de_Capacitación_Totales" horizontal-alignment="not-set" expression="none" type="2"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Cantidad_de_Alumnos" horizontal-alignment="not-set" expression="none" type="2"/>
+</report-spec>

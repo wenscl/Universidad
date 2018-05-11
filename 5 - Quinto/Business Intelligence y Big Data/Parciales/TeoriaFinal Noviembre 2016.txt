@@ -1,0 +1,13 @@
+2) Data mining:
+	a) Qué es
+	b) Nombrar y ejemplificar los posibles resultados (Clasificación, Asociación, Segmentación y Secuenciación)
+
+3) Big data:
+	a) Daba una frase, que definía big data y decir si estabas de acuerdo o no, y justificar
+	b) definir:
+		-Hadoop
+		-Map Reduce
+
+4)
+	a) ventajas del modelo de Kimball sobre el de Inmon
+	b) a qué modelo responde el ejercicio 1

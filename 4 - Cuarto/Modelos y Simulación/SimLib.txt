@@ -1,0 +1,26 @@
+Estadísticos
+
+1) Demora media en cola
+2) Número medio en cola
+3) Utilización del servidor
+
+Tipos:
+	- Estadísticos Escalares: 1
+	- Estadísticos temporales (están en función del tiempo): 2 y 3
+
+Ejemplos
+	//sampst(valor, cola)
+	- sampst(demora, DemoraCola)
+	
+	//timest(valor, variable) //Valor es la altura de la cola
+	- timest(valor, NumeroMedioEnCola)
+	
+Reporte:
+	- sampst(valor, -DemoraCola) 
+	//Es para que devuelva el cálculo
+	//El resultado lo coloca en el TRANSFER (ver Ayuda para orden)
+	
+	- timest(valor, -NumeroMedioEnCola) 
+	//Es para que devuelva el cálculo
+	//El resultado lo coloca en el TRANSFER (ver Ayuda para orden)
+	

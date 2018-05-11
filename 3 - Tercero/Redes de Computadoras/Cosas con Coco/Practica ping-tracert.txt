@@ -1,0 +1,15 @@
+Comandos: ping 
+tracert
+
+www.pinterest.com ip:23.12.150.205 - 7 saltos - proveedor:Akamai Technologies, Inc.
+www.claro.com.ar ip:200.123.197.168 - 8 saltos - proveedor:Akamai Argentina
+www.lanacion.com ip:190.220.57.134 - 8 saltos - proveedor:Telmex IDC
+www.wikipedia.com ip:208.80.154.224 - 15 saltos - proveedor:Wikimedia Foundation Inc.
+www.twitter.com ip:199.16.158.40 - 14 saltos - proveedor:Twitter Inc.
+
+www.limansky.com.ar ip:205.251.142.90 - 16 saltos - proveedor:Global Net Access, LLC
+www.basso.com.ar ip:200.2.127.152 - 6 saltos - proveedor:Wiltel
+www.sancor.com.ar ip:200.45.208.250 - 6 saltos - proveedor:Telecom
+www.williner.com.ar ip:190.210.151.71 - 8 saltos - proveedor:NSS SA
+
+

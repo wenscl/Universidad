@@ -1,0 +1,5 @@
+(n = cantidad de unos agregados)
+
+Subredes = 2^n
+
+Hosts = 2^(32-[cantidad de unos de la máscara]) - 2

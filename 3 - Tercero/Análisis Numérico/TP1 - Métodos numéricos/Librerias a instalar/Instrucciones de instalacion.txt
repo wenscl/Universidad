@@ -1,0 +1,21 @@
+1- Instalar Python 2.7 32bits ubicado en la carpeta de instaladores (cambiarlo si tienela version 
+   de 64bits porque no presenta compatibilidad con algunas librerias)
+
+2- Configurar variables de entorno windows para Python
+   Link de explicacion (http://www.geekuu.com/configurar-variables-de-entorno-windows-para-python/)
+
+3- Abrir Shell de Windows (CMD) y "ejecutar como administrador", cambiar el directorio a la carpeta de los 
+   instaladores y ejecutar la siguiente linea:
+   
+   python ex_setup.py
+
+4- Instalar libreria MatPlotLib ejecutando el archivo "MatPlotLib.exe" ubicado en la carpeta de instaladores
+
+5- Instalar libreria NumPy ejecutando el archivo "NumPy.exe" ubicado en la carpeta de instaladores
+
+6- Instala libreria DateUtil. Ejecutar el shell de windows (CMD), moverse a la carpeta "python-dateutil" ubicada dentro de los
+   instaladores y ejecutar la siguiente linea de codigo:
+   
+   python setup.py install
+
+7- Instalar libreria PyParsing ejecutando "PyParsing.exe" ubicado en la carpeta de instaladores

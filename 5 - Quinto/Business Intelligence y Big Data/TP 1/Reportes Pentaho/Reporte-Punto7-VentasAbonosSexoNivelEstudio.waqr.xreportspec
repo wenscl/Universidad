@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-spec tool='waqr' tool-version='1.0' template-name='Basic'>
+<report-name><![CDATA[Reporte-Punto7-VentasAbonosSexoNivelEstudio]]></report-name>
+<report-desc><![CDATA[]]></report-desc>
+<query>
+<mql>
+<domain_type>relational</domain_type>
+<domain_id><![CDATA[admin/resources/metadata/DW-Report-Punto7-VentasAbonosSexoNivelEstudio.xmi]]></domain_id><model_id><![CDATA[MODEL_1]]></model_id>
+<options>
+<disable_distinct>false</disable_distinct>
+</options>
+<selections>
+<selection><view>DW-Report-Punto7-VentasAbonosSexoNivelEstudio</view><column>LC_INLINE_SQL_1_pc_Sexo</column></selection>
+<selection><view>DW-Report-Punto7-VentasAbonosSexoNivelEstudio</view><column>LC_INLINE_SQL_1_pc_Nivel_de_Estudio</column></selection>
+<selection><view>DW-Report-Punto7-VentasAbonosSexoNivelEstudio</view><column>LC_INLINE_SQL_1_pc_Monto_total</column></selection>
+</selections>
+<constraints>
+</constraints>
+<orders>
+<order><direction>asc</direction><view_id>DW-Report-Punto7-VentasAbonosSexoNivelEstudio</view_id><column_id>LC_INLINE_SQL_1_pc_Sexo</column_id></order>
+</orders>
+</mql>
+</query>
+<field-mapping key="reportheader" value=""/><field-mapping key="reportfooter" value=""/><field-mapping key="pageheader" value=""/><field-mapping key="pagefooter" value=""/><page-format><![CDATA[LETTER]]></page-format>
+<orientation><![CDATA[portrait]]></orientation>
+<field is-detail="false" name="LC_INLINE_SQL_1_pc_Sexo" horizontal-alignment="not-set" type="12" repeat-group-header="false" level-name="" group-totals-label="Total $(LC_INLINE_SQL_1_pc_Sexo)" page-break-before-header="false" page-break-after-header="false" page-break-before-footer="false" page-break-after-footer="false" calculate-group-totals="true" create-group-header="true" vertical-alignment="top"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Nivel_de_Estudio" horizontal-alignment="not-set" expression="none" type="12"/>
+<field is-detail="true" name="LC_INLINE_SQL_1_pc_Monto_total" horizontal-alignment="not-set" format="$ #,###;-$ #,###" expression="sum" type="2"/>
+</report-spec>

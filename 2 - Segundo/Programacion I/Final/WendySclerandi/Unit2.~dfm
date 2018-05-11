@@ -1,0 +1,152 @@
+object frmEjercicio2: TfrmEjercicio2
+  Left = 233
+  Top = 141
+  Width = 1088
+  Height = 633
+  Caption = 'frmEjercicio2'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 80
+    Top = 16
+    Width = 697
+    Height = 249
+    DataSource = DataSourcePropietarios
+    ReadOnly = True
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object DBGrid2: TDBGrid
+    Left = 80
+    Top = 288
+    Width = 881
+    Height = 257
+    DataSource = DataSourcePropiedades
+    ReadOnly = True
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+  end
+  object edtPropietario: TEdit
+    Left = 808
+    Top = 144
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'edtPropietario'
+  end
+  object Buscar: TButton
+    Left = 944
+    Top = 136
+    Width = 89
+    Height = 33
+    Caption = 'Buscar'
+    TabOrder = 3
+    OnClick = BuscarClick
+  end
+  object DataSourcePropietarios: TDataSource
+    DataSet = tblPropietarios
+    Left = 8
+    Top = 40
+  end
+  object DataSourcePropiedades: TDataSource
+    DataSet = tblPropiedades
+    Left = 40
+    Top = 40
+  end
+  object tblPropietarios: TTable
+    DatabaseName = 'd:\WendySclerandi'
+    TableName = 'Propietarios.db'
+    Left = 8
+    Top = 8
+    object tblPropietariosIDPropietario: TIntegerField
+      FieldName = 'IDPropietario'
+    end
+    object tblPropietariosNombre: TStringField
+      FieldName = 'Nombre'
+      Size = 50
+    end
+    object tblPropietariosTelefono: TStringField
+      FieldName = 'Telefono'
+      Size = 50
+    end
+    object tblPropietariosDomicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 50
+    end
+  end
+  object tblPropiedades: TTable
+    DatabaseName = 'd:\WendySclerandi'
+    IndexFieldNames = 'IDPropietario'
+    MasterFields = 'IDPropietario'
+    MasterSource = DataSourcePropietarios
+    TableName = 'Propiedades.DB'
+    Left = 40
+    Top = 8
+    object tblPropiedadesIDPropietario: TIntegerField
+      FieldName = 'IDPropietario'
+    end
+    object tblPropiedadesIDPropiedad: TIntegerField
+      FieldName = 'IDPropiedad'
+    end
+    object tblPropiedadesIDLocalidad: TIntegerField
+      FieldName = 'IDLocalidad'
+    end
+    object tblPropiedadesDestino: TIntegerField
+      FieldName = 'Destino'
+    end
+    object tblPropiedadesCantidadDormitorios: TIntegerField
+      FieldName = 'CantidadDormitorios'
+    end
+    object tblPropiedadesGaraje: TBooleanField
+      FieldName = 'Garaje'
+    end
+    object tblPropiedadesPatio: TBooleanField
+      FieldName = 'Patio'
+    end
+    object tblPropiedadesMetrosCubiertos: TFloatField
+      FieldName = 'MetrosCubiertos'
+    end
+    object tblPropiedadesPrecioVenta: TCurrencyField
+      FieldName = 'PrecioVenta'
+    end
+    object tblPropiedadesDomicilio: TStringField
+      FieldName = 'Domicilio'
+      Size = 50
+    end
+    object tblPropiedadesEstado: TIntegerField
+      FieldName = 'Estado'
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 8
+    Top = 80
+    object Ejercicio11: TMenuItem
+      Caption = 'Ejercicio 1'
+      OnClick = Ejercicio11Click
+    end
+    object Ejercicio21: TMenuItem
+      Caption = 'Ejercicio 2'
+    end
+    object Ejercicio31: TMenuItem
+      Caption = 'Ejercicio 3'
+      OnClick = Ejercicio31Click
+    end
+  end
+end
