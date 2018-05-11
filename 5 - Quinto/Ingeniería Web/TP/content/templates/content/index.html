@@ -1,0 +1,104 @@
+{% extends 'home/_base.html' %}
+
+{% block content %}
+    <h3>Últimos posts</h3>
+    <div class="row">
+        <div class="col-md-8">
+            {% with posts=posts_page %}
+                {% include "content/_posts_list.html" %}
+            {% endwith %}
+
+            {% if posts_page %}
+                <!-- Paginación -->
+                <div class="text-center">
+                    <div class="pagination">
+                        <span class="step-links">
+                            <ul class="pagination">
+                                {% if posts_page.has_previous %}
+                                    <li><a href="?page={{ posts_page.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                                {% endif %}
+
+                                {% for page in posts_page.paginator.page_range %}
+                                    {% if page == posts_page.number %}
+                                        <li class="active"><a href="#" onclick="return false;">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ page }}">{{ page }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if posts_page.has_next %}
+                                    <li><a href="?page={{ posts_page.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                {% endif %}                    
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h3>Aún no hay nada por aquí.</h3>
+                    <p>¡Animate a <a href="{% url 'create_post' %}">crear un post</a>!</p>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Posts - Top 10 - Última semana</h3>
+                </div>
+                <div class="panel-body">
+                    {% if top10_posts %}
+                        <ol class="p-l-15">
+                            {% for post in top10_posts %}
+                                <li>
+                                    <a title="{{ post.title }}" href="{% url 'post_details' post_id=post.id %}">{{ post.title|truncatechars:25 }}</a>
+                                    <div class="pull-right">
+                                        <i class="fa fa-star post-rating-star" aria-hidden="true"></i>
+                                        <strong>{{ post.score }}</strong>/10 
+                                        <text>
+                                        {% if post.vote_count == 1 %}
+                                            (1 voto)
+                                        {% else %}
+                                            ({{ post.vote_count }} votos)
+                                        {% endif %}
+                                        </text>
+                                    </div>
+                                </li>                            
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="text-center">Aún no hay posts destacados esta semana.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Listas - Top 10 - Última semana</h3>
+                </div>
+                <div class="panel-body">
+                    {% if top10_lists %}
+                        <ol class="p-l-15">
+                            {% for post in top10_lists %}
+                                <li>
+                                    <a title="{{ post.title }}" href="{% url 'post_details' post_id=post.id %}">{{ post.title|truncatechars:25 }}</a>
+                                    <div class="pull-right">
+                                        <i class="fa fa-star post-rating-star" aria-hidden="true"></i>
+                                        <strong>{{ post.score }}</strong>/10 
+                                        <text>
+                                        {% if post.vote_count == 1 %}
+                                            (1 voto)
+                                        {% else %}
+                                            ({{ post.vote_count }} votos)
+                                        {% endif %}
+                                        </text>
+                                    </div>
+                                </li>                            
+                            {% endfor %}
+                        </ol>
+                    {% else %}
+                        <p class="text-center">Aún no hay listas destacadas esta semana.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

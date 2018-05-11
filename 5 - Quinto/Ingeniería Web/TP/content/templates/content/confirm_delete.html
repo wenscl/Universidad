@@ -1,0 +1,62 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        {% if content.published %}
+            <li><a href="{% url 'section' section_id=content.section.id %}">{{ content.section.name }}</a></li>
+        {% else %}
+            <li><a href="{% url 'my_content' %}">Mi Contenido</a></li>            
+        {% endif %}
+        <li class="active">{{ content.title }}</li>
+    </ul>
+    {% if content.is_list %}
+        <h3>¿Realmente deseás eliminar la lista?</h3>
+    {% else %}
+        <h3>¿Realmente deseás eliminar el post?</h3>
+    {% endif %}
+    <h4>Detalles:</h4>
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="{% url 'post_details' post_id=content.id %}">
+                        <h4 class="list-group-item-heading">{{ content.title }}</h4>
+                    </a>
+                    <small>Fecha: {{ content.create_date|date:'d/m/Y - H:i' }}</small>
+                    
+                    {% if content.is_list %}
+                        {% if item_list %}
+                            <ul>
+                                {% for item in item_list %}
+                                    <li>{{ item.name }}</li>
+                                {% endfor %}
+                            </ul>   
+                        {% endif %}
+                    {% else %}
+                        <p>{{ content.description|safe|truncatewords_html:20 }}</p>
+                    {% endif %}
+
+                    <p class="text-right">
+                        <a class="btn btn-sm btn-primary" href="{% url 'post_details' post_id=content.id %}">
+                        Ver detalle 
+                            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <a href="{% url 'my_content' %}" class="btn btn-default">Cancelar</a>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

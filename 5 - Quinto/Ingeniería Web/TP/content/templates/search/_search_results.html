@@ -1,0 +1,28 @@
+{% for post in posts %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="{% url 'post_details' post_id=post.id %}">
+                <h4 class="list-group-item-heading">{{ post.title }}</h4>
+            </a>
+            <small>Posteado en <a href="{% url 'section' section_id=post.section_id %}"><strong>{{ post.section }}</strong></a> 
+                por <a href="{% url 'profile' user_id=post.user_id %}"><strong>{{ post.user }}</strong></a> 
+                el {{ post.create_date|date:'d/m/Y - H:i' }}
+            </small>
+            <br>
+            <text class="pull-left m-t-5">
+                <i class="fa fa-star post-rating-star" aria-hidden="true"></i>
+                <strong>{{ post.content_score }}</strong>/10 
+                <text>
+                    {% if post.vote_count == 1 %}
+                        (1 voto)
+                    {% else %}
+                        ({{ post.vote_count }} votos)
+                    {% endif %}
+                </text>
+            </text>
+            <text class="pull-right m-t-5"><a href="{% url 'post_details' post_id=post.id %}">Ver detalle <i class="fa fa-chevron-right" aria-hidden="true"></i></a></text>
+        </div>
+    </div>
+{% empty %}
+    <h3 class="text-center">No encontramos posts que coincidan con tu búsqueda &#x1F61E;</h3>
+{% endfor %}

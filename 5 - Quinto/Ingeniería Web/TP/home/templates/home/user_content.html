@@ -1,0 +1,44 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active"><a href="{% url 'profile' user_id=user_profile.id %}">Perfil de {{ user_profile.username }}</a></li>
+        <li class="active">Publicaciones de {{ user_profile.username }}</li>
+    </ul>
+
+    <h3>Publicaciones de {{ user_profile.username }}</h3>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#published-posts" data-toggle="tab" aria-expanded="true">Posts Publicados</a></li>
+        <li class=""><a href="#published-lists" data-toggle="tab" aria-expanded="false">Listas Publicadas</a></li>
+    </ul>
+
+    <div id="tab-content" class="tab-content">
+        <!-- Posts -->
+        <div class="tab-pane fade active in" id="published-posts">
+            <br>
+            <div id="published-content-post">
+                {% with posts=published_posts_page is_list='false' user_id=user_profile.id %}
+                    {% include "content/_user_posts_list.html" %}
+                {% endwith %}
+            </div>
+        </div>
+
+        <!-- Listas -->
+        <div class="tab-pane fade" id="published-lists">
+            <br>
+            <div id="published-content-list">
+                {% with posts=published_lists_page is_list='true' user_id=user_profile.id %}
+                    {% include "content/_user_posts_list.html" %}
+                {% endwith %}
+            </div>
+        </div>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static '/home/js/user_content.js' %}"></script>
+{% endblock scripts %}

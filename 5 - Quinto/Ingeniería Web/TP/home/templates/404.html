@@ -1,0 +1,12 @@
+{% extends "home/_base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="text-center">
+            <h1>¡Oh, no!</h1>
+            <h2>No pudimos encontrar lo que buscabas &#x1F631;</h2>
+            <br>
+            <h3><a href="{% url 'index' %}">Volver al Inicio</a></h3>
+        </div>
+    </div>
+{% endblock content %}

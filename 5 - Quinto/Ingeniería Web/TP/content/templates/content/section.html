@@ -1,0 +1,55 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'sections' %}">Secciones</a></li>
+        <li class="active">{{ section.name }}</li>
+    </ul>
+    
+    <h3>{{ section.name }}</h3>
+    <p>{{ section.description }}</p>
+    <br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            {% with posts=posts_page %}
+                {% include "content/_posts_list.html" %}
+            {% endwith %}
+
+            {% if posts_page %}
+                <!-- Paginación -->
+                <div class="text-center">
+                    <div class="pagination">
+                        <span class="step-links">
+                            <ul class="pagination">
+                                {% if posts_page.has_previous %}
+                                    <li><a href="?page={{ posts_page.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                                {% endif %}
+
+                                {% for page in posts_page.paginator.page_range %}
+                                    {% if page == posts_page.number %}
+                                        <li class="active"><a href="#" onclick="return false;">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ page }}">{{ page }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if posts_page.has_next %}
+                                    <li><a href="?page={{ posts_page.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                {% endif %}                    
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h3>Aún no hay nada por aquí.</h3>
+                    <p>¡Animate a crear un <a href="{% url 'create_post' %}">post</a> o una <a href="{% url 'create_list' %}">lista</a>!</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Volver al inicio</a>
+{% endblock content %}

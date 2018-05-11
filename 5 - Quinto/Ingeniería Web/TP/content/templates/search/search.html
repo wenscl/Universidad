@@ -1,0 +1,86 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Buscar contenido</li>
+    </ul>
+    
+    <h3>Buscar contenido</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <form method="get" action=".">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q" placeholder="Buscar" value="{{ query }}">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if query %}
+                        {% if page.paginator.count > 1 %}
+                            <h4 class="text-center">Encontramos {{ page.paginator.count }} posts que coinciden con tu búsqueda</h4>
+                        {% elif page.paginator.count == 1 %}
+                            <h4 class="text-center">Encontramos 1 post que coincide con tu búsqueda</h4>       
+                        {% endif %}
+                        <p class="text-center">Estás viendo los resultados {{ page.start_index }} a {{ page.end_index }} de {{ page.paginator.count }}</p>
+                        
+                        {% with posts=page.object_list %}
+                            {% include "search/_search_results.html" %}
+                        {% endwith %}
+
+                        <!-- Paginación -->
+                        {% if page %}
+                            <div class="text-center">
+                                <div class="pagination">
+                                    <span class="step-links">
+                                        <ul class="pagination">
+                                            {% if page.has_previous %}
+                                                <li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                                            {% endif %}
+
+                                            {% for page_number in page.paginator.page_range %}
+                                                {% if page_number == page.number %}
+                                                    <li class="active"><a href="#" onclick="return false;">{{ page_number }}</a></li>
+                                                {% else %}
+                                                    <li><a href="?q={{ query }}&amp;page={{ page_number }}">{{ page_number }}</a></li>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            {% if page.has_next %}
+                                                <li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                            {% endif %}                    
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Volver al inicio</a>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}

@@ -1,0 +1,25 @@
+{% extends "home/_base.html" %}
+
+{% block content %}
+    <h1>Registro</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                {% csrf_token %}
+                <div class="well bs-component">
+                    <div class="form-group">
+                        {{ user_form.as_p }}
+                    </div>
+
+                    <a href="{% url 'index' %}" class="btn btn-default">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                    <p>
+                        <br>
+                        <small>¿Ya tenés cuenta? ¡Podés ingresar desde <a href="{% url 'login' %}">aquí</a>!</small>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

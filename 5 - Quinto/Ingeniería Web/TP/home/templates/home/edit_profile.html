@@ -1,0 +1,33 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static '/home/css/bootstrap-datepicker.min.css' %}" type="text/css">
+{% endblock css %}
+
+{% block content %}
+    <h2>Información de Perfil</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-6 col-xs-offset-2">
+            <form method="POST" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="well bs-component">
+                    <div class="form-group">
+                        {{ user_form.as_p }}
+                    </div>
+                    <a href="{% url 'profile' user_id=user.id %}" class="btn btn-default">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block scripts %}
+    <script src="{% static '/home/js/bootstrap-datepicker.min.js' %}"></script>
+    <script src="{% static '/home/locales/bootstrap-datepicker.es.min.js' %}"></script>
+    <script src="{% static '/home/js/edit_profile.js' %}"></script>
+{% endblock scripts %}

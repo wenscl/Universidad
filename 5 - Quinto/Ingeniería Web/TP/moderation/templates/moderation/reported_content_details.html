@@ -1,0 +1,157 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% load mptt_tags %}
+
+{% block css %}  
+{% endblock css %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'moderation' %}">Panel de Moderación</a></li>
+        <li class="active">Detalle</li>
+    </ul>
+
+    {% if content.user.ban_count > 0 %}
+        <div class="row">
+            <div class="col-md-12">
+                {% if content.user.is_banned %}
+                    <div class="alert alert-danger alert-ban">
+                        <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>¡Atención!</strong> Este usuario se encuentra {{ content.user.state }}. 
+                        {% if content.user.is_temporarily_banned %}
+                            El baneo finaliza el dìa {{ content.user.temporary_ban_end_date|date:'d/m/Y \a \l\a\s H:i' }}.
+                        {% endif %}
+                        </p>
+                    </div>
+                    <br>
+                {% endif %}
+                <div class="alert alert-warning alert-ban">
+                    <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <strong>¡Atención!</strong> Este usuario ya ha sido baneado {{ content.user.ban_count }} 
+                    {% if content.user.ban_count == 1 %}
+                        vez.
+                    {% else %}
+                        veces.
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if content.response_to %}
+        <!-- Información del comentario -->
+        <h3>Comentario del usuario <a href="{% url 'profile' user_id=content.user.id %}">{{ content.user.username }}</a>:</h3>
+        <h5><a href="{% url 'comment_post_original' comment_id=content.id post_id=content.get_root.id %}">Ver post original</a></h5>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <p>{{ content.description|safe }}</p>
+            </div>
+        </div>
+    {% else %}
+        <!-- Información del post -->
+        <h3>Detalle del post</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h4>{{ content.title }}</h4>
+                <small>
+                    Posteado en <strong>{{ content.section }}</strong></a> 
+                    por <a href="{% url 'profile' user_id=content.user.id %}"><strong>{{ content.user.username }}</strong></a>.
+                </small>
+                <p>
+                    {% for tag in content.tags.all %}
+                        <span class="label label-success"><i class="fa fa-tags" aria-hidden="true"></i> {{ tag }}</span>
+                    {% endfor %}
+                </p>
+                <p>{{ content.description|safe }}</p>
+                {% if content.is_list %}
+                    <p>Elementos de la lista:</p>
+                    <ul>
+                        {% for item in content.items.all %}
+                            <li>{{ item.item_name }}</li>
+                        {% endfor %}
+                    </ul>                  
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <h3>Denuncias</h3>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            {% for complaint in complaints %}
+                <blockquote>
+                    <p>{{ complaint.comment }}</p>
+                    <small><em>{{ complaint.user }}</em></small>
+                </blockquote>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-sm btn-default" onclick="return showCancelBanModal();" href="#">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Cancelar ban
+            </a>
+            <a class="btn btn-sm btn-primary" onclick="return showConfirmBanModal();" href="#">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Confirmar ban
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Ban -->
+
+    <div class="modal" id="confirm-ban">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmar baneo</h4>
+                </div>
+                <form action="{% url 'confirm_ban' %}" method="POST" >
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        {{ ban_form.type_ban.label_tag }}                        
+                        {{ ban_form.type_ban }}
+                        <input type="hidden" value="{{ content.id }}" name='content_id'>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Cancelar Ban -->
+
+    <div class="modal" id="cancel-ban">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cancelar baneo</h4>
+                </div>
+                <form action="{% url 'cancel_ban' %}" method="POST" >
+                    {% csrf_token %}
+
+                    <div class="modal-body">
+                        <p>¿Estás seguro de que querés cancelar el baneo sobre este contenido?</p>
+                        <input type="hidden" value="{{ content.id }}" name='content_id'>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static '/moderation/js/moderation.js' %}"></script>
+{% endblock scripts %}

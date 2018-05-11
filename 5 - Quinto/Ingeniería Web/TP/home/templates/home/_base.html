@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Movies of our Lives</title>
+    <link rel="icon" type="image/ico" href="{% static '/home/images/favicon.png' %}">
+    
+    <!-- Sección CSS -->
+    <link rel="stylesheet" href="{% static '/home/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/home/css/bootstrap-flatly-theme.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/home/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/home/css/site.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    
+    {% block css %}
+    {% endblock %}
+
+    <!-- JQuery -->
+    <script src="{% static '/home/js/jquery-3.2.0.min.js' %}"></script>
+</head>
+<body>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+            <a href="{% url 'index' %}?page=1" tabindex="-1" title="Inicio" class="navbar-brand site-title">The Movies of our Lives</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'sections' %}" tabindex="-1"><i class="fa fa-th-large" aria-hidden="true"></i> Secciones</a>
+                    </li>
+                    {% if user.is_admin %}
+                        <li><a href="{% url 'admin:index' %}" tabindex="-1"><i class="fa fa-wrench" aria-hidden="true"></i> Admin</a></li>
+                        <li><a href="{% url 'moderation' %}" tabindex="-1"><i class="fa fa-users" aria-hidden="true"></i> Moderación</a></li>                        
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form action="{% url 'haystack_search' %}" method="GET" class="navbar-form search-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm input-search" name="q" placeholder="Buscar" tabindex="-1">                            
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-sm btn-search" tabindex="-1">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </li>
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url 'login' %}" tabindex="-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sesión</a></li>
+                        <li><a href="{% url 'register' %}" tabindex="-1"><i class="fa fa-chevron-up" aria-hidden="true"></i> Registrarse</a></li>                        
+                    {% else %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" tabindex="-1" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Crear <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{% url 'create_post' %}" tabindex="-1"><i class="fa fa-file-text-o" aria-hidden="true"></i> Nuevo Post</a></li>
+                                <li><a href="{% url 'create_list' %}" tabindex="-1"><i class="fa fa-list-ul" aria-hidden="true"></i> Nueva lista</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" tabindex="-1" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Hola, {{ user.username }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{% url 'my_content' %}" tabindex="-1"><i class="fa fa-folder" aria-hidden="true"></i> Mi Contenido</a></li>
+                                <li><a href="{% url 'favorites' %}" tabindex="-1"><i class="fa fa-heart" aria-hidden="true"></i> Favoritos</a></li>
+                                <li><a href="{% url 'profile' user_id=user.id %}" tabindex="-1"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+                                <li class="divider"></li>
+                                <li><a href="{% url 'logout' %}" tabindex="-1"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar Sesión</a></li>                                
+                            </ul>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <hr>
+            <row>
+                <div class="col-md-12">
+                    <p class="text-right">
+                        <small>
+                            El contenido compartido en este sitio está bajo una <a rel="license" tabindex="-1" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" tabindex="-1"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+                        </small>
+
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p class="text-right"><small>¿Sos programador? ¡Podés usar nuestra <a href="/api/docs/">API</a>!</small></p>
+                </div>
+                <div class="col-md-12">
+                    <p class="text-right">&copy; {% now 'Y' %} - With &#x2764; from Wendy Sclerandi &amp; Alejandro Barsotti</p>
+                </div>
+            </row>
+        </footer>
+    </div>
+
+    <!-- Sección de Scripts -->
+    <script src="{% static '/home/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/home/js/_base.js' %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

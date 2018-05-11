@@ -1,0 +1,48 @@
+{% extends 'home/_base.html' %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Favoritos</li>
+    </ul>
+
+    <h3>Favoritos</h3>
+    <div class="row">
+        <div class="col-md-10 col-lg-offset-1">
+            {% with posts=favorites_page %}
+                {% include "content/_posts_list.html" %}
+            {% endwith %}
+
+            {% if favorites_page %}
+                <!-- Paginación -->
+                <div class="text-center">
+                    <div class="pagination">
+                        <span class="step-links">
+                            <ul class="pagination">
+                                {% if favorites_page.has_previous %}
+                                    <li><a href="?page={{ favorites_page.previous_page_number }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                                {% endif %}
+
+                                {% for page in favorites_page.paginator.page_range %}
+                                    {% if page == favorites_page.number %}
+                                        <li class="active"><a href="#" onclick="return false;">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ page }}">{{ page }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if favorites_page.has_next %}
+                                    <li><a href="?page={{ favorites_page.next_page_number }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                                {% endif %}                    
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h4>Parece que todavía no tenés post favoritos. &#x1F494;</h4>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

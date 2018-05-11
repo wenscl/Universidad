@@ -1,0 +1,26 @@
+{% if current_page %}
+    <!-- Paginación -->
+    <div class="text-center">
+        <div class="pagination">
+            <span class="step-links">
+                <ul class="pagination">
+                    {% if current_page.has_previous %}
+                        <li><a href="#" onclick="return goToPage({{ current_page.previous_page_number }}, '{{ type }}')"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                    {% endif %}
+
+                    {% for page in current_page.paginator.page_range %}
+                        {% if page == current_page.number %}
+                            <li class="active"><a href="#" onclick="return false;">{{ page }}</a></li>
+                        {% else %}
+                            <li><a href="#" onclick="return goToPage({{ page }}, '{{ type }}')">{{ page }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if current_page.has_next %}
+                        <li><a href="#" onclick="return goToPage({{ current_page.next_page_number }}, '{{ type }}')"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    {% endif %}                    
+                </ul>
+            </span>
+        </div>
+    </div>
+{% endif %}    

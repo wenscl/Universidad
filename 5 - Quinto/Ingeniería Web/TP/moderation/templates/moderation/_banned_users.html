@@ -1,0 +1,31 @@
+{% if banned_users_page %}
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Tipo de Baneo</th>
+                <th>Fecha de Finalización</th>
+                <th>Cancelar Ban</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for banned_user in banned_users_page %}
+                <tr>
+                    <td>{{ banned_user.username }} (<a href="{% url 'profile' user_id=banned_user.id %}">Perfil</a>)</td>
+                    <td>{{ banned_user.state }}</td>
+                    <td>{{ banned_user.temporary_ban_end_date|date:'d/m/Y - H:i'|default:"-" }}</td>
+                    <td><a class="btn btn-primary btn-xs" onclick="return showCancelUserBanModal('{% url 'cancel_user_ban' user_id=banned_user.id %}')" href="#">Cancelar ban</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <div class="alert alert-success text-center">
+        No hay usuarios baneados.
+    </div>
+    <h4></h4>
+{% endif %}
+
+{% with current_page=banned_users_page type='user' %}
+    {% include "moderation/_pagination.html" %}
+{% endwith %}

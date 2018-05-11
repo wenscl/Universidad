@@ -1,0 +1,34 @@
+Contenido
+	X Reportar contenido/comentario
+	X Comentar contenido/comentario
+	X Editar comentario
+	X Eliminar comentario
+	X Eliminar contenido de favoritos
+	X Agregar contenido a favoritos
+	X Crear contenido
+	X Modificar contenido
+	X Eliminar contenido
+	X Restaurar contenido
+	X Votar contenido
+	X Eliminar votación de contenido
+	X Obtener detalle de contenidos
+	X Obtener comentarios de un contenido
+	X Obtener lista de contenidos
+	X Obtener TOP10 de Posts de la semana
+	X Obtener TOP10 de Listas de la semana
+
+Secciones
+	X Obtener lista de posts de una sección
+	X Obtener detalle de una sección
+	X Obtener lista de secciones
+
+Usuarios
+	X Editar perfil
+	X Ver lista de favoritos del usuario
+	X Ver perfil
+	X Ver contenidos publicados de un usuario
+	X Ver contenidos borradores del usuario
+	X Ver contenidos eliminados del usuario
+
+Búsqueda
+    X Full text search

@@ -1,0 +1,72 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        {% if user == user_profile %}
+            <li class="active">Mi Perfil</li>
+        {% else %}
+            <li class="active">Perfil de {{ user_profile.username }}</li>
+        {% endif %}
+    </ul>
+    
+    {% if user == user_profile %}    
+        <div class="row">
+            <div class="col-md-10">
+                <h3>Mi Perfil</h3>
+            </div>
+            <div class="col-md-2">
+                <p class="pull-right">                
+                    <a class="btn btn-sm btn-info" href="{% url 'edit_profile'%}">
+                        Editar perfil
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </div>            
+    {% else %}
+        <div class="row">
+            <div class="col-md-9">
+                <h3>Perfil de {{ user_profile.username }}</h3>
+            </div>
+            <div class="col-md-3">
+                <p class="pull-right">
+                    <a class="btn btn-sm btn-info" href="{% url 'user_content' user_id=user_profile.id %}">
+                        Ver publicaciones de este usuario
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-3 text-center">
+            {% if user_profile.profile_image %}
+                <img src="{{ user_profile.profile_image.url }}" class="img-circle user-avatar" alt="Avatar">
+            {% else %}
+                <img src="{% static '/home/images/avatar-default.png' %}" class="img-circle user-avatar" alt="Avatar">
+            {% endif %}
+        </div>
+        
+        <div class="col-md-8">
+            <div>
+                <h4><strong>{{ user_profile.username|upper }}</strong></h4>
+                <p>Nombre: <strong>{{ user_profile.first_name|default:"-" }}</strong></p>
+                <p>Apellido: <strong>{{ user_profile.last_name|default:"-" }}</strong></p>
+                <p>Fecha de Nacimiento: <strong>{{ user_profile.date_of_birth|date:'j/m/Y'|default:"-" }}</strong></p>                
+                <p>E-mail: <strong>{{ user_profile.email }}</strong></p>
+                <p>Fecha de Registro: <strong>{{ user_profile.date_joined|date:'l j \d\e F \d\e Y - H:i' }}</strong></p>
+                <p>Último Acceso: <strong>{{ user_profile.last_login|date:'l j \d\e F \d\e Y - H:i' }}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <a href="{% url 'index' %}">Volver al Inicio</a>
+        </div>
+    </div>
+{% endblock content %}

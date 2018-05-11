@@ -1,0 +1,67 @@
+{% extends 'home/_base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Panel de Moderación</li>
+    </ul>
+    
+    <h3>Panel de Moderación</h3>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#reported-posts" data-toggle="tab" aria-expanded="true">Posts reportados 
+            <span class="badge">{{ reported_posts_page.paginator.count }}</span></a></li>
+        <li class=""><a href="#reported-comments" data-toggle="tab" aria-expanded="false">Comentarios reportados 
+            <span class="badge">{{ reported_comments_page.paginator.count }}</span></a></li>
+        <li class=""><a href="#banned-users" data-toggle="tab" aria-expanded="false">Usuarios baneados 
+            <span class="badge">{{ banned_users_page.paginator.count }}</span></a></li>                
+    </ul>
+
+    <div id="tab-content" class="tab-content">
+        <div class="tab-pane fade active in" id="reported-posts">
+            <br>
+            <div id="reported-posts-list">
+                {% include "moderation/_reported_posts.html" %}
+            </div>
+        </div>
+        <div class="tab-pane fade" id="reported-comments">
+            <br>
+            <div id="reported-comments-list">
+                {% include "moderation/_reported_comments.html" %}                
+            </div>
+        </div>
+        <div class="tab-pane fade" id="banned-users">
+            <br>
+            <div id="banned-users-list">
+                {% include "moderation/_banned_users.html" %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Cancelar Ban de Usuario -->
+
+    <div class="modal" id="cancel-user-ban">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cancelar baneo de usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que querés cancelar el baneo de este usuario?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" id="cancel-user-ban-button">Confirmar</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static '/moderation/js/moderation.js' %}"></script>
+{% endblock scripts %}

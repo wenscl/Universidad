@@ -1,0 +1,546 @@
+digraph model_graph {
+	graph [bb="0,0,796.5,761",
+		fontname=Helvetica,
+		fontsize=8,
+		splines=true
+	];
+	node [fontname=Helvetica,
+		fontsize=8,
+		label="\N",
+		shape=plaintext
+	];
+	edge [fontname=Helvetica,
+		fontsize=8
+	];
+	django_contrib_auth_base_user_AbstractBaseUser	 [height=0.70833,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    AbstractBaseUser
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">last_login</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">password</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="233.5,25.5",
+		width=2.1111];
+	home_models_CustomUser	 [height=3.3333,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    CustomUser<BR/>&lt;<FONT FACE="Helvetica Italic">AbstractBaseUser</FONT>&gt;
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">activation_key</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">ban_count</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">IntegerField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">date_joined</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">date_of_birth</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">email</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">EmailField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">first_name</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">is_admin</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">BooleanField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">key_expiration_date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Italic">last_login</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Italic">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">last_name</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Italic">password</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Italic">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">profile_image</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">ImageField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">state</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">temporary_ban_end_date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">username</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="233.5,225",
+		width=2.9306];
+	home_models_CustomUser -> django_contrib_auth_base_user_AbstractBaseUser	 [arrowhead=empty,
+		arrowtail=none,
+		dir=both,
+		label="abstract\ninheritance",
+		lp="253.5,78",
+		pos="e,233.5,51.048 233.5,104.84 233.5,88.93 233.5,73.758 233.5,61.076"];
+	home_models_Complaint	 [height=1.0694,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    Complaint
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">content</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">user</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">comment</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="255.5,716",
+		width=2.2222];
+	home_models_Complaint -> home_models_CustomUser	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="user (complaint)",
+		lp="259.5,512.5",
+		pos="s,234.68,677.23 231.64,669.79 229.54,664.26 227.74,658.58 226.5,653 225.63,649.1 226.47,648 226.5,644 227.34,543.3 229.33,428.97 \
+230.97,345.36"];
+	content_models_Content	 [height=3.1528,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    Content<BR/>&lt;<FONT FACE="Helvetica Italic">MPTTModel</FONT>&gt;
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Bold">response_to</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Bold">TreeForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Bold">section</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">user</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">create_date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">description</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">TextField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">elimination_date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">last_modification_date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">level</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">PositiveIntegerField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">lft</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">PositiveIntegerField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">published</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">NullBooleanField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">reported</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">BooleanField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">rght</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">PositiveIntegerField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">title</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">tree_id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">PositiveIntegerField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="533.5,512.5",
+		width=3.0833];
+	home_models_Complaint -> content_models_Content	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="content (complaint)",
+		lp="416,648.5",
+		pos="s,327.1,677.39 334.28,673.31 358.73,659.28 385.33,642.89 408.5,626 413.1,622.65 417.73,619.15 422.35,615.56"];
+	home_models_FavoriteContent	 [height=1.0694,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    FavoriteContent
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">content</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">user</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">date</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">DateTimeField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="78.5,716",
+		width=2.1806];
+	home_models_FavoriteContent -> home_models_CustomUser	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="user (favoritecontent)",
+		lp="185,512.5",
+		pos="s,83.464,677.18 84.636,669.1 93.813,606.7 113.64,492.2 146.5,399 152.76,381.24 160.44,362.98 168.63,345.28"];
+	home_models_FavoriteContent -> content_models_Content	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="content (favoritecontent)",
+		lp="324.5,648.5",
+		pos="s,150.43,677.38 157.99,674.25 160.84,673.11 163.69,672.02 166.5,671 215.45,653.24 229.33,653.64 280.5,644 336.96,633.37 356.43,650.28 \
+408.5,626 413.13,623.84 417.71,621.45 422.23,618.87"];
+	mptt_models_MPTTModel	 [height=0.5,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    MPTTModel
+    </FONT></TD></TR>
+  
+    </TABLE>
+    >,
+		pos="746.5,225",
+		width=1.3889];
+	content_models_Section	 [height=0.88889,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    Section
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">description</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT COLOR="#7B7B7B" FACE="Helvetica ">TextField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">name</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="471.5,225",
+		width=1.9861];
+	content_models_Tag	 [height=0.70833,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    Tag
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">text</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="619.5,225",
+		width=1.625];
+	content_models_Content -> home_models_CustomUser	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="user (created_content)",
+		lp="433.5,372",
+		pos="s,422.22,405.6 416.14,399.81 390.74,375.64 364.04,350.23 339.13,326.52"];
+	content_models_Content -> mptt_models_MPTTModel	 [arrowhead=empty,
+		arrowtail=none,
+		dir=both,
+		label="abstract\ninheritance",
+		lp="692.5,372",
+		pos="e,739.73,243.4 644.51,400.05 659.81,382.31 674.65,363.64 687.5,345 707.85,315.46 725.26,277.88 735.78,252.94"];
+	content_models_Content -> content_models_Section	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="section (contents)",
+		lp="536.5,372",
+		pos="s,509,398.66 507.3,390.84 496.66,341.86 485.25,289.33 478.25,257.06"];
+	content_models_Content -> content_models_Tag	 [arrowhead=dot,
+		arrowtail=dot,
+		dir=both,
+		label="tags (content)",
+		lp="601.5,372",
+		pos="s,567.49,398.66 e,612.11,250.53 569.81,390.95 584.38,342.58 600,290.73 609.76,258.34"];
+	content_models_Content -> content_models_Content	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="response_to (responses)",
+		lp="707.5,512.5",
+		pos="s,644.51,533.29 651.96,529.65 658.57,525.49 662.5,519.77 662.5,512.5 662.5,502.8 655.51,495.87 644.51,491.71"];
+	content_models_Vote	 [height=1.0694,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    Vote
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">content</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">user</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">value</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">PositiveIntegerField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="436.5,716",
+		width=2.2917];
+	content_models_Vote -> home_models_CustomUser	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="user (vote)",
+		lp="393.5,512.5",
+		pos="s,425.31,677.32 422.06,669.92 417.72,660.67 412.26,651.48 405.5,644 394.56,631.9 383.98,638.51 373.5,626 368.7,620.28 313.67,460.89 \
+274.06,345.07"];
+	content_models_Vote -> content_models_Content	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="content (vote)",
+		lp="496.5,648.5",
+		pos="s,454.74,677.1 458.37,669.57 464.7,656.41 471.92,641.42 479.31,626.06"];
+	content_models_ListItem	 [height=1.25,
+		label=<
+    <TABLE BGCOLOR="palegoldenrod" BORDER="0" CELLBORDER="0" CELLSPACING="0">
+    <TR><TD COLSPAN="2" CELLPADDING="4" ALIGN="CENTER" BGCOLOR="olivedrab4">
+    <FONT FACE="Helvetica Bold" COLOR="white">
+    ListItem
+    </FONT></TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">AutoField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica Bold">content</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica Bold">ForeignKey (id)</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">item_id</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">item_name</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    <TR><TD ALIGN="LEFT" BORDER="0">
+    <FONT FACE="Helvetica ">item_type</FONT>
+    </TD><TD ALIGN="LEFT">
+    <FONT FACE="Helvetica ">CharField</FONT>
+    </TD></TR>
+  
+    </TABLE>
+    >,
+		pos="620.5,716",
+		width=2.3056];
+	content_models_ListItem -> content_models_Content	 [arrowhead=none,
+		arrowtail=dot,
+		dir=both,
+		label="content (items)",
+		lp="619.5,648.5",
+		pos="s,601.41,670.78 598.2,663.35 593.21,651.79 587.72,639.08 582.12,626.1"];
+}

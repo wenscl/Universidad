@@ -1,0 +1,21 @@
+--------- Si hay tiempo y ganas... ---------
+
+- Cerrar la sesión de los usuarios baneados o controlar en todas las vistas.
+
+- Buscar componente para recortar imágenes (para imagen de perfil de usuario).
+
+- Agregar opción "Olvidé mi contraseña" en el login.
+
+- Agregar notificaciones en perfil de usuario: cuando contestan a un post, cuando se elimina un contenido.
+
+- Buscar django sanitize html. Leer: https://docs.djangoproject.com/en/1.11/topics/security/
+
+- Agregar campos para links de redes sociales en perfil de usuario.
+
+- Ver lo de registro de usuario de django.
+
+- Buscar lo de las imágenes de heroku.
+
+- Hacer test. Buscar dónde hacerlos.
+
+- Agregar registro de posts vistos por usuario (mostrar diferente aquellos posts ya vistos).

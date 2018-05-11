@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /admin*
+Disallow: /activation*
+Disallow: /register_success*
+Disallow: /resend_activation_mail*
+Disallow: /ajax*
+Disallow: /delete_comment*
+Disallow: /delete_post*
+Disallow: /edit_post*

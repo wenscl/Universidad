@@ -1,0 +1,182 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% load mptt_tags %}
+
+{% block css %} 
+{% endblock css %}
+
+{% block content %}
+
+    <!-- Breadcrumb -->
+
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li><a href="{% url 'moderation' %}">Panel de Moderación</a></li>
+        <li><a href="{% url 'reported_content_details' content_id=comment_id %}">Comentario</a></li>        
+        <li class="active">Post original</li>
+    </ul>
+
+    <!-- Información del post -->
+
+    <div class="row">
+        <div class="col-md-10 col-xs-offset-1">
+            <h3>{{ post.title }}</h3>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <small>
+                Posteado en <strong>{{ post.section }}</strong>
+                por <a href="{% url 'profile' user_id=post.user.id %}"><strong>{{ post.user.username }}</strong></a>
+                el {{ post.create_date|date:'d/m/Y - H:i' }}.
+                {% if post.edited %}
+                    Última modificación: {{ post.last_modification_date|date:'d/m/Y - H:i' }}.
+                {% endif %}
+            </small>
+            <p>
+                {% for tag in post.tags.all %}
+                    <span class="label label-success"><i class="fa fa-tags" aria-hidden="true"></i> {{ tag }}</span>
+                {% endfor %}
+            </p>
+            <p>{{ post.description|safe }}</p>
+            {% if post.is_list %}
+                <p>Elementos de la lista:</p>
+                <ul>
+                    {% for item in post.items.all %}
+                        <li>{{ item.item_name }}</li>
+                    {% endfor %}
+                </ul>                  
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Comentarios -->
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <hr>
+            <h4><i class="fa fa-comments" aria-hidden="true"></i> Comentarios</h4>
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                        {% recursetree post.get_descendants %}
+                            {% if node.id == comment_id %}
+                                <div class="panel panel-danger comment">
+                            {% elif node.user == post.user %}
+                                <div class="panel panel-primary comment">                                
+                            {% else %}
+                                <div class="panel panel-default comment">
+                            {% endif %}
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                                            {% if node.id == comment_id or node.user == post.user %}
+                                                <a href="{% url 'profile' user_id=node.user.id %}" class="text-white"><strong>{{ node.user.username }}</strong></a>
+                                            {% else %}
+                                                <a href="{% url 'profile' user_id=node.user.id %}" class="text-primary"><strong>{{ node.user.username }}</strong></a>
+                                            {% endif %}
+                                            <p class="pull-right">
+                                                <small>
+                                                    {{ node.create_date|date:'d/m/Y - H:i' }}
+                                                    {% if node.edited %}
+                                                        <text data-original-title="Última edición: {{ node.last_modification_date|date:'d/m/Y - H:i' }}" data-toggle="tooltip" data-placement="top">(Editado)</text>
+                                                    {% endif %}
+                                                </small>&nbsp;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body content-img">                                  
+                                    {% if node.elimination_date %}
+                                        <p class="removed-comment">
+                                            <em>Este comentario fue eliminado por su autor.</em>
+                                        </p>
+                                    {% else %}
+                                        <p>{{ node.description|safe }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>                                
+                            {% if not node.is_leaf_node %}
+                                <ul class="children">
+                                    {{ children }}
+                                </ul>
+                            {% endif %}
+                        {% endrecursetree %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-sm btn-default" onclick="return showCancelBanModal();" href="#">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                Cancelar ban
+            </a>
+            <a class="btn btn-sm btn-primary" onclick="return showConfirmBanModal();" href="#">
+                <i class="fa fa-check" aria-hidden="true"></i>
+                Confirmar ban
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Ban -->
+
+    <div class="modal" id="confirm-ban">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmar baneo</h4>
+                </div>
+                <form action="{% url 'confirm_ban' %}" method="POST" >
+                    {% csrf_token %}
+
+                    <div class="modal-body">
+                        {{ ban_form.type_ban.label_tag }}
+                        {{ ban_form.type_ban }}
+                        <input type="hidden" value="{{ comment_id }}" name='content_id'>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Confirmar Cancelar Ban -->
+
+    <div class="modal" id="cancel-ban">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Cancelar baneo</h4>
+                </div>
+                <form action="{% url 'cancel_ban' %}" method="POST" >
+                    {% csrf_token %}
+
+                    <div class="modal-body">
+                        <p>¿Estás seguro de que querés cancelar el baneo sobre este contenido?</p>
+                        <input type="hidden" value="{{ comment_id }}" name='content_id'>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static '/moderation/js/moderation.js' %}"></script>
+    <script src="{% static '/moderation/js/comment_post_original.js' %}"></script>
+{% endblock scripts %}

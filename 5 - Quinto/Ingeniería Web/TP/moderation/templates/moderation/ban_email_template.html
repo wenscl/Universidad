@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <h2><strong>The Movies of our Lives</strong></h2>
+    <hr>
+    <h5>Hola {{ user }}.</h5>
+    {% if type_ban < 0 %}
+        <p>Te informamos que tu cuenta fue baneada permanentemente debido a que una publicación tuya recibió varias denuncias de otros usuarios.</p>
+    {% else %}
+        <p>Te informamos que tu cuenta fue baneada temporalmente debido a que una publicación tuya recibió varias denuncias de otros usuarios.</p>
+        <p>Tu baneo terminará el día {{ end_ban|date:'d/m/Y \a \l\a\s H:i' }}.</p>
+    {% endif %}
+    <br>
+    {% if content.response_to %}
+        <p>El comentario denunciado fue:</p>
+        <p>{{ content.description }}</p>
+    {% else %}
+        <p>La publicación denunciada fue "{{ content.title }}"<p>
+    {% endif %}
+    <br>
+    <p>El equipo de The Movies of our Lives</p>
+</body>
+</html>

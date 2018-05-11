@@ -1,0 +1,15 @@
+{% extends "home/_base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="text-center">
+            <h2>¡Hola de nuevo, {{ username }}!</h2>
+            <br>
+            <h3>¡Parece que aún necesitamos saber que no sos un robot!</h3>
+            <h3>Hemos enviado un nuevo mail a {{ email }} con un link para que confirmes tu cuenta.</h3>
+            <h4>Nota: el link tiene un período de validez de 24 horas.</h4>
+            <br>
+            <h3><a href="{% url 'index' %}">Volver al Inicio</a></h3>
+        </div>
+    </div>
+{% endblock content %}

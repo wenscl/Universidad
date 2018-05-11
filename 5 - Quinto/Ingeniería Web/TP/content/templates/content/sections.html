@@ -1,0 +1,42 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Secciones</li>
+    </ul>
+
+    <h3>Secciones</h3>
+    <br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            {% for section in sections_list %}
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="panel panel-primary">
+                        <div class="panel-body section">
+                            <div class="img-section">
+                                <img src="{% get_static_prefix %}content/img/{{ section.name }}.png">
+                            </div>
+                            <div class="w-100">
+                                <h4 class="text-center text-uppercase"><a href="{% url 'section' section_id=section.id %}">{{ section.name }}</a></h4>
+                                <p class="text-center">{{ section.description }}</p>
+                                <br>
+                                <p class="pull-right"><a href="{% url 'section' section_id=section.id %}">Leer posts sobre esta sección <i class="fa fa-chevron-right" aria-hidden="true"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Volver al inicio</a>
+        </div>
+    </div>
+{% endblock content %}

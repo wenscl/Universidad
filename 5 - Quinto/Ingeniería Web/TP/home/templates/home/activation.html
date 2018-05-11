@@ -1,0 +1,21 @@
+{% extends "home/_base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="text-center">
+            {% if not resend_mail %}
+                <h2>¡Felicidades!</h2>
+                <h3>Tu cuenta se ha confirmado correctamente y hemos iniciado sesión por vos.</h3>
+                <h3>Ahora podés acceder a todas las características que tenemos para ofrecerte.</h3>
+                <br>
+                <h3>¡Que te diviertas!</h3>
+            {% else %}
+                <h2>La clave de activación ha expirado</h2>
+                <h3>No hemos podido confirmar tu cuenta.</h3>
+                <h3>Por favor, solicitá otra clave en este <a href="{% url 'resend_activation_mail' token=token %}">enlace</a>.</h3>
+            {% endif %}
+            <br>
+            <h4><a href="{% url 'index' %}">Volver al Inicio</a></h4>
+        </div>
+    </div>
+{% endblock content %}

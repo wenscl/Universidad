@@ -1,0 +1,73 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Mi Contenido</li>
+    </ul>
+
+    <h3>Mi Contenido</h3>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#published-posts" data-toggle="tab" aria-expanded="true">Posts Publicados</a></li>
+        <li class=""><a href="#drafts-posts" data-toggle="tab" aria-expanded="false">Borradores de Posts</a></li>
+        <li class=""><a href="#published-lists" data-toggle="tab" aria-expanded="false">Listas Publicadas</a></li>
+        <li class=""><a href="#drafts-lists" data-toggle="tab" aria-expanded="false">Borradores de Listas</a></li>
+        <li class=""><a href="#recicle-bin" data-toggle="tab" aria-expanded="false">Papelera de Reciclaje</a></li>                
+    </ul>
+
+    <div id="tab-content" class="tab-content">
+
+        <!-- Posts -->
+        <div class="tab-pane fade active in" id="published-posts">
+            <br>
+            <div id="published-content-post">
+                {% with content_page=published_posts_page is_published='true' is_deleted='false' is_list='false' %}
+                    {% include "content/_profile_post.html" %}
+                {% endwith %}
+            </div>
+        </div>
+        <div class="tab-pane fade" id="drafts-posts">
+            <br>
+            <div id="draft-content-post">
+                {% with content_page=drafts_posts_page is_published='false' is_deleted='false' is_list='false' %}
+                    {% include "content/_profile_post.html" %}
+                {% endwith %}
+            </div>
+        </div>
+        
+        <!-- Listas -->
+        <div class="tab-pane fade" id="published-lists">
+            <br>
+            <div id="published-content-list">
+                {% with content_page=published_lists_page is_published='true' is_deleted='false' is_list='true' %}
+                    {% include "content/_profile_post.html" %}
+                {% endwith %}
+            </div>
+        </div>
+        <div class="tab-pane fade" id="drafts-lists">
+            <br>
+            <div id="draft-content-list">
+                {% with content_page=drafts_content_lists_page is_published='false' is_deleted='false' is_list='true' %}
+                    {% include "content/_profile_post.html" %}
+                {% endwith %}
+            </div>
+        </div>
+
+        <!-- Papelera -->        
+        <div class="tab-pane fade" id="recicle-bin">
+            <br>
+            <div id="recicle-bin-list">
+                {% with content_page=recicle_bin_page is_published='false' is_deleted='true' is_list='false' %}
+                    {% include "content/_profile_post.html" %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static '/home/js/my_content.js' %}"></script>
+{% endblock scripts %}

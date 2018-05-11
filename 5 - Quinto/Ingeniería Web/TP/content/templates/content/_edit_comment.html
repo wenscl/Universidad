@@ -1,0 +1,13 @@
+<div id='edit-comment'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <form action='/edit_comment/' method='POST'>
+                {% csrf_token %}
+                <textarea name='description' id='summernote' cols='40' required='' rows='10'></textarea>
+                <input type='hidden' name='comment_id' value='%comment-id%' id='comment_id'>
+                <button onclick='return restaurarComentario();' type='button' class='btn btn-default btn-sm m-b-10'>Cancelar</button>
+                <button type='submit' class='btn btn-primary btn-sm m-b-10'>Comentar</button>
+            </form>
+        </div>
+    </div>
+</div>

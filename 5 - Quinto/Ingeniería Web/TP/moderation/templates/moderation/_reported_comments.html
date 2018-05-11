@@ -1,0 +1,21 @@
+{% for content in reported_comments_page %}
+    {% if content.response_to %}
+        <div class="panel panel-default content-img">
+            <div class="panel-body">
+                <p>
+                    <a href="{% url 'profile' user_id=content.user.id %}"><strong>{{ content.user.username }}</strong></a> dijo: 
+                    {{ content.description|safe }}
+                </p>
+                <text class="pull-right"><a href="{% url 'reported_content_details' content_id=content.id %}">Ver denuncias <i class="fa fa-chevron-right" aria-hidden="true"></i></a></text>
+            </div>
+        </div>
+    {% endif %}
+{% empty %}
+    <div class="alert alert-success">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> <strong>¡Bien hecho!</strong> Ya se revisaron todos los comentarios reportados.
+    </div>
+{% endfor %}
+
+{% with current_page=reported_comments_page type='comment' %}
+    {% include "moderation/_pagination.html" %}
+{% endwith %}

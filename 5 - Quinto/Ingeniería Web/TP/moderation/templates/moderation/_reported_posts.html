@@ -1,0 +1,42 @@
+{% for content in reported_posts_page %}
+    {% if content.response_to is None %}
+        <div class="panel panel-default content-img">
+            <div class="panel-body">
+                <h4 class="list-group-item-heading">
+                    <a href="{% url 'reported_content_details' content_id=content.id %}">
+                    {{ content.title }}</a>
+                </h4>
+                <small>
+                    Posteado en <strong>{{ content.section }}</strong> 
+                    por <a href="{% url 'profile' user_id=content.user.id %}"><strong>{{ content.user.username }}</strong></a> 
+                    el {{ content.create_date|date:'d/m/Y - H:i' }}. 
+                    {% if content.edited %}
+                        Última modificación: {{ content.last_modification_date|date:'d/m/Y - H:i' }}.
+                    {% endif %}
+                </small>
+                <p>{{ content.description|safe|truncatewords_html:20 }}</p>
+            
+                <text class="pull-left">
+                    <i class="fa fa-star post-rating-star" aria-hidden="true"></i>
+                    <strong>{{ content.score }}</strong>/10 
+                    <text>
+                        {% if content.vote_count == 1 %}
+                            (1 voto)
+                        {% else %}
+                            ({{ content.vote_count }} votos)
+                        {% endif %}
+                    </text>
+                </text>
+                <text class="pull-right"><a href="{% url 'reported_content_details' content_id=content.id %}">Ver denuncias <i class="fa fa-chevron-right" aria-hidden="true"></i></a></text>
+            </div>
+        </div>
+    {% endif %}
+{% empty %}
+    <div class="alert alert-success">
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i> <strong>¡Bien hecho!</strong> Ya se revisaron todos los post reportados.
+    </div>
+{% endfor %}
+
+{% with current_page=reported_posts_page type='post' %}
+    {% include "moderation/_pagination.html" %}
+{% endwith %}

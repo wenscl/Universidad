@@ -1,0 +1,10 @@
+{{ object.title }}
+{{ object.section.name }}
+{{ object.description }}
+{{ object.user.username }}
+{% for tag in object.tags.all %}
+    {{ tag }}
+{% endfor %}
+{% for item in object.items.all %}
+    {{ item.item_name }}
+{% endfor %}

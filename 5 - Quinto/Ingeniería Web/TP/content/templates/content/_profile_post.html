@@ -1,0 +1,113 @@
+{% for post in content_page %}
+    <div class="panel panel-default content-img m-b-10">
+        <div class="panel-body">
+            {% if post.elimination_date %}
+                <h4 class="list-group-item-heading">{{ post.title }}</h4>                
+            {% else %}
+                <h4 class="list-group-item-heading">
+                    <a href="{% url 'post_details' post_id=post.id %}">
+                    {{ post.title }}</a>
+                </h4>
+            {% endif %}
+            <small>
+                Posteado en 
+                {% if post.elimination_date %}
+                    <strong>{{ post.section }}</strong> 
+                {% else %}            
+                    <a href="{% url 'section' section_id=post.section.id %}"><strong>{{ post.section }}</strong></a> 
+                {% endif %}
+                el {{ post.create_date|date:'d/m/Y - H:i' }}. 
+                {% if post.edited %}
+                    Última modificación: {{ post.last_modification_date|date:'d/m/Y - H:i' }}.
+                {% endif %}
+            </small>
+            <p>{{ post.description|safe|truncatewords_html:20 }}</p>
+            {% if post.published %}
+                <text class="pull-left">
+                    <i class="fa fa-star post-rating-star" aria-hidden="true"></i>
+                    <strong>{{ post.score }}</strong>/10
+                    <text>
+                        {% if post.vote_count == 1 %}
+                            (1 voto)
+                        {% else %}
+                            ({{ post.vote_count }} votos)
+                        {% endif %}
+                    </text>
+                </text>
+            {% endif %}
+            {% if post.elimination_date %}
+                <text class="pull-right">
+                    <a class="btn btn-xs btn-primary" href="{% url 'restore_post' post_id=post.id %}">
+                    Restaurar 
+                        <i class="fa fa-window-restore" aria-hidden="true"></i>
+                    </a>
+                </text>
+            {% else %}
+                <text class="pull-right">
+                    <a class="btn btn-xs btn-primary" href="{% url 'post_details' post_id=post.id %}">
+                    Ver detalle 
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                    {% if post.is_list %}
+                        <a class="btn btn-xs btn-info" href="{% url 'edit_list' list_id=post.id %}">
+                        Editar 
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn-xs btn-danger" href="{% url 'delete_list' list_id=post.id %}">
+                        Eliminar
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    {% else %}
+                        <a class="btn btn-xs btn-info" href="{% url 'edit_post' post_id=post.id %}">
+                        Editar 
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn-xs btn-danger" href="{% url 'delete_post' post_id=post.id %}">
+                        Eliminar
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+                </text>
+            {% endif %}
+        </div>
+    </div>
+{% empty %}
+    <div class="text-center">
+        <h3>¡Nada por aquí!</h3>
+        {% if is_deleted == 'false' %}
+            {% if is_list == 'true' %}
+                <p>¿Probaste <a href="{% url 'create_list' %}">crear una lista</a>?</p>        
+            {% else %}
+                <p>¿Probaste <a href="{% url 'create_post' %}">crear un post</a>?</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endfor %}
+{% if content_page %}
+    <!-- Paginación -->
+    <div class="text-center">
+        <div class="pagination">
+            <span class="step-links">
+                <ul class="pagination">
+                    {% if content_page.has_previous %}
+                        <li><a href="#" onclick="return goToPage({{ content_page.previous_page_number }}, {{ is_published }}, {{ is_deleted }}, {{ is_list }})"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+                    {% endif %}
+
+                    {% for page in content_page.paginator.page_range %}
+                        {% if page == content_page.number %}
+                            <li class="active"><a href="#" onclick="return false;">{{ page }}</a></li>
+                        {% else %}
+                            <li><a href="#" onclick="return goToPage({{ page }}, {{ is_published }}, {{ is_deleted }}, {{ is_list }})">{{ page }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if content_page.has_next %}
+                        <li><a href="#" onclick="return goToPage({{ content_page.next_page_number }}, {{ is_published }}, {{ is_deleted }}, {{ is_list }})"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                    {% endif %}                    
+                </ul>
+            </span>
+        </div>
+    </div>
+{% endif %}

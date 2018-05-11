@@ -1,0 +1,304 @@
+.bootstrap-tagsinput{
+    display: block !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.m-t-5 {
+    margin-top: 5px;
+}
+
+ul.children {
+    padding-left: 20px;
+    margin-left: 20px;
+    border-left: lightgray 3px solid;
+}
+
+.comment hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.panel.comment {
+    margin-bottom: 15px;
+}
+
+.comment>[class^="panel-"]  {
+    padding-bottom: 0px;
+    padding-top: 5px;
+}
+
+.comment p { 
+    margin-bottom: 5px;
+    border: 5px;
+}
+
+.removed-comment {
+    text-align: center;
+    margin: 12px !important;
+}
+
+.removed-comment em {
+    font-size: 1.1em;
+    color: gray;
+}
+
+.post-rating-star {
+    color:gold;
+}
+
+.text-white {
+    color: white;
+}
+
+.user-avatar {
+    width: 200px;
+    height: 200px;
+    border: lightgray 1px solid;
+}
+
+.site-title {
+    font-family: 'Josefin Sans', sans-serif, regular;
+    font-size: 1.5em;
+}
+
+.search-form {
+    margin: 0px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+}
+
+.input-search:focus {
+    border-color: #18bc9c;
+}
+
+.btn-search {
+    border-color: #18bc9c;
+    background-color: #18bc9c;
+    color: white;
+}
+
+.btn-search:focus, .btn-search:hover {
+    color:black;
+}
+
+.p-l-15 {
+    padding-left: 15px;
+}
+
+.content-img img {
+    max-width: 100%;
+}
+
+.cancel-star-rating {
+    padding-top: 4px;
+    font-size: 18px;
+}
+
+.cancel-star-rating:hover {
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+.my-rating {
+    margin-right: 5px;
+    padding-top: 1px;
+}
+
+.alert-ban {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+/* --------------- Corazón de Favorito --------------- */
+
+.heart {
+    margin-top: 21px;
+    position: relative;
+    top: 5px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.heart.heart-red {
+    fill: #e74c3c;
+}
+
+.heart.heart-gray {
+    fill: lightgrey;
+}
+
+@keyframes grayToRed {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); fill: #e74c3c; }
+}
+
+@keyframes redToGray {
+  0% { transform: scale(1); fill: #e74c3c; }
+  50% { transform: scale(0.5); }
+  100% { transform: scale(1); fill: lightgray; }
+}
+
+.tooltip-inner {
+    max-width: none;
+    white-space: nowrap;
+}
+
+/* --------------- */
+
+.badge {
+    margin-left: 5px;
+}
+
+body {
+    background-image: url('../images/site-background.png');
+}
+
+body>.container {
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0px 0px 15px 5px rgba(211, 211, 211, 0.3);
+}
+
+.navbar {
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 20px 5px lightgray;
+}
+
+.breadcrumb {
+    margin-top: 15px;
+}
+
+.section {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.img-section {
+    padding-right: 10px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.tmdb-logo {
+    width: 130px;
+}
+
+.post-list {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.post-list img {
+    max-width: 100%;
+}
+
+.poster-div {
+    padding-right: 10px;    
+    width: 20%;
+}
+
+.m-t-b-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.data-movie img {
+    width: 75%;
+}
+
+.data-movie small {
+    color: #2c3e50;
+}
+
+.bootstrap-tagsinput span.twitter-typeahead {
+    width: unset;
+}
+
+.move-row {
+    cursor: pointer;
+    color: #18bc9c;
+}
+
+.delete-row {
+    cursor: pointer;
+    color: #e74c3c;    
+}
+
+table.table.table-list.table-bordered.table-hover {
+    background-color: #f9f9f9;
+}
+
+.label-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.text-mono {
+    font-family: monospace;
+    word-wrap: break-word;
+}
+
+/* --------------- Métodos HTTP --------------- */
+.http-get {
+    color: green;
+}
+
+.http-get::before {
+    content: "GET";
+}
+
+.http-post {
+    color: orange;
+}
+
+.http-post::before {
+    content: "POST";
+}
+
+.http-put {
+    color: blue;
+}
+
+.http-put::before {
+    content: "PUT";
+}
+
+.http-patch {
+    color: darkviolet;
+}
+
+.http-patch::before {
+    content: "PATCH";
+}
+
+.http-delete {
+    color: red;
+}
+
+.http-delete::before {
+    content: "DELETE";
+}
+
+[class^="http-"] {
+    font-weight: bold;
+}
+
+.api-authetication-required::before {
+    content: "Requiere autenticación";
+}
+
+.http-methods::before {
+    content: "[";
+}
+.http-methods::after {
+    content: "]";
+}
+/* --------------- */

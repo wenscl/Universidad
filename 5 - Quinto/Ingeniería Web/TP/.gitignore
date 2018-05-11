@@ -1,0 +1,11 @@
+*.pyc
+.idea/*
+.idea/workspace.xml
+.idea/tasks.xml
+.ipynb_checkpoints/
+*.gz
+media
+tmp
+static_server_files
+*.sqlite3
+/whoosh_index/

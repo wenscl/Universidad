@@ -1,0 +1,1101 @@
+{% extends "home/_base.html" %}
+
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active">Documentación de la API</li>
+    </ul>
+
+    <h2>Documentación de la API</h2>
+    <br>
+    <p>Aquí encontrarás la información necesaria para utilizar la API del sitio en tus propios proyectos.</p>
+    <hr>
+
+    <h3 id="index">Índice de Contenido</h3>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <ul>
+                <li>
+                    <a href="#general">General</a>
+                    <ul>
+                        <li><a href="#raiz">Raíz</a></li>
+                        <li><a href="#fulltextsearch">Búsqueda de texto completo</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#autenticacion">Autenticación</a>
+                    <ul>
+                        <li><a href="#token">Obtener Token</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#secciones">Secciones</a>
+                    <ul>
+                        <li><a href="#lista-secciones">Lista de Secciones</a></li>
+                        <li><a href="#detalle-seccion">Detalle de Sección</a></li>
+                        <li><a href="#contenido-seccion">Contenido de Sección</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#contenido">Contenido</a>
+                    <ul>
+                        <li><a href="#lista-contenido">Lista de Contenido</a></li>
+                        <li><a href="#top10-posts">TOP 10 de Posts</a></li>
+                        <li><a href="#top10-listas">TOP 10 de Listas</a></li>
+                        <li><a href="#detalle-contenido">Detalle de Contenido</a></li>
+                        <li><a href="#comentarios-contenido">Comentarios de Contenido</a></li>
+                        <li><a href="#crear-contenido">Crear Contenido</a></li>
+                        <li><a href="#editar-contenido">Editar Contenido</a></li>
+                        <li><a href="#eliminar-contenido">Eliminar Contenido</a></li>
+                        <li><a href="#restaurar-contenido">Restaurar Contenido</a></li>
+                        <li><a href="#votar-contenido">Votar Contenido</a></li>
+                        <li><a href="#eliminar-votacion">Eliminar votación de Contenido</a></li>
+                        <li><a href="#agregar-favoritos">Agregar Contenido a Favoritos</a></li>
+                        <li><a href="#eliminar-favoritos">Eliminar Contenido de Favoritos</a></li>
+                        <li><a href="#reportar-contenido">Reportar Contenido</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#comentarios">Comentarios</a>
+                    <ul>
+                        <li><a href="#detalle-comentario">Detalle de Comentario</a></li>
+                        <li><a href="#comentar-contenido">Comentar Contenido</a></li>
+                        <li><a href="#editar-comentario">Editar Comentario</a></li>
+                        <li><a href="#eliminar-comentario">Eliminar Comentario</a></li>
+                        <li><a href="#reportar-comentario">Reportar Comentario</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#usuarios">Usuarios</a>
+                    <ul>
+                        <li><a href="#lista-usuarios">Lista de Usuarios</a></li>
+                        <li><a href="#detalle-usuario">Detalle de Usuario</a></li>
+                        <li><a href="#lista-contenido-publicado">Lista de Contenido publicado de un Usuario</a></li>
+                        <li><a href="#lista-contenido-borrador">Lista de Contenido borrador de un Usuario</a></li>
+                        <li><a href="#lista-contenido-eliminado">Lista de Contenido eliminado de un Usuario</a></li>
+                        <li><a href="#lista-favoritos">Lista de Contenido favorito de un Usuario</a></li>
+                        <li><a href="#editar-perfil">Editar Perfil de Usuario</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    {% with base_url=domain|add:'/api/' %}
+        <h3 id="general">General</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="raiz">
+                            Raíz
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>                 
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene una lista resumida de rutas a las que se pueden realizar requests.</p>
+                
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="fulltextsearch">
+                            Búsqueda de texto completo
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Efectúa una búsqueda de contenido del sitio según el texto especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}search/?q={query_text}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="autenticacion">Autenticación</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="token">
+                            Obtener Token 
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene un token de autenticación.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}get_token/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">username</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">password</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="secciones">Secciones</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-secciones">
+                            Lista de Secciones 
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista de secciones del sitio.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}sections/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="detalle-seccion">
+                            Detalle de Sección 
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene el detalle de la sección especificada.</p>                
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}sections/{section_id}/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="contenido-seccion">
+                            Contenido de Sección 
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista de contenido de la sección especificada.</p>                
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}sections/{section_id}/content/
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="contenido">Contenido</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-contenido">
+                            Lista de Contenido
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista de contenido publicado en el sitio.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="top10-posts">
+                            TOP 10 de Posts
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene los posts que pertenecen al TOP 10 de la última semana.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/top10_posts/
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="top10-listas">
+                            TOP 10 de Listas
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene las listas que pertenecen al TOP 10 de la última semana.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/top10_lists/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="detalle-contenido">
+                            Detalle de Contenido 
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene el detalle de un contenido (post, lista o comentario).</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="comentarios-contenido">
+                            Comentarios de Contenido
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista de comentarios de un contenido (post, lista o comentario).</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/comments/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="crear-contenido">
+                            Crear Contenido
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Crea un nuevo contenido (post o lista).</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">content_type</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">title</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">description</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">section</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">published</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">tags</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">items</td>
+                                    <td class="text-center"><i class="fa fa-times"></i> (requerido en el caso de Listas)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <small><p>Nota: El campo '<em>content_type</em>' puede tomar el valor '<em>content</em>'' o '<em>comment</em>'.</p></small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="editar-contenido">
+                            Editar Contenido
+                            <small class="http-methods">
+                                <text class="http-put"></text>, <text class="http-patch"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Editar el contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido (PUT)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">title</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">description</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">section</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">published</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">tags</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">items</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="eliminar-contenido">
+                            Eliminar Contenido
+                            <small class="http-methods">
+                                <text class="http-delete"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Elimina el contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="restaurar-contenido">
+                            Restaurar Contenido
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Restaura el contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/restore/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="votar-contenido">
+                            Votar Contenido
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Vota el contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/vote/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">rating</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="eliminar-votacion">
+                            Eliminar votación de Contenido
+                            <small class="http-methods">
+                                <text class="http-delete"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Elimina el voto efectuado al contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/vote/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="agregar-favoritos">
+                            Agregar Contenido a Favoritos
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Agrega el contenido (post o lista) especificado a la lista de favoritos del usuario.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/favorite/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="eliminar-favoritos">
+                            Eliminar Contenido de Favoritos
+                            <small class="http-methods">
+                                <text class="http-delete"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Elimina el contenido (post o lista) especificado de la lista de favoritos del usuario.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/favorite/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="reportar-contenido">
+                            Reportar Contenido
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Reporta el contenido (post o lista) especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{content_id}/report/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">comment</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="comentarios">Comentarios</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="detalle-comentario">
+                            Detalle de Comentario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene el detalle del comentario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{comment_id}/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="comentar-contenido">
+                            Comentar Contenido
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Crea un nuevo comentario en respuesta al contenido especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">content_type</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">description</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">response_to</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <small><p>Nota: El campo '<em>content_type</em>' puede tomar el valor '<em>content</em>'' o '<em>comment</em>'.</p></small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="editar-comentario">
+                            Editar Comentario
+                            <small class="http-methods">
+                                <text class="http-put"></text>, <text class="http-patch"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Edita el comentario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{comment_id}/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido (PUT)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">description</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="eliminar-comentario">
+                            Eliminar Comentario
+                            <small class="http-methods">
+                                <text class="http-delete"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Elimina el comentario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{comment_id}/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="reportar-comentario">
+                            Reportar Comentario
+                            <small class="http-methods">
+                                <text class="http-post"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>
+                <p>Reporta el comentario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}contents/{comment_id}/report/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">comment</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="usuarios">Usuarios</h3>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-usuarios">
+                            Lista de Usuarios
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista de usuarios del sitio.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="detalle-usuario">
+                            Detalle de Perfil de Usuario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene el detalle de perfil del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-contenido-publicado">
+                            Lista de Contenido publicado de un Usuario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <p>Obtiene la lista del contenido (posts y listas) publicado del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/published_content/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-contenido-borrador">
+                            Lista de Contenido borrador de un Usuario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>                
+                <p>Obtiene la lista del contenido (posts y listas) borrador del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/content_drafts/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-contenido-eliminado">
+                            Lista de Contenido eliminado de un Usuario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>                
+                <p>Obtiene la lista del contenido (posts y listas) eliminado del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/recycle_bin/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="lista-favoritos">
+                            Lista de Contenido favorito de un Usuario
+                            <small class="http-methods">
+                                <text class="http-get"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>                
+                <p>Obtiene la lista del contenido (posts y listas) favorito del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/favorites/
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <h4 id="editar-perfil">
+                            Editar Perfil de Usuario
+                            <small class="http-methods">
+                                <text class="http-put"></text>, <text class="http-patch"></text>
+                            </small>
+                        </h4>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#index"><i class="fa fa-angle-double-up text-primary" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <small class="api-authetication-required text-info"></small>                
+                <p>Edita el perfil del usuario especificado.</p>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="well well-sm text-mono">
+                            {{ base_url }}users/{user_id}/
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <p>Body</p>
+                        <table class="table table-bordered table-condensed table-hover table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Requerido (PUT)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">username</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">email</td>
+                                    <td class="text-center"><i class="fa fa-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">first_name</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">last_name</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">date_of_birth</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">profile_image</td>
+                                    <td class="text-center"><i class="fa fa-times"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endwith %}
+
+
+{% endblock content %}

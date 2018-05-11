@@ -1,0 +1,437 @@
+model = Sequential([
+        Dense(64, input_shape=(picture_size ** 2 * len(channels),)),
+        Activation('relu'),
+        
+        Dense(32),
+        Activation('relu'),
+        
+        Dense(16),
+        Activation('relu'),
+        
+        Dense(1),
+        Activation('sigmoid'),
+])
+
+25 epochs
+128 batch_size -> probar con 200
+
+----------------------------------------------------------
+
+Corrida 1
+
+######################### train #########################
+accuracy 0.85725
+             precision    recall  f1-score   support
+
+          0       0.89      0.81      0.85      4002
+          1       0.83      0.90      0.86      3998
+
+avg / total       0.86      0.86      0.86      8000
+
+######################### test #########################
+accuracy 0.8145
+             precision    recall  f1-score   support
+
+          0       0.84      0.78      0.81       998
+          1       0.79      0.85      0.82      1002
+
+avg / total       0.82      0.81      0.81      2000
+
+
+Corrida 2
+
+######################### train #########################
+accuracy 0.858875
+             precision    recall  f1-score   support
+
+          0       0.83      0.90      0.86      3984
+          1       0.89      0.82      0.85      4016
+
+avg / total       0.86      0.86      0.86      8000
+
+######################### test #########################
+accuracy 0.819
+             precision    recall  f1-score   support
+
+          0       0.80      0.86      0.83      1016
+          1       0.84      0.78      0.81       984
+
+avg / total       0.82      0.82      0.82      2000
+
+
+Corrida 3
+
+######################### train #########################
+accuracy 0.82525
+             precision    recall  f1-score   support
+
+          0       0.90      0.73      0.81      3993
+          1       0.77      0.92      0.84      4007
+
+avg / total       0.84      0.83      0.82      8000
+
+######################### test #########################
+accuracy 0.8005
+             precision    recall  f1-score   support
+
+          0       0.88      0.70      0.78      1007
+          1       0.75      0.90      0.82       993
+
+avg / total       0.81      0.80      0.80      2000
+
+
+Corrida 4
+
+######################### train #########################
+accuracy 0.8335
+             precision    recall  f1-score   support
+
+          0       0.78      0.93      0.85      4002
+          1       0.91      0.74      0.82      3998
+
+avg / total       0.85      0.83      0.83      8000
+
+######################### test #########################
+accuracy 0.8145
+             precision    recall  f1-score   support
+
+          0       0.76      0.92      0.83       998
+          1       0.90      0.71      0.79      1002
+
+avg / total       0.83      0.81      0.81      2000
+
+
+Corrida 5
+
+######################### train #########################
+accuracy 0.847
+             precision    recall  f1-score   support
+
+          0       0.88      0.81      0.84      4027
+          1       0.82      0.89      0.85      3973
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.813
+             precision    recall  f1-score   support
+
+          0       0.83      0.77      0.80       973
+          1       0.80      0.85      0.82      1027
+
+avg / total       0.81      0.81      0.81      2000
+
+
+Corrida 6
+
+######################### train #########################
+accuracy 0.8495
+             precision    recall  f1-score   support
+
+          0       0.82      0.89      0.86      4003
+          1       0.88      0.81      0.84      3997
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.8175
+             precision    recall  f1-score   support
+
+          0       0.79      0.86      0.82       997
+          1       0.85      0.77      0.81      1003
+
+avg / total       0.82      0.82      0.82      2000
+
+
+Corrida 7
+
+######################### train #########################
+accuracy 0.849
+             precision    recall  f1-score   support
+
+          0       0.90      0.79      0.84      4014
+          1       0.81      0.91      0.86      3986
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.8195
+             precision    recall  f1-score   support
+
+          0       0.86      0.75      0.80       986
+          1       0.79      0.88      0.83      1014
+
+avg / total       0.82      0.82      0.82      2000
+
+
+Corrida 8
+
+######################### train #########################
+accuracy 0.866875
+             precision    recall  f1-score   support
+
+          0       0.90      0.83      0.86      3991
+          1       0.84      0.91      0.87      4009
+
+avg / total       0.87      0.87      0.87      8000
+
+######################### test #########################
+accuracy 0.8145
+             precision    recall  f1-score   support
+
+          0       0.86      0.76      0.81      1009
+          1       0.78      0.87      0.82       991
+
+avg / total       0.82      0.81      0.81      2000
+
+
+Corrida 9
+
+######################### train #########################
+accuracy 0.862
+             precision    recall  f1-score   support
+
+          0       0.88      0.84      0.86      4005
+          1       0.85      0.88      0.86      3995
+
+avg / total       0.86      0.86      0.86      8000
+
+######################### test #########################
+accuracy 0.8415
+             precision    recall  f1-score   support
+
+          0       0.87      0.80      0.83       995
+          1       0.82      0.88      0.85      1005
+
+avg / total       0.84      0.84      0.84      2000
+
+
+Corrida 10
+
+######################### train #########################
+accuracy 0.83325
+             precision    recall  f1-score   support
+
+          0       0.90      0.75      0.82      4032
+          1       0.78      0.92      0.85      3968
+
+avg / total       0.84      0.83      0.83      8000
+
+######################### test #########################
+accuracy 0.8025
+             precision    recall  f1-score   support
+
+          0       0.85      0.72      0.78       968
+          1       0.77      0.88      0.82      1032
+
+avg / total       0.81      0.80      0.80      2000
+
+
+Corrida 11
+
+######################### train #########################
+accuracy 0.846125
+             precision    recall  f1-score   support
+
+          0       0.82      0.88      0.85      4001
+          1       0.87      0.81      0.84      3999
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.813
+             precision    recall  f1-score   support
+
+          0       0.80      0.84      0.82       999
+          1       0.83      0.79      0.81      1001
+
+avg / total       0.81      0.81      0.81      2000
+
+
+Corrida 12
+
+######################### train #########################
+accuracy 0.856625
+             precision    recall  f1-score   support
+
+          0       0.83      0.90      0.86      3969
+          1       0.89      0.82      0.85      4031
+
+avg / total       0.86      0.86      0.86      8000
+
+######################### test #########################
+accuracy 0.8225
+             precision    recall  f1-score   support
+
+          0       0.80      0.88      0.84      1031
+          1       0.86      0.76      0.81       969
+
+avg / total       0.83      0.82      0.82      2000
+
+
+Corrida 13
+
+######################### train #########################
+accuracy 0.850125
+             precision    recall  f1-score   support
+
+          0       0.87      0.83      0.85      3995
+          1       0.84      0.87      0.85      4005
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.8365
+             precision    recall  f1-score   support
+
+          0       0.85      0.82      0.83      1005
+          1       0.82      0.86      0.84       995
+
+avg / total       0.84      0.84      0.84      2000
+
+
+Corrida 14
+
+######################### train #########################
+accuracy 0.84875
+             precision    recall  f1-score   support
+
+          0       0.86      0.83      0.85      4003
+          1       0.84      0.86      0.85      3997
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.815
+             precision    recall  f1-score   support
+
+          0       0.83      0.80      0.81       997
+          1       0.80      0.83      0.82      1003
+
+avg / total       0.82      0.81      0.81      2000
+
+
+Corrida 15
+
+######################### train #########################
+accuracy 0.8445
+             precision    recall  f1-score   support
+
+          0       0.82      0.89      0.85      4027
+          1       0.88      0.80      0.84      3973
+
+avg / total       0.85      0.84      0.84      8000
+
+######################### test #########################
+accuracy 0.8245
+             precision    recall  f1-score   support
+
+          0       0.79      0.88      0.83       973
+          1       0.87      0.77      0.82      1027
+
+avg / total       0.83      0.82      0.82      2000
+
+
+Corrida 16
+
+######################### train #########################
+accuracy 0.831875
+             precision    recall  f1-score   support
+
+          0       0.91      0.73      0.81      3979
+          1       0.78      0.93      0.85      4021
+
+avg / total       0.85      0.83      0.83      8000
+
+######################### test #########################
+accuracy 0.778
+             precision    recall  f1-score   support
+
+          0       0.86      0.67      0.76      1021
+          1       0.72      0.89      0.80       979
+
+avg / total       0.79      0.78      0.78      2000
+
+
+Corrida 17
+
+######################### train #########################
+accuracy 0.854125
+             precision    recall  f1-score   support
+
+          0       0.87      0.83      0.85      3994
+          1       0.84      0.88      0.86      4006
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.81
+             precision    recall  f1-score   support
+
+          0       0.81      0.81      0.81      1006
+          1       0.81      0.81      0.81       994
+
+avg / total       0.81      0.81      0.81      2000
+
+
+Corrida 18
+
+######################### train #########################
+accuracy 0.84925
+             precision    recall  f1-score   support
+
+          0       0.89      0.80      0.84      3994
+          1       0.82      0.90      0.86      4006
+
+avg / total       0.85      0.85      0.85      8000
+
+######################### test #########################
+accuracy 0.8125
+             precision    recall  f1-score   support
+
+          0       0.85      0.76      0.80      1006
+          1       0.78      0.87      0.82       994
+
+avg / total       0.82      0.81      0.81      2000
+
+
+Corrida 19
+
+######################### train #########################
+accuracy 0.823
+             precision    recall  f1-score   support
+
+          0       0.92      0.71      0.80      3971
+          1       0.76      0.94      0.84      4029
+
+avg / total       0.84      0.82      0.82      8000
+
+######################### test #########################
+accuracy 0.788
+             precision    recall  f1-score   support
+
+          0       0.90      0.66      0.76      1029
+          1       0.72      0.92      0.81       971
+
+avg / total       0.81      0.79      0.78      2000
+
+
+Corrida 20
+
+######################### train #########################
+accuracy 0.858875
+             precision    recall  f1-score   support
+
+          0       0.85      0.88      0.86      3982
+          1       0.87      0.84      0.86      4018
+
+avg / total       0.86      0.86      0.86      8000
+
+######################### test #########################
+accuracy 0.827
+             precision    recall  f1-score   support
+
+          0       0.83      0.83      0.83      1018
+          1       0.82      0.82      0.82       982
+
+avg / total       0.83      0.83      0.83      2000
