@@ -1,0 +1,163 @@
+html * {
+    font-family: 'Montserrat', sans-serif !important;
+}
+p, form, select, input, .select2-selection, .select2-results, .btn, .form-check, .input-group-text {
+    font-size: 14px;
+}
+p.page {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+table {
+    font-size: 13px !important;
+}
+label {
+    margin-bottom: 0;
+}
+h5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #a3c7ee;
+}
+.content {
+    padding-top: 5px;
+}
+.container {
+    padding-right: 0 !important; 
+    padding-left: 0 !important;
+}
+.form-check {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.dropdown-divider {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.table-hover tbody tr:hover td {
+    background: lightsteelblue;
+}
+.form {
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group.columns {
+    margin-bottom: 0px;
+}
+.form-check-label {
+    color: #212529 !important;
+}
+.docs-datepicker-trigger {
+    border: 1px solid #ced4da;
+    background-color: #e9ecef;
+}
+.card-body {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.card-body hr {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.card-header {
+    font-size: 20px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.card-title {
+    font-size: 18px;
+    padding-top: .5rem;
+}
+.card-group {
+    margin-bottom: 10px;
+}
+.col-detail {
+    padding-right: 0px;
+}
+.pagination {
+    margin-bottom: 5px;
+}
+
+/* Hacer los select del tamaño correcto. Sino son más grandes que el resto de los campos */
+.select2.select2-container.select2-container--bootstrap4 {
+    width: -webkit-fill-available !important;
+}
+.select2-container {
+    min-width: 0 !important;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + -1px);
+}
+.select2-container--bootstrap4 .select2-selection--single {
+    height: calc(2.25rem + -1px)!important;
+}
+
+footer {
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: #e4e4e4bd;
+}
+
+/* .navbar-dark .navbar-nav .nav-item.active .nav-link{
+    color: #e72e2e;
+} */
+
+/* .navbar-dark .navbar-nav .nav-link:focus {
+    color: rgb(238, 26, 26);
+} */
+
+/* table.table thead th.orderable { 
+    background: url('/static/img/sort-solid.svg') no-repeat center right; 
+    background-size: 12% 50%;
+}
+table.table thead th.asc { 
+    background: url('/static/img/sort-up-solid.svg') no-repeat center right; 
+    background-size: 12% 50%;
+}
+table.table thead th.desc { 
+    background: url('/static/img/sort-down-solid.svg') no-repeat center right; 
+    background-size: 12% 50%;
+} */
+
+.border-steelblue-1 {
+    border-color: steelblue;
+}
+.border-steelblue-2 {
+    border-color: rgb(40, 94, 138);
+}
+.text-steelblue-1 {
+    color: steelblue;
+}
+.text-steelblue-2 {
+    color: rgb(40, 94, 138);
+}
+
+.border-darkcyan-1 {
+    border-color: darkcyan;
+}
+.border-darkcyan-2 {
+    border-color: rgb(0, 107, 107);
+}
+.border-darkcyan-3 {
+    border-color: rgb(0, 78, 78);
+}
+.text-darkcyan-1 {
+    color: darkcyan;
+}
+.text-darkcyan-2 {
+    color: rgb(0, 107, 107);
+}
+.text-darkcyan-3 {
+    color: rgb(0, 78, 78);
+}

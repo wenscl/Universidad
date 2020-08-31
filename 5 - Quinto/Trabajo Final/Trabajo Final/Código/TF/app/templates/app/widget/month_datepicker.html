@@ -1,0 +1,23 @@
+{% load static %}
+{% include "django/forms/widgets/input.html" %}
+<script type="text/javascript" src="{% static 'datepicker/datepicker.es-ES.js' %}"></script>
+
+<script>
+  var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  $(function () {
+    $("input[name='{{ widget.name }}']")
+      .datepicker({
+        format:'mm yyyy',
+        language: 'es-ES',
+        trigger: $("#btn-{{ widget.name }}"),
+        autoHide: true,
+        startView: 1,
+        offset: 5
+      })
+      .on('pick.datepicker', function (e) {
+        e.preventDefault();
+        var monthDate = months[e.date.getMonth()] + ' ' + e.date.getFullYear();
+        $(this).val(monthDate); 
+      }); 
+  });
+</script>

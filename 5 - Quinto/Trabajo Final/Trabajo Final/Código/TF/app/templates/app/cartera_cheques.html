@@ -1,0 +1,22 @@
+{% extends 'app/_base.html' %}
+
+{% block header %}
+    {{ script|safe }}
+    {{ script_r|safe }}
+
+    <h3>
+    {% block title %}
+    Cartera de Cheques
+    {% endblock %}
+    </h3>
+{% endblock %}
+
+
+{% block content %}
+
+    {% block bokeh %}
+        {{ div|safe }}
+        {{ div_r|safe }}
+    {% endblock %}
+
+{% endblock %}

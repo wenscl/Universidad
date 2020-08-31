@@ -1,0 +1,18 @@
+{% extends 'app/_base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h3>Iniciar Sesión</h3>
+
+<form method="POST">{% csrf_token %}
+  <div class="form">
+    {% bootstrap_form form %}
+    {% bootstrap_button 'Ingresar' button_class='btn btn-outline-primary' %}
+  </div>
+</form>
+<br>
+{% comment %} <div class="text-center">
+  <p>¿Nuevo? - <a href="{% url 'register' %}">Registrarse</a></p>
+</div> {% endcomment %}
+
+{% endblock content %}

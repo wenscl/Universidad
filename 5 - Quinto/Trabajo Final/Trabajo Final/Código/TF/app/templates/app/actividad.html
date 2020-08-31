@@ -1,0 +1,239 @@
+{% extends 'app/_base.html' %}
+{% load bootstrap4 %}
+{% load django_tables2 %}
+{% block extrahead %}
+  {{ filter.form.media }}
+{% endblock %}
+
+{% block header %}
+  {{ script|safe }}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-10">
+    <h3>Resumen por Actividad</h3>
+  </div>
+  <div class='col-md-2 text-right'>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+      Filtrar
+    </button>
+  </div>
+</div>
+
+<form method="GET">{% csrf_token %}
+<div class="collapse" id="collapseForm">
+<div class="form">
+  <div class="row">
+    <div class="col-md-6 form-group">
+      {% bootstrap_label filter.form.actividad.label %}
+      {{ filter.form.actividad }}
+    </div>
+    <div class="col-md-6">
+      <label>Periodo Contable</label>
+      <div class="row">
+        <div class="col-md-6">
+          {% bootstrap_field filter.form.inicio_periodo show_label=False addon_before='<label>Inicio</label>' addon_after="<button type='button' id='btn-inicio_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+        </div>
+        <div class="col-md-6">
+          {% bootstrap_field filter.form.fin_periodo show_label=False addon_before='<label>Fin</label>' addon_after="<button type='button' id='btn-fin_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 form-group">
+      {% bootstrap_label filter.form.acumulador.label %}
+      {{ filter.form.acumulador }}
+    </div>
+    <div class="col-md-6 form-group">
+      {% bootstrap_label filter.form.imputacion.label %}
+      {{ filter.form.imputacion }}
+    </div>
+  </div>
+  <div class="text-right">
+    {% bootstrap_button '<i class="fas fa-filter"></i> Filtrar' button_class='btn btn-outline-primary' %}
+    {% bootstrap_button '<i class="fas fa-eraser"></i> Limpiar Filtro' button_type='link' button_class='btn btn-outline-secondary' href='/actividad' %}
+  </div>
+</div>
+</div>
+
+{# Título detalle #}
+{% if title or title_periodo %}
+<div class="row">
+  <div class="col-md-8">
+    {% if title %}
+    <h4>{{ title }}</h4>
+    {% endif %}
+  </div>
+  <div class="col-md-4 text-right">
+    {% if title_periodo %}
+    <h6>{{ title_periodo }}</h6>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{# Tarjetas Ingresos y Egresos #}
+<div class="row card-group">
+  {% if ingresos %}
+  <div class="col-sm-5">
+    <div class="card border-success">
+      <h6 class="card-header text-success">Total Ingresos</h6>
+      <div class="card-body">
+        <p class="card-text">$ {{ ingresos }} </p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-sm-5">
+    <div class="card border-secondary">
+      <h6 class="card-header text-secondary">Total Ingresos</h6>
+      <div class="card-body">
+        <p class="card-text text-secondary">—</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if egresos %}
+  <div class="col-sm-5">
+    <div class="card border-danger">
+      <h6 class="card-header text-danger">Total Egresos</h6>
+      <div class="card-body">
+        <p class="card-text">$ {{ egresos }} </p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-sm-5">
+    <div class="card border-secondary">
+      <h6 class="card-header text-secondary">Total Egresos</h6>
+      <div class="card-body">
+        <p class="card-text text-secondary">—</p>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if div.pie_ingresos_egresos %}
+    <div class="col-sm-2">
+      {{ div.pie_ingresos_egresos|safe }}
+    </div>
+  {% endif %}
+</div>
+
+{% if imputacion %}
+  {% if table %}
+  <div class="row">
+    <div class="col-md-6">
+      <p class='page'>Resultados: {{table.page.paginator.count}} registros</p>
+    </div>
+    <div class="col-md-6">
+      {# Form para elegir las columnas de la tabla #}
+      <div class="dropdown text-right">
+        <button class="btn btn-light dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Columnas visibles
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          {% bootstrap_field form.all form_group_class='form-group columns' %}
+          <div class="dropdown-divider"></div>
+          {% bootstrap_field form.visible_columns show_label=false form_group_class='form-group columns' %}
+          <div class="dropdown-divider"></div>
+          <div class="text-center">
+            {% bootstrap_button '<i class="fas fa-redo-alt"></i> Actualizar' button_class='btn btn-outline-primary' size='sm' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% render_table table %}
+  {% endif %}
+{% else %}
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="barras-tab" data-toggle="tab" href="#barras" role="tab" aria-controls="barras" aria-selected="true">Gráfico de Barras</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="torta-tab" data-toggle="tab" href="#torta" role="tab" aria-controls="torta" aria-selected="false">Gráfico de Torta</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="tabla-tab" data-toggle="tab" href="#tabla" role="tab" aria-controls="tabla" aria-selected="false">Tabla</a>
+  </li>
+</ul>
+
+<div class="tab-content" id="tabContent">
+  <div class="tab-pane fade show active" id="barras" role="tabpanel" aria-labelledby="nav-barras-tab">
+    {% if div.bar_total %}
+      <h5><i class="fas fa-exchange-alt"></i> Ingresos y Egresos por Actividad</h5>
+      {{ div.bar_total|safe }}
+    {% endif %}
+    {% if div.bar_ingresos %}
+      <h5><i class="fas fa-arrow-up text-success"></i> Ingresos por Imputación</h5>
+      {{ div.bar_ingresos|safe }}
+    {% endif %}
+    {% if div.bar_egresos %}
+      <h5><i class="fas fa-arrow-down text-danger"></i> Egresos por Imputación</h5>
+      {{ div.bar_egresos|safe }}
+    {% endif %}
+  </div>
+  <div class="tab-pane fade" id="torta" role="tabpanel" aria-labelledby="nav-torta-tab">
+    <div class="row">
+      {% if div.pie_ingresos %}
+        <div class="col-md-6">
+          <h5><i class="fas fa-arrow-up text-success"></i> Ingresos</h5>
+          {{ div.pie_ingresos|safe }}
+        </div>
+      {% endif %}
+      {% if div.pie_egresos %}
+        <div class="col-md-6">
+          <h5><i class="fas fa-arrow-down text-danger"></i> Egresos</h5>
+          {{ div.pie_egresos|safe }}
+        </div>
+    {% endif %}
+    </div>
+    {% if div.pie_ingresos_detalle %}
+      <div class="row">
+        <div class="col">
+          <h5><i class="fas fa-arrow-up text-success"></i> Ingresos por Imputación</h5>
+          {{ div.pie_ingresos_detalle|safe }}
+        </div>
+      </div>
+    {% endif %}
+    {% if div.pie_egresos_detalle %}
+      <div class="row">
+        <div class="col">
+          <h5><i class="fas fa-arrow-down text-danger"></i> Egresos por Imputación</h5>
+          {{ div.pie_egresos_detalle|safe }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <div class="tab-pane fade" id="tabla" role="tabpanel" aria-labelledby="nav-tabla-tab">
+    <div class="row">
+      <div class="col-md-6">
+        <p class='page'>Resultados: {{table.page.paginator.count}} registros</p>
+      </div>
+      <div class="col-md-6">
+        {# Form para elegir las columnas de la tabla #}
+        <div class="dropdown text-right">
+          <button class="btn btn-light dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Columnas visibles
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            {% bootstrap_field form.all form_group_class='form-group columns' %}
+            <div class="dropdown-divider"></div>
+            {% bootstrap_field form.visible_columns show_label=false form_group_class='form-group columns' %}
+            <div class="dropdown-divider"></div>
+            <div class="text-center">
+              {% bootstrap_button '<i class="fas fa-redo-alt"></i> Actualizar' button_class='btn btn-outline-primary' size='sm' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% render_table table %}
+  </div>
+</div>
+</form>
+{% endif %}
+
+{% endblock %}

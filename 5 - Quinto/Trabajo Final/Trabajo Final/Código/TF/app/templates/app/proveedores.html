@@ -1,0 +1,75 @@
+{% extends 'app/_base.html' %}
+{% load bootstrap4 %}
+{% load django_tables2 %}
+{% block extrahead %}
+  {{ filter.form.media }} {# Cargar el DatePicker #}
+{% endblock %}
+
+{% block header %}
+  {{ script|safe }}
+  <h3>Ficha Cuenta Corriente Proveedor</h3>
+{% endblock %}
+
+{% block content %}
+<form method="GET" class="form">{% csrf_token %}
+  <div class="form-group row">
+    <div class="col-md-6">
+      {% bootstrap_field filter.form.razon_social size='sm' %}
+    </div>
+    <div class="col-md-6">
+      <label>Periodo Contable</label>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          {% bootstrap_field filter.form.inicio_periodo show_label=False size='sm' addon_after="<button type='button' id='btn-inicio_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+        </div>
+        <div class="form-group col-md-6">
+          {% bootstrap_field filter.form.fin_periodo show_label=False size='sm' addon_after="<button type='button' id='btn-fin_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-right">
+    {% bootstrap_button '<i class="fas fa-filter"></i> Filtrar' button_class='btn btn-sm btn-outline-primary' %}
+    {% bootstrap_button '<i class="fas fa-eraser"></i> Limpiar Filtro' button_type='link' button_class='btn btn-sm btn-outline-secondary' href='/cta_cte_proveedor' %}
+  </div>
+</form>
+
+{% if datos_proveedor %}
+<div class="card-group">
+  <div class="card">
+    <h5 class="card-header">{{ datos_proveedor.razon_social }} </h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3"> 
+          <p class="card-text">Direccion: {{ datos_proveedor.direccion }}</p>
+        </div>
+        <div class="col-md-3"> 
+          <p class="card-text">Localidad: {{ datos_proveedor.localidad }}</p>
+        </div>
+        <div class="col-md-3">
+          <p class="card-text">Cuit: {{ datos_proveedor.cuit }}</p>
+        </div>
+        <div class="col-md-3">
+          <p class="card-text">Saldo: {{ datos_proveedor.saldo }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <p class='page'>Resultados: {{table.page.paginator.count}}</p>
+  </div>
+  <div class="col-md-6">
+    <p class='page text-right'>Página {{table.page.number}} de {{table.page.paginator.num_pages}}</p>
+  </div>
+</div>
+{% render_table table %}
+{% endif %}
+
+{% block bokeh %}
+  {{ div.tabs|safe }}
+  {{ div.pie|safe }}
+{% endblock %}
+
+{% endblock %}

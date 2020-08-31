@@ -1,0 +1,213 @@
+{% extends 'app/_base.html' %}
+{% load django_tables2 %}
+{% load bootstrap4 %}
+{% block header %}
+    {{ script|safe }}
+{% endblock %}
+
+{% block content %}
+<h3>Panel de Control</h3>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-10">
+                        Patrimonio Neto: ${{patrimonio_neto|floatformat:2}}
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <a href="detalle_patrimonio_neto" class='text-light' data-toggle="tooltip" data-placement="top" title='Ver Detalle'><i class="fas fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body d-flex justify-content-center">
+                {{ div.patrimonio_neto|safe }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-dark">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-10">
+                        Rentabilidad Total: {{rentabilidad_total|floatformat:2}}%
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <a href="detalle_rentabilidad_actividad" class='text-light' data-toggle="tooltip" data-placement="top" title='Ver Detalle'><i class="fas fa-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body d-flex justify-content-center">
+                {{ div.rentabilidad|safe }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card border-darkcyan-1 text-darkcyan-1 mb-3">
+            <div class="card-header">
+                Liquidez
+            </div>
+            <div class="card-body">
+                <h5 class="card-text">Liquidez Corriente: {{ liquidez.liquidez_corriente|floatformat:2 }} <i class="fas fa-percentage"></i></h5>
+                <br>
+                <h5 class="card-text">Liquidez Seca: {{ liquidez.liquidez_seca|floatformat:2 }} <i class="fas fa-percentage"></i></h5>
+                <br>
+                <h5 class="card-text">Capital de trabajo: <i class="fas fa-dollar-sign"></i> {{ liquidez.capital_trabajo|floatformat:2 }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-steelblue-1 text-steelblue-1 mb-3">
+            <div class="card-header">
+                Endeudamiento
+            </div>
+            <div class="card-body">
+                <h5 class="card-text">Endeudamiento sobre el Patrimonio Neto: {{endeudamiento.sobre_patrimonio_neto|floatformat:2}} <i class="fas fa-percentage"></i></h5>
+                <br>
+                <h5 class="card-text">Endeudamiento sobre el Activo Total: {{endeudamiento.sobre_activo_total|floatformat:2}} <i class="fas fa-percentage"></i></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} <div class="row">
+    <div class="col-md-6">
+        <h5>Patrimonio Neto: ${{patrimonio_neto|floatformat:2}}</h5>
+        <div class="card border-steelblue mb-3">
+            <div class="card-header text-steelblue">
+                <div class="row">
+                    <div class="col-md-6">
+                        Patrimonio Neto: ${{patrimonio_neto|floatformat:2}}
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <small><a href="detalle_patrimonio_neto">Ver Detalle</a></small>
+                    </div>
+                </div>
+            </div>
+            <div class="row card-body"> 
+            <div class="card-body">
+                {{ div.patrimonio_neto|safe }}
+                <div class="col-md-6">
+                    <h5 class="card-title text-steelblue">Activos: ${{ activos.total|floatformat:2 }}</h5>
+                    <p class="card-text">Activo corriente: ${{ activos.corriente|floatformat:2 }}</p>
+                    <p class="card-text">Activo no corriente: ${{ activos.no_corriente|floatformat:2 }}</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title text-steelblue">Pasivos: ${{ pasivos.total|floatformat:2 }}</h5>
+                        <p class="card-text">Pasivo corriente: ${{ pasivos.corriente|floatformat:2 }}</p>
+                        <p class="card-text">Pasivo no corriente: ${{ pasivos.no_corriente|floatformat:2 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+{% comment %} <div class="row">
+    <div class="col-md-6">
+        <div class="card border-primary mb-3">
+            <div class="card-header text-primary">Liquidez</div>
+            <div class="card-body">
+                <p class="card-text">Liquidez Corriente: {{ liquidez.liquidez_corriente|floatformat:2 }}%</p>
+                <p class="card-text">Liquidez Seca: {{ liquidez.liquidez_seca|floatformat:2 }}%</p>
+                <p class="card-text">Capital de trabajo: ${{ liquidez.capital_trabajo|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+   <div class="col-md-6">
+        <div class="card border-info mb-3">
+            <div class="card-header text-info">Endeudamiento</div>
+            <div class="card-body">
+                <p class="card-text">Endeudamiento sobre el Activo Total: {{endeudamiento.sobre_activo_total|floatformat:2}}%</p>
+                <p class="card-text">Endeudamiento sobre el Patrimonio Neto: {{endeudamiento.sobre_patrimonio_neto|floatformat:2}}%</p>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+{% comment %} <hr>
+
+<div class="row">
+    <div class="col-md-6">
+        {% if rentabilidad_total > 0 %}
+            <h4 class='text-success'>Rentabilidad total: {{rentabilidad_total|floatformat:2}}%</h4>
+        {% else %}
+            <h4 class='text-danger'>Rentabilidad total: {{rentabilidad_total|floatformat:2}}%</h4>
+        {% endif %}
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="detalle_rentabilidad_actividad">Ver Detalle</a>
+    </div>
+</div>
+{{ div.rentabilidad|safe }}
+
+<div class="row">
+    <div class="col-md-4">
+        {% if ganado.utilidad <= 0 %}
+        <div class="card border-danger mb-3">
+        {% else %}
+        <div class="card border-success mb-3">
+        {% endif %}
+            <div class="card-header">Ganado</div>
+            <div class="card-body">
+                {% if ganado.utilidad <= 0 %}
+                <p class="card-title text-danger">Utilidad sobre Ventas: {{ganado.utilidad|floatformat:2}}%</p>
+                {% else %}
+                <p class="card-title text-success">Utilidad sobre Ventas: {{ganado.utilidad|floatformat:2}}%</p>
+                {% endif %}
+                <p class="card-text">Retorno sobre Activos: {{ ganado.roa|floatformat:2 }}%</p>
+                <p class="card-text">Retorno sobre Patrimonio Neto: {{ ganado.roe|floatformat:2 }}%</p>
+                <p class="card-text">Total de Ventas: ${{ ganado.ventas|floatformat:2 }}</p>
+                <p class="card-text">Total de Costos: ${{ ganado.costos|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        {% if agricultura.utilidad <= 0 %}
+        <div class="card border-danger mb-3">
+        {% else %}
+        <div class="card border-success mb-3">
+        {% endif %}
+            <div class="card-header">Agricultura</div>
+            <div class="card-body">
+                {% if agricultura.utilidad <= 0 %}
+                <p class="card-title text-danger">Utilidad sobre Ventas: {{agricultura.utilidad|floatformat:2}}%</p>
+                {% else %}
+                <p class="card-title text-success">Utilidad sobre Ventas: {{agricultura.utilidad|floatformat:2}}%</p>
+                {% endif %}
+                <p class="card-text">Retorno sobre Activos: {{ agricultura.roa|floatformat:2 }}%</p>
+                <p class="card-text">Retorno sobre Patrimonio Neto: {{ agricultura.roe|floatformat:2 }}%</p>
+                <p class="card-text">Total de Ventas: ${{ agricultura.ventas|floatformat:2 }}</p>
+                <p class="card-text">Total de Costos: ${{ agricultura.costos|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        {% if tambo.utilidad <= 0 %}
+        <div class="card border-danger mb-3">
+        {% else %}
+        <div class="card border-success mb-3">
+        {% endif %}
+            <div class="card-header">Tambo</div>
+            <div class="card-body">
+                {% if tambo.utilidad <= 0 %}
+                <p class="card-title text-danger">Utilidad sobre Ventas: {{tambo.utilidad|floatformat:2}}%</p>
+                {% else %}
+                <p class="card-title text-success">Utilidad sobre Ventas: {{tambo.utilidad|floatformat:2}}%</p>
+                {% endif %}
+                <p class="card-text">Retorno sobre Activos: {{ tambo.roa|floatformat:2 }}%</p>
+                <p class="card-text">Retorno sobre Patrimonio Neto: {{ tambo.roe|floatformat:2 }}%</p>
+                <p class="card-text">Total de Ventas: ${{ tambo.ventas|floatformat:2 }}</p>
+                <p class="card-text">Total de Costos: ${{ tambo.costos|floatformat:2 }}</p>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'app/_base.html' %}
+{% load django_tables2 %}
+{% load bootstrap4 %}
+{% block header %}
+    {{ script|safe }}
+{% endblock %}
+
+{% block content %}
+
+<h3>Detalle del Patrimonio Neto</h3>
+
+<div class="row d-flex justify-content-between">
+    <div class="col-md-8">
+        <h5 class='text-steelblue mb-2'>Patrimonio Neto: ${{patrimonio_neto|floatformat:2}}</h5>
+        <div class="row">
+            <div class='col-md-6'>
+                <div class="row">
+                    <div class="col-md-12 col-detail">
+                        <div class="card border-success mb-3">
+                            <div class="card-header text-success">
+                                Activos: ${{ activos.total|floatformat:2 }}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Corriente: ${{ activos.corriente|floatformat:2 }}</p>
+                                <p class="card-text">No Corriente: ${{ activos.no_corriente|floatformat:2 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-6'>
+                <div class="row">
+                    <div class="col-md-12 col-detail">
+                        <div class="card border-danger mb-3">
+                            <div class="card-header text-danger">
+                                Pasivos: ${{ pasivos.total|floatformat:2 }}
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Corriente: ${{ pasivos.corriente|floatformat:2 }}</p>
+                                <p class="card-text">No Corriente: ${{ pasivos.no_corriente|floatformat:2 }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='col-md-4'>
+        {{ div.plot_patrimonio_neto|safe }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <h5><i class="fas fa-arrow-up text-success"></i> Activos: ${{activos.total|floatformat:2}}</h5>
+        {{ div.plot_activos|safe }}
+    </div>
+    <div class="col-md-5">
+        <h5><i class="fas fa-arrow-down text-danger"></i> Pasivos: ${{pasivos.total|floatformat:2}}</h5>
+        {{ div.plot_pasivos|safe }}
+    </div>
+</div>
+
+{% endblock content %}

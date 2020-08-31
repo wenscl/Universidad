@@ -1,0 +1,237 @@
+{% extends 'app/_base.html' %}
+{% load django_tables2 %}
+{% load bootstrap4 %}
+{% block header %}
+    {{ script|safe }}
+{% endblock %}
+{% block extrahead %}
+  {{ filter.form.media }}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-10">
+    <h3>Detalle de Rentabilidad por Actividad</h3>
+  </div>
+  <div class='col-md-2 text-right'>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm">
+      Filtrar
+    </button>
+  </div>
+</div>
+
+<div class="collapse" id="collapseForm">
+<form method="GET">{% csrf_token %}
+  <div class="form">
+    <div class="row">
+      <div class="col-md-6">
+        <label>Periodo Contable</label>
+        <div class="row">
+          <div class="col-md-6">
+            {% bootstrap_field filter.form.inicio_periodo show_label=False addon_before='<label>Inicio</label>' addon_after="<button type='button' id='btn-inicio_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+          </div>
+          <div class="col-md-6">
+            {% bootstrap_field filter.form.fin_periodo show_label=False addon_before='<label>Fin</label>' addon_after="<button type='button' id='btn-fin_periodo' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>Fecha Comprobante</label>
+        <div class="row">
+          <div class="col-md-6">
+            {% bootstrap_field filter.form.inicio_comprobante show_label=False addon_before='<label>Inicio</label>' addon_after="<button type='button' id='btn-inicio_comprobante' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+          </div>
+          <div class="col-md-6">
+            {% bootstrap_field filter.form.fin_comprobante show_label=False addon_before='<label>Fin</label>' addon_after="<button type='button' id='btn-fin_comprobante' class='btn btn-outline-secondary docs-datepicker-trigger'><i class='fa fa-calendar' aria-hidden='true'></i></button>" addon_after_class=None %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+      {% bootstrap_button '<i class="fas fa-filter"></i> Filtrar' button_class='btn btn-outline-primary' %}
+      {% bootstrap_button '<i class="fas fa-eraser"></i> Limpiar Filtro' button_type='link' button_class='btn btn-outline-secondary' href='/detalle_rentabilidad_actividad' %}
+    </div>
+  </div>
+</form>
+</div>
+
+{# Título detalle #}
+{% if title_periodo %}
+<div class="row">
+  <div class="col-md-8">
+    <h6>{{ title_periodo }}</h6>
+  </div>
+</div>
+{% endif %}
+
+<div class="row d-flex justify-content-between">
+    <div class="col-md-8">
+        {% if rentabilidad_total > 0 %}
+            <h5 class='text-success mb-2'>Rentabilidad total: {{rentabilidad_total|floatformat:2}}%</h5>
+        {% else %}
+            <h5 class='text-danger mb-2'>Rentabilidad total: {{rentabilidad_total|floatformat:2}}%</h5>
+        {% endif %}
+        <div class="row">
+<!--            <div class="col-md-4 col-detail">-->
+<!--                {% if mixta.utilidad <= 0 %}-->
+<!--                <div class="card border-danger mb-3">-->
+<!--                {% else %}-->
+<!--                <div class="card border-success mb-3">-->
+<!--                {% endif %}-->
+<!--                    <div class="card-header">Mixta</div>-->
+<!--                    <div class="card-body">-->
+<!--                        {% if mixta.utilidad <= 0 %}-->
+<!--                        <p class="card-text text-danger mb-2">Utilidad sobre Ventas: {{mixta.utilidad|floatformat:2}}%</p>-->
+<!--                        {% else %}-->
+<!--                        <p class="card-text text-success mb-2">Utilidad sobre Ventas: {{mixta.utilidad|floatformat:2}}%</p>-->
+<!--                        {% endif %}-->
+<!--                        <p class="card-text mb-2">Retorno sobre Activos: {{ mixta.roa|floatformat:2 }}%</p>-->
+<!--                        <p class="card-text mb-2">Retorno sobre Patrimonio Neto: {{ mixta.roe|floatformat:2 }}%</p>-->
+<!--                        <p class="card-text mb-2">Total de Ventas: ${{ mixta.ventas|floatformat:2 }}</p>-->
+<!--                        <p class="card-text mb-2">Total de Costos: ${{ mixta.costos|floatformat:2 }}</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-md-6 col-detail">
+                {% if agricultura.utilidad <= 0 %}
+                <div class="card border-danger mb-3">
+                {% else %}
+                <div class="card border-success mb-3">
+                {% endif %}
+                    <div class="card-header">Agricultura</div>
+                    <div class="card-body">
+                        {% if agricultura.utilidad <= 0 %}
+                        <p class="card-text text-danger mb-2">Utilidad sobre Ventas: {{agricultura.utilidad|floatformat:2}}%</p>
+                        {% else %}
+                        <p class="card-text text-success mb-2">Utilidad sobre Ventas: {{agricultura.utilidad|floatformat:2}}%</p>
+                        {% endif %}
+                        <p class="card-text mb-2">Retorno sobre Activos: {{ agricultura.roa|floatformat:2 }}%</p>
+                        <p class="card-text mb-2">Retorno sobre Patrimonio Neto: {{ agricultura.roe|floatformat:2 }}%</p>
+                        <p class="card-text mb-2">Total de Ventas: ${{ agricultura.ventas|floatformat:2 }}</p>
+                        <p class="card-text mb-2">Total de Costos: ${{ agricultura.costos|floatformat:2 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-detail">
+                {% if tambo.utilidad <= 0 %}
+                <div class="card border-danger mb-3">
+                {% else %}
+                <div class="card border-success mb-3">
+                {% endif %}
+                    <div class="card-header">Tambo</div>
+                    <div class="card-body">
+                        {% if tambo.utilidad <= 0 %}
+                        <p class="card-text text-danger mb-2">Utilidad sobre Ventas: {{tambo.utilidad|floatformat:2}}%</p>
+                        {% else %}
+                        <p class="card-text text-success mb-2">Utilidad sobre Ventas: {{tambo.utilidad|floatformat:2}}%</p>
+                        {% endif %}
+                        <p class="card-text mb-2">Retorno sobre Activos: {{ tambo.roa|floatformat:2 }}%</p>
+                        <p class="card-text mb-2">Retorno sobre Patrimonio Neto: {{ tambo.roe|floatformat:2 }}%</p>
+                        <p class="card-text mb-2">Total de Ventas: ${{ tambo.ventas|floatformat:2 }}</p>
+                        <p class="card-text mb-2">Total de Costos: ${{ tambo.costos|floatformat:2 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        {{ div.rentabilidad_pie|safe }}
+    </div>
+</div>
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+<!--    <li class="nav-item">-->
+<!--        <a class="nav-link active" id="mixta-tab" data-toggle="tab" href="#mixta" role="tab"-->
+<!--           aria-controls="mixta" aria-selected="true">Mixta</a>-->
+<!--    </li>-->
+    <li class="nav-item">
+        <a class="nav-link" id="agricultura-tab" data-toggle="tab" href="#agricultura" role="tab" aria-controls="agricultura" aria-selected="false">Agricultura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="tambo-tab" data-toggle="tab" href="#tambo" role="tab" aria-controls="tambo" aria-selected="false">Tambo</a>
+    </li>
+</ul>
+<div class="tab-content" id="nav-tabContent">
+<!--    <div class="tab-pane fade show active" id="mixta" role="tabpanel" aria-labelledby="ganado-tab">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-3">-->
+<!--                <h5><i class="fas fa-arrow-up text-success"></i> Ventas</h5>-->
+<!--                {% for acumulador, importe in ventas.mixta_ventas %}-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-12">-->
+<!--                            <div class="card my-2">-->
+<!--                                <div class="card-header">{{ acumulador }}</div>-->
+<!--                                <div class="card-body">-->
+<!--                                    <h6 class="card-text my-1"><i class="fas fa-dollar-sign"></i> {{ importe|floatformat:2 }}</h6>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--            <div class="col-md-9">-->
+<!--                <h5><i class="fas fa-arrow-down text-danger"></i> Costos</h5>-->
+<!--                {{ div.mixta_costos|safe }}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <hr>-->
+<!--        <h5 class='mt-3 mb-2'>Detalle de los Movimientos de Imputación</h5>-->
+<!--        {% render_table tables.ganado %}-->
+<!--    </div>-->
+    <div class="tab-pane fade show active" id="agricultura" role="tabpanel"
+         aria-labelledby="agricultura-tab">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><i class="fas fa-arrow-up text-success"></i> Ventas</h5>
+                {% for acumulador, importe in ventas.agricultura_ventas %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card my-2">
+                            <div class="card-header">{{ acumulador }}</div>
+                            <div class="card-body">
+                                <h6 class="card-text my-1"><i class="fas fa-dollar-sign"></i> {{ importe|floatformat:2 }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-9">
+                <h5><i class="fas fa-arrow-down text-danger"></i> Costos</h5>
+                {{ div.agricultura_costos|safe }}
+            </div>
+        </div>
+        <hr>
+        <h5 class='mt-3 mb-2'>Detalle de los Movimientos de Imputación</h5>
+        {% render_table tables.agricultura %}
+    </div>
+    <div class="tab-pane fade" id="tambo" role="tabpanel" aria-labelledby="tambo-tab">
+        <div class="row">
+            <div class="col-md-3">
+                <h5><i class="fas fa-arrow-up text-success"></i> Ventas</h5>
+                {% for acumulador, importe in ventas.tambo_ventas %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card my-2">
+                            <div class="card-header">{{ acumulador }}</div>
+                            <div class="card-body">
+                                <h6 class="card-text my-1"><i class="fas fa-dollar-sign"></i> {{ importe|floatformat:2 }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-9">
+                <h5><i class="fas fa-arrow-down text-danger"></i> Costos</h5>
+                {{ div.tambo_costos|safe }}
+            </div>
+        </div>
+        <hr>
+        <h5 class='mt-3 mb-2'>Detalle de los Movimientos de Imputación</h5>
+        {% render_table tables.tambo %}
+    </div>
+</div>
+
+{% endblock content %}

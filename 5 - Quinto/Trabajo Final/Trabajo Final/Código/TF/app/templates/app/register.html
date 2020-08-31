@@ -1,0 +1,17 @@
+{% extends 'app/_base.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h3>Registrarse</h3>
+
+<form method="POST">{% csrf_token %}
+  <div class="form">
+    {% bootstrap_form form %}
+    {% bootstrap_button 'Crear Cuenta' button_class='btn btn-outline-primary' %}
+  </div>
+</form>
+<br>
+{% comment %} <div class="text-center">
+  <p>¿Ya tienes cuenta? - <a href="{% url 'login' %}">Iniciar Sesión</a></p>
+</div> {% endcomment %}
+{% endblock content %}

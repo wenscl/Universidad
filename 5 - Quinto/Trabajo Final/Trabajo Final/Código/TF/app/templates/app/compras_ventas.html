@@ -1,0 +1,52 @@
+{% extends 'app/_base.html' %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+
+{% block header %}
+  {{ script|safe }}
+
+    <h3>
+    {% block title %}
+    Compras y Ventas
+    {% endblock %}
+    </h3>
+{% endblock %}
+
+{% block content %}
+
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-compras-tab" data-toggle="tab" href="#nav-compras" role="tab" aria-controls="nav-compras" aria-selected="true">Compras</a>
+    <a class="nav-item nav-link" id="nav-ventas-tab" data-toggle="tab" href="#nav-ventas" role="tab" aria-controls="nav-ventas" aria-selected="false">Ventas</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-compras" role="tabpanel" aria-labelledby="nav-compras-tab">
+  compras
+  </div>
+  <div class="tab-pane fade" id="nav-ventas" role="tabpanel" aria-labelledby="nav-ventas-tab">
+    {% if cliente %}
+      <div class="container">
+      <div class="row">
+        <div class="col-auto mr-auto">
+          <h5>{{ cliente }}</h5>
+        </div>
+        <div class="col-auto">
+          <form action="{% url 'compras_ventas' %}" method="GET">{% csrf_token %}
+            <button class="btn btn-outline-secondary" type="submit">Limpiar</button>
+          </form>
+        </div>
+      </div>
+      </div>
+    {% else %}
+      <form method="POST">{% csrf_token %}
+      {% crispy form %}
+      </form>
+    {% endif %}
+
+    {% block bokeh %}
+      {{ div|safe }}
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}
